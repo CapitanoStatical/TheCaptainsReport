@@ -23,7 +23,10 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
-    /* HEADER */
+
+    /* =========================
+       HEADER
+       ========================= */
 
     header {
       text-align: center;
@@ -46,7 +49,10 @@
       letter-spacing: 1.5px;
     }
 
-    /* NAVIGATION */
+
+    /* =========================
+       NAVIGATION
+       ========================= */
 
     nav {
       display: flex;
@@ -68,7 +74,10 @@
       text-decoration: underline;
     }
 
-    /* HOMEPAGE */
+
+    /* =========================
+       HOMEPAGE
+       ========================= */
 
     .home {
       text-align: center;
@@ -118,11 +127,19 @@
       line-height: 1.5;
     }
 
-    .read-button {
+
+    /* =========================
+       BUTTONS
+       ========================= */
+
+    .read-button,
+    .back-button,
+    .original-button {
       display: inline-block;
       padding: 13px 26px;
       border: 1px solid #171717;
       color: #171717;
+      background: transparent;
       text-decoration: none;
       font-size: 12px;
       font-weight: bold;
@@ -130,12 +147,17 @@
       transition: .2s;
     }
 
-    .read-button:hover {
+    .read-button:hover,
+    .back-button:hover,
+    .original-button:hover {
       background: #171717;
       color: #e7e3d8;
     }
 
-    /* FULL ISSUE READER */
+
+    /* =========================
+       ISSUE READER
+       ========================= */
 
     .reader {
       display: none;
@@ -165,23 +187,16 @@
     }
 
     .reader-controls {
-      margin-bottom: 30px;
+      margin: 0 0 30px;
     }
 
-    .back-button {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 1px solid #171717;
-      color: #171717;
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
 
-    .back-button:hover {
-      background: #171717;
-      color: #e7e3d8;
+    /* =========================
+       DESKTOP NEWSPAPER
+       ========================= */
+
+    .desktop-newspaper {
+      display: block;
     }
 
     .pages {
@@ -197,55 +212,201 @@
       box-shadow: 0 8px 28px rgba(0, 0, 0, .14);
     }
 
-    /* ARCHIVE PLACEHOLDER */
 
-    .archive-note {
-      max-width: 600px;
-      margin: 70px auto;
-      padding: 0 20px;
+    /* =========================
+       MOBILE DIGITAL EDITION
+       ========================= */
+
+    .mobile-newspaper {
+      display: none;
+    }
+
+    .mobile-edition-heading {
+      max-width: 650px;
+      margin: 0 auto 20px;
+    }
+
+    .mobile-edition-heading p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .mobile-story {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 42px 0;
+      border-bottom: 1px solid rgba(23, 23, 23, .35);
+      text-align: left;
+    }
+
+    .mobile-kicker {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .mobile-story h2 {
+      margin: 0;
+      text-align: center;
+      font-size: 34px;
+      font-weight: normal;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .mobile-story h3 {
+      margin: 32px 0 14px;
+      font-size: 25px;
+      font-weight: normal;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .mobile-subtitle {
+      max-width: 580px;
+      margin: 12px auto 28px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .mobile-story p {
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .mobile-info-box {
+      margin: 30px 0;
+      padding: 22px 4px;
+      border-top: 2px solid #171717;
+      border-bottom: 2px solid #171717;
+    }
+
+    .mobile-info-box h3 {
+      margin-top: 0;
       text-align: center;
     }
 
-    /* MOBILE */
+    .mobile-info-box ul {
+      margin: 0;
+      padding-left: 22px;
+    }
 
-    @media (max-width: 600px) {
+    .mobile-info-box li {
+      margin: 10px 0;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .original-option {
+      max-width: 680px;
+      margin: 35px auto 10px;
+      text-align: center;
+    }
+
+    .original-option p {
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 768px) {
+
       header {
-        padding-top: 24px;
+        padding: 24px 14px 10px;
       }
 
       .masthead {
+        font-size: clamp(34px, 10vw, 52px);
         letter-spacing: 1px;
       }
 
+      .byline {
+        font-size: 10px;
+      }
+
       nav {
-        gap: 20px;
+        gap: 18px;
+        padding: 12px 8px;
+      }
+
+      nav a {
+        font-size: 11px;
       }
 
       .home {
-        padding-top: 38px;
+        padding: 38px 16px 60px;
       }
 
       .cover {
         width: 100%;
+        max-width: 500px;
       }
 
-      .pages {
-        width: 100%;
+      .reader {
+        padding: 35px 18px 60px;
       }
 
-      .newspaper-page {
-        margin-bottom: 20px;
+
+      /* Hide original square pages on phones */
+
+      .desktop-newspaper {
+        display: none;
+      }
+
+
+      /* Show digital mobile edition */
+
+      .mobile-newspaper {
+        display: block;
+      }
+
+      .mobile-story {
+        padding: 35px 0;
+      }
+
+      .mobile-story h2 {
+        font-size: 32px;
+      }
+
+      .mobile-story h3 {
+        font-size: 24px;
+      }
+
+      .mobile-story p {
+        font-size: 18px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <header id="home">
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header>
     <h1 class="masthead">THE CAPTAINS REPORT</h1>
     <p class="byline">WRITTEN BY CAPITANO STATICAL</p>
   </header>
+
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
 
   <nav>
     <a href="#">HOME</a>
@@ -254,69 +415,235 @@
   </nav>
 
 
-  <!-- FULL SEPTEMBER ISSUE -->
+  <!-- =========================
+       SEPTEMBER ISSUE
+       ========================= -->
 
   <section class="reader" id="issue">
 
     <h2 class="reader-title">September 2026</h2>
-    <p class="reader-subtitle">VOLUME 1 • ISSUE 3</p>
+
+    <p class="reader-subtitle">
+      VOLUME 1 • ISSUE 3
+    </p>
 
     <div class="reader-controls">
-      <a class="back-button" href="#">← BACK TO HOME</a>
+      <a class="back-button" href="#">
+        ← BACK TO HOME
+      </a>
     </div>
 
-    <div class="pages">
 
-      <img
-        class="newspaper-page"
-        src="september-2026-page-1.png"
-        alt="The Captains Report September 2026 Page 1"
-      >
+    <!-- =========================
+         DESKTOP EDITION
+         ========================= -->
 
-      <img
-        class="newspaper-page"
-        src="september-2026-page-2.png"
-        alt="The Captains Report September 2026 Page 2"
-        loading="lazy"
-      >
+    <div class="desktop-newspaper">
 
-      <img
-        class="newspaper-page"
-        src="september-2026-page-3.png"
-        alt="The Captains Report September 2026 Page 3"
-        loading="lazy"
-      >
+      <div class="pages">
 
-      <img
-        class="newspaper-page"
-        src="september-2026-page-4.png"
-        alt="The Captains Report September 2026 Page 4"
-        loading="lazy"
-      >
+        <img
+          class="newspaper-page"
+          src="september-2026-page-1.png"
+          alt="The Captains Report September 2026 Page 1"
+        >
 
-      <img
-        class="newspaper-page"
-        src="september-2026-page-5.png"
-        alt="The Captains Report September 2026 Page 5"
-        loading="lazy"
-      >
+        <img
+          class="newspaper-page"
+          src="september-2026-page-2.png"
+          alt="The Captains Report September 2026 Page 2"
+          loading="lazy"
+        >
+
+        <img
+          class="newspaper-page"
+          src="september-2026-page-3.png"
+          alt="The Captains Report September 2026 Page 3"
+          loading="lazy"
+        >
+
+        <img
+          class="newspaper-page"
+          src="september-2026-page-4.png"
+          alt="The Captains Report September 2026 Page 4"
+          loading="lazy"
+        >
+
+        <img
+          class="newspaper-page"
+          src="september-2026-page-5.png"
+          alt="The Captains Report September 2026 Page 5"
+          loading="lazy"
+        >
+
+      </div>
 
     </div>
 
-    <div class="reader-controls">
-      <a class="back-button" href="#">← BACK TO HOME</a>
+
+    <!-- =========================
+         MOBILE EDITION
+         ========================= -->
+
+    <div class="mobile-newspaper">
+
+      <div class="mobile-edition-heading">
+
+        <p>
+          The Captains Report mobile edition — the same monthly
+          report, reformatted for easier reading on smaller screens.
+        </p>
+
+      </div>
+
+
+      <!-- PAGE 1 -->
+
+      <article class="mobile-story">
+
+        <p class="mobile-kicker">
+          September 2026
+        </p>
+
+        <h2>
+          Season 21 Sets Sail
+        </h2>
+
+        <p class="mobile-subtitle">
+          Season 21 arrives September 17 with new rewards,
+          recurring events and another major sandbox experiment.
+        </p>
+
+
+        <h3>
+          A New Season Begins
+        </h3>
+
+        <p>
+          Season 21 arrives September 17, bringing a new season
+          of adventures to the Sea of Thieves.
+        </p>
+
+        <p>
+          This section will contain the original reporting from
+          Page 1 of The Captains Report, presented as normal web
+          text instead of being baked into the newspaper image.
+        </p>
+
+
+        <div class="mobile-info-box">
+
+          <h3>
+            Season 21 At A Glance
+          </h3>
+
+          <ul>
+            <li>
+              September 17 — Season 21 begins.
+            </li>
+
+            <li>
+              Season rewards and monthly events continue
+              throughout the new season.
+            </li>
+
+            <li>
+              Major sandbox changes and experiments are
+              covered throughout this issue.
+            </li>
+          </ul>
+
+        </div>
+
+
+        <h3>
+          No More Easy Escape
+        </h3>
+
+        <p>
+          The rest of the Page 1 article will continue here,
+          followed naturally by Music of the Month, Twitch Drops
+          and the remaining sections from the original newspaper.
+        </p>
+
+      </article>
+
+
+      <!--
+        NEXT:
+        We will put the REAL remaining September content here.
+
+        PAGE 1:
+        Season 21
+        No More Easy Escape
+        Music of the Month
+        Twitch Drops
+
+        PAGE 2:
+        Golden Sands Returns
+        Bugs Go Public
+
+        PAGE 3:
+        Tavern Rumors
+        Style of Thieves
+        The Month Ahead
+
+        PAGE 4:
+        Community Spotlight
+        Reapers Watch
+        What To Watch
+
+        PAGE 5:
+        Captain's Log
+        Closing sections
+      -->
+
+
+      <div class="original-option">
+
+        <p>
+          Want to see the original newspaper design?
+        </p>
+
+        <a
+          class="original-button"
+          href="september-2026-page-1.png"
+        >
+          VIEW ORIGINAL EDITION
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="reader-controls"
+      style="margin-top: 45px;"
+    >
+
+      <a class="back-button" href="#">
+        ← BACK TO HOME
+      </a>
+
     </div>
 
   </section>
 
 
-  <!-- HOMEPAGE -->
+  <!-- =========================
+       HOMEPAGE
+       ========================= -->
 
   <main class="home">
 
-    <p class="label">LATEST ISSUE</p>
+    <p class="label">
+      LATEST ISSUE
+    </p>
 
-    <h2 class="issue-date">September 2026</h2>
+    <h2 class="issue-date">
+      September 2026
+    </h2>
 
     <p class="issue-number">
       VOLUME 1 • ISSUE 3
@@ -337,15 +664,26 @@
       recurring events and another major sandbox experiment.
     </p>
 
-    <a class="read-button" href="#issue">
+    <a
+      class="read-button"
+      href="#issue"
+    >
       READ THE ISSUE
     </a>
 
   </main>
 
 
-  <section class="archive-note" id="archive">
+  <!-- =========================
+       ARCHIVE
+       ========================= -->
+
+  <section
+    class="archive-note"
+    id="archive"
+  >
   </section>
+
 
 </body>
 
