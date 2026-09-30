@@ -5,22 +5,251 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>The Captains Report</title>
+  <title>The Captains Report | Capitano Statical</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #e7e3d8;
+      color: #171717;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 42px 24px 0;
+    }
+
+    .masthead {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 86px);
+      font-weight: 500;
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+
+    .byline {
+      margin: 14px 0 26px;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ---------- NAVIGATION ---------- */
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 44px;
+
+      border-top: 2px solid #171717;
+      border-bottom: 2px solid #171717;
+
+      padding: 15px 20px;
+    }
+
+    nav a {
+      color: #171717;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.55;
+    }
+
+    /* ---------- MAIN PAGE ---------- */
+
+    main {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .latest {
+      text-align: center;
+      padding: 70px 0;
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      font-size: 17px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .issue-date {
+      margin: 0;
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .issue-number {
+      margin: 10px 0 35px;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .issue-placeholder {
+      width: min(650px, 100%);
+      aspect-ratio: 1 / 1;
+      margin: 0 auto 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #777268;
+      background: #ded9cc;
+
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- BUTTON ---------- */
+
+    .read-button {
+      display: inline-block;
+      padding: 15px 32px;
+
+      border: 2px solid #171717;
+
+      color: #171717;
+      background: transparent;
+
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .read-button:hover {
+      background: #171717;
+      color: #e7e3d8;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 650px) {
+
+      header {
+        padding-top: 28px;
+      }
+
+      .masthead {
+        letter-spacing: 1px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      nav a {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .latest {
+        padding: 45px 0;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
-  <h1>THE CAPTAINS REPORT</h1>
+  <header>
 
-  <p>
-    An independent Sea of Thieves community newspaper
-    written and created by Capitano Statical.
-  </p>
+    <h1 class="masthead">
+      THE CAPTAINS REPORT
+    </h1>
 
-  <h2>Latest Issue</h2>
+    <p class="byline">
+      Written by Capitano Statical
+    </p>
 
-  <p>September 2026 — Volume 1, Issue 3</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Latest Issue</a>
+      <a href="#">Archive</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="latest">
+
+      <p class="section-label">
+        Latest Issue
+      </p>
+
+      <h2 class="issue-date">
+        September 2026
+      </h2>
+
+      <p class="issue-number">
+        Volume 1 • Issue 3
+      </p>
+
+      <div class="issue-placeholder">
+        Newspaper Cover Goes Here
+      </div>
+
+      <h3 class="headline">
+        Season 21 Sets Sail
+      </h3>
+
+      <p class="subtitle">
+        Season 21 arrives September 17 with new rewards,
+        recurring events and another major sandbox experiment.
+      </p>
+
+      <a class="read-button" href="#">
+        Read The Issue
+      </a>
+
+    </section>
+
+  </main>
 
 </body>
-
 </html>
