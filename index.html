@@ -223,13 +223,20 @@
 
     .mobile-edition-heading {
       max-width: 650px;
-      margin: 0 auto 20px;
+      margin: 0 auto 30px;
+      text-align: center;
     }
 
     .mobile-edition-heading p {
+      margin: 0 auto 18px;
       font-size: 14px;
       line-height: 1.5;
     }
+
+
+    /* =========================
+       MOBILE STORY
+       ========================= */
 
     .mobile-story {
       max-width: 680px;
@@ -240,9 +247,9 @@
     }
 
     .mobile-kicker {
-      margin: 0 0 8px;
+      margin: 0 0 8px !important;
       text-align: center;
-      font-size: 11px;
+      font-size: 11px !important;
       font-weight: bold;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -251,27 +258,28 @@
     .mobile-story h2 {
       margin: 0;
       text-align: center;
-      font-size: 34px;
+      font-size: 38px;
       font-weight: normal;
-      line-height: 1.05;
+      line-height: 1;
       text-transform: uppercase;
     }
 
     .mobile-story h3 {
-      margin: 32px 0 14px;
-      font-size: 25px;
+      margin: 38px 0 12px;
+      text-align: center;
+      font-size: 27px;
       font-weight: normal;
-      line-height: 1.15;
+      line-height: 1.1;
       text-transform: uppercase;
     }
 
     .mobile-subtitle {
-      max-width: 580px;
-      margin: 12px auto 28px;
+      max-width: 590px;
+      margin: 12px auto 25px !important;
       text-align: center;
-      font-size: 16px;
+      font-size: 16px !important;
       font-weight: bold;
-      line-height: 1.4;
+      line-height: 1.4 !important;
     }
 
     .mobile-story p {
@@ -280,38 +288,81 @@
       line-height: 1.65;
     }
 
+
+    /* =========================
+       ARTICLE IMAGES
+       ========================= */
+
+    .story-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 20px auto 28px;
+      border: 1px solid rgba(23, 23, 23, .2);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, .10);
+    }
+
+
+    /* =========================
+       AT A GLANCE
+       ========================= */
+
     .mobile-info-box {
-      margin: 30px 0;
-      padding: 22px 4px;
+      margin: 36px 0 42px;
+      padding: 25px 0;
       border-top: 2px solid #171717;
       border-bottom: 2px solid #171717;
     }
 
     .mobile-info-box h3 {
-      margin-top: 0;
+      margin: 0 0 23px;
       text-align: center;
     }
 
-    .mobile-info-box ul {
+    .mobile-info-item {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .mobile-info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .mobile-info-item strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .mobile-info-item p {
       margin: 0;
-      padding-left: 22px;
+      font-size: 16px;
+      line-height: 1.45;
     }
 
-    .mobile-info-box li {
-      margin: 10px 0;
-      font-size: 17px;
-      line-height: 1.5;
+
+    /* =========================
+       STORY DIVIDER
+       ========================= */
+
+    .story-divider {
+      width: 80px;
+      height: 1px;
+      margin: 45px auto;
+      background: #171717;
     }
 
-    .original-option {
-      max-width: 680px;
-      margin: 35px auto 10px;
+
+    /* =========================
+       ARCHIVE
+       ========================= */
+
+    .archive-note {
+      max-width: 600px;
+      margin: 70px auto;
+      padding: 0 20px;
       text-align: center;
-    }
-
-    .original-option p {
-      font-size: 13px;
-      margin-bottom: 15px;
     }
 
 
@@ -357,33 +408,34 @@
       }
 
 
-      /* Hide original square pages on phones */
+      /* Hide original newspaper pages on phones */
 
       .desktop-newspaper {
         display: none;
       }
 
 
-      /* Show digital mobile edition */
+      /* Show reformatted mobile edition */
 
       .mobile-newspaper {
         display: block;
       }
 
       .mobile-story {
-        padding: 35px 0;
+        padding: 38px 0;
       }
 
       .mobile-story h2 {
-        font-size: 32px;
+        font-size: clamp(32px, 10vw, 44px);
       }
 
       .mobile-story h3 {
-        font-size: 24px;
+        font-size: 25px;
       }
 
       .mobile-story p {
         font-size: 18px;
+        line-height: 1.65;
       }
     }
 
@@ -398,9 +450,16 @@
        HEADER
        ========================= -->
 
-  <header>
-    <h1 class="masthead">THE CAPTAINS REPORT</h1>
-    <p class="byline">WRITTEN BY CAPITANO STATICAL</p>
+  <header id="home">
+
+    <h1 class="masthead">
+      THE CAPTAINS REPORT
+    </h1>
+
+    <p class="byline">
+      WRITTEN BY CAPITANO STATICAL
+    </p>
+
   </header>
 
 
@@ -409,34 +468,50 @@
        ========================= -->
 
   <nav>
-    <a href="#">HOME</a>
-    <a href="#issue">LATEST ISSUE</a>
-    <a href="#archive">ARCHIVE</a>
+
+    <a href="#">
+      HOME
+    </a>
+
+    <a href="#issue">
+      LATEST ISSUE
+    </a>
+
+    <a href="#archive">
+      ARCHIVE
+    </a>
+
   </nav>
 
 
   <!-- =========================
-       SEPTEMBER ISSUE
+       SEPTEMBER 2026 ISSUE
        ========================= -->
 
   <section class="reader" id="issue">
 
-    <h2 class="reader-title">September 2026</h2>
+
+    <h2 class="reader-title">
+      September 2026
+    </h2>
 
     <p class="reader-subtitle">
       VOLUME 1 • ISSUE 3
     </p>
 
+
     <div class="reader-controls">
+
       <a class="back-button" href="#">
         ← BACK TO HOME
       </a>
+
     </div>
 
 
-    <!-- =========================
-         DESKTOP EDITION
-         ========================= -->
+    <!-- ==================================
+         DESKTOP ORIGINAL NEWSPAPER
+         ================================== -->
 
     <div class="desktop-newspaper">
 
@@ -481,128 +556,20 @@
     </div>
 
 
-    <!-- =========================
-         MOBILE EDITION
-         ========================= -->
+    <!-- ==================================
+         MOBILE DIGITAL EDITION
+         ================================== -->
 
     <div class="mobile-newspaper">
+
+
+      <!-- MOBILE EXPLANATION -->
 
       <div class="mobile-edition-heading">
 
         <p>
           The Captains Report mobile edition — the same monthly
           report, reformatted for easier reading on smaller screens.
-        </p>
-
-      </div>
-
-
-      <!-- PAGE 1 -->
-
-      <article class="mobile-story">
-
-        <p class="mobile-kicker">
-          September 2026
-        </p>
-
-        <h2>
-          Season 21 Sets Sail
-        </h2>
-
-        <p class="mobile-subtitle">
-          Season 21 arrives September 17 with new rewards,
-          recurring events and another major sandbox experiment.
-        </p>
-
-
-        <h3>
-          A New Season Begins
-        </h3>
-
-        <p>
-          Season 21 arrives September 17, bringing a new season
-          of adventures to the Sea of Thieves.
-        </p>
-
-        <p>
-          This section will contain the original reporting from
-          Page 1 of The Captains Report, presented as normal web
-          text instead of being baked into the newspaper image.
-        </p>
-
-
-        <div class="mobile-info-box">
-
-          <h3>
-            Season 21 At A Glance
-          </h3>
-
-          <ul>
-            <li>
-              September 17 — Season 21 begins.
-            </li>
-
-            <li>
-              Season rewards and monthly events continue
-              throughout the new season.
-            </li>
-
-            <li>
-              Major sandbox changes and experiments are
-              covered throughout this issue.
-            </li>
-          </ul>
-
-        </div>
-
-
-        <h3>
-          No More Easy Escape
-        </h3>
-
-        <p>
-          The rest of the Page 1 article will continue here,
-          followed naturally by Music of the Month, Twitch Drops
-          and the remaining sections from the original newspaper.
-        </p>
-
-      </article>
-
-
-      <!--
-        NEXT:
-        We will put the REAL remaining September content here.
-
-        PAGE 1:
-        Season 21
-        No More Easy Escape
-        Music of the Month
-        Twitch Drops
-
-        PAGE 2:
-        Golden Sands Returns
-        Bugs Go Public
-
-        PAGE 3:
-        Tavern Rumors
-        Style of Thieves
-        The Month Ahead
-
-        PAGE 4:
-        Community Spotlight
-        Reapers Watch
-        What To Watch
-
-        PAGE 5:
-        Captain's Log
-        Closing sections
-      -->
-
-
-      <div class="original-option">
-
-        <p>
-          Want to see the original newspaper design?
         </p>
 
         <a
@@ -614,8 +581,283 @@
 
       </div>
 
+
+      <!-- ==================================
+           SEPTEMBER 2026
+           ================================== -->
+
+      <article class="mobile-story">
+
+        <p class="mobile-kicker">
+          SEPTEMBER 2026
+        </p>
+
+
+        <!-- ==================================
+             MAIN HEADLINE
+             ================================== -->
+
+        <h2>
+          SEASON 21 SETS SAIL
+        </h2>
+
+        <p class="mobile-subtitle">
+          Season 21 arrives September 17 with new rewards, recurring events and another major sandbox experiment
+        </p>
+
+
+        <!-- ==================================
+             A NEW SEASON BEGINS
+             ================================== -->
+
+        <h3>
+          A NEW SEASON BEGINS
+        </h3>
+
+        <img
+          class="story-image"
+          src="season-21.png"
+          alt="Sea of Thieves Season 21"
+        >
+
+        <p>
+          Season 21 arrives September 17, and this one is going to look a little different.
+        </p>
+
+        <p>
+          Rather than launching alongside one massive new feature, Rare is putting more attention on the world that is already there.
+        </p>
+
+        <p>
+          Recurring Live Events will play a bigger role throughout the Season, Custom Seas will continue to expand, and a major experiment will try to get crews spending more time sailing across the shared world.
+        </p>
+
+        <p>
+          The Season Pass isn't going anywhere. A new free reward track arrives with another Star Prize waiting at level 50, while the Premium Tier brings the new “Mutiny's Mark” collection.
+        </p>
+
+        <p>
+          Outpost shops are also getting some much-needed attention, with new cosmetics arriving for players to earn and purchase with gold. The Pirate Emporium will still receive new stock, including the returning “Bleakheart Groom”, but Rare says a larger change to its cosmetic strategy is on the way.
+        </p>
+
+        <p>
+          The biggest change, however, may be what Season 21 takes away. Diving to Voyages, Tall Tales and Raids will be disabled as Rare tests whether keeping crews on the same server for longer can bring more life back to the sandbox.
+        </p>
+
+
+        <!-- ==================================
+             SEASON 21 AT A GLANCE
+             ================================== -->
+
+        <div class="mobile-info-box">
+
+          <h3>
+            SEASON 21 AT A GLANCE
+          </h3>
+
+
+          <div class="mobile-info-item">
+
+            <strong>
+              SEPTEMBER 17th
+            </strong>
+
+            <p>
+              Season 21 begins
+            </p>
+
+          </div>
+
+
+          <div class="mobile-info-item">
+
+            <strong>
+              NO DIVING
+            </strong>
+
+            <p>
+              Voyages, Tall Tales and Raids will REQUIRE sailing
+            </p>
+
+          </div>
+
+
+          <div class="mobile-info-item">
+
+            <strong>
+              NO HEADLINE FEATURE
+            </strong>
+
+            <p>
+              Major features are no longer tied to Season launches
+            </p>
+
+          </div>
+
+
+          <div class="mobile-info-item">
+
+            <strong>
+              PORTAL HOPPING
+            </strong>
+
+            <p>
+              Changing servers will reset your Emissary Grade
+            </p>
+
+          </div>
+
+
+          <div class="mobile-info-item">
+
+            <strong>
+              NEW REWARDS
+            </strong>
+
+            <p>
+              A new Season Pass and Premium Tier arrive
+            </p>
+
+          </div>
+
+
+          <div class="mobile-info-item">
+
+            <strong>
+              MORE LIVE EVENTS
+            </strong>
+
+            <p>
+              Recurring events take a bigger role throughout the Season
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================
+             NO MORE EASY ESCAPE
+             ================================== -->
+
+        <h3>
+          NO MORE EASY ESCAPE
+        </h3>
+
+        <p class="mobile-subtitle">
+          Rare expands its Season 21 experiments to include Portal Hopping
+        </p>
+
+        <img
+          class="story-image"
+          src="portal-hopping.png"
+          alt="Let's Talk About Portal Hopping Developer Update"
+          loading="lazy"
+        >
+
+        <p>
+          In the latest Sea of Thieves Developer Update, Production Director Drew Stevens discusses a major change to portal hopping coming with Season 21. Crews will still be able to use the Sea of the Damned to move between servers, but they will no longer be able to carry their Emissary Grade with them.
+        </p>
+
+        <p>
+          The change will be especially noticeable for Grade Five Reapers, who could previously portal hop while keeping their Grade and immediately begin hunting Emissaries on the new server.
+        </p>
+
+        <p>
+          Stevens explained that this works with Rare's goal of making each server feel like its own “living story.” The team wants crews to see threats developing around them and have time to react, rather than having a fully established Reaper suddenly arrive from another server.
+        </p>
+
+        <p>
+          Rare acknowledges that the change won't appeal to everyone, but believes crews should build their reputation and influence on the seas they're currently sailing.
+        </p>
+
+
+        <div class="story-divider"></div>
+
+
+        <!-- ==================================
+             MUSIC OF THE MONTH
+             ================================== -->
+
+        <h3>
+          MUSIC OF THE MONTH
+        </h3>
+
+        <img
+          class="story-image"
+          src="weatherbound.png"
+          alt="Weatherbound"
+          loading="lazy"
+        >
+
+        <p>
+          Arriving alongside Season 21 is a brand-new track from the Sea of Thieves Audio Team. “Weatherbound” can already be heard accompanying the Season 21 title screen, bringing a new sound to the start of the latest Season.
+        </p>
+
+        <p>
+          The track officially releases on September 11 across music streaming platforms, giving pirates a chance to take the sounds of Season 21 with them beyond the seas.
+        </p>
+
+
+        <div class="story-divider"></div>
+
+
+        <!-- ==================================
+             TWITCH DROPS
+             ================================== -->
+
+        <h3>
+          TWITCH DROPS
+        </h3>
+
+        <p class="mobile-subtitle">
+          NEW REWARDS ARRIVE SEPTEMBER 18–23
+        </p>
+
+        <img
+          class="story-image"
+          src="twitch-drops.png"
+          alt="September 2026 Twitch Drops"
+          loading="lazy"
+        >
+
+        <p>
+          Twitch Drops return this month with another set of rewards for pirates tuning in to participating Sea of Thieves streamers.
+        </p>
+
+        <p>
+          From September 18 through September 23, players can earn Gold and Renown, along with the Drum Show-Off Emote, Lazybeard Title, Twilight Hunter Fishing Rod and Graveyard Gladiator Pistol.
+        </p>
+
+        <p>
+          Those who stick around for the full six hours can also claim the new and exclusive Fishbone Throwing Knives.
+        </p>
+
+        <p>
+          Make sure your Sea of Thieves and Twitch accounts are linked before watching to earn the rewards.
+        </p>
+
+
+      </article>
+
+
+      <!-- ==================================
+           PAGES 2–5 WILL CONTINUE HERE
+
+           We are intentionally NOT adding
+           rewritten or guessed text here.
+
+           The exact published text and images
+           from those pages will be added next.
+           ================================== -->
+
+
     </div>
 
+
+    <!-- =========================
+         BOTTOM BACK BUTTON
+         ========================= -->
 
     <div
       class="reader-controls"
@@ -656,7 +898,7 @@
     >
 
     <h3 class="headline">
-      Season 21 Sets Sail
+      SEASON 21 SETS SAIL
     </h3>
 
     <p class="deck">
