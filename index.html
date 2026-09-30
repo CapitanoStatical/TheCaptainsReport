@@ -421,33 +421,55 @@
       }
 
 
-      /* Original newspaper hidden by default on phone */
+      /* =========================
+         NORMAL MOBILE VERSION
+         ========================= */
 
       .desktop-newspaper {
         display: none;
       }
-
-
-      /* Reformatted mobile edition shown by default */
 
       .mobile-newspaper {
         display: block;
       }
 
 
-      /* This is shown by JavaScript when original mode is selected */
+      /* =========================
+         ORIGINAL EDITION SELECTED
+         ========================= */
 
-      .desktop-newspaper.original-mobile-active {
+      body.original-edition .desktop-newspaper {
         display: block;
       }
 
+      body.original-edition .mobile-newspaper {
+        display: none;
+      }
 
-      /* Back to mobile button only appears in original mobile mode */
-
-      .desktop-newspaper.original-mobile-active .mobile-original-controls {
+      body.original-edition .mobile-original-controls {
         display: block;
       }
 
+      body.original-edition .reader {
+        padding: 45px 20px 80px;
+      }
+
+      body.original-edition .pages {
+        width: min(100%, 1250px);
+        margin: auto;
+      }
+
+      body.original-edition .newspaper-page {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 40px;
+      }
+
+
+      /* =========================
+         MOBILE ARTICLE STYLING
+         ========================= */
 
       .mobile-story {
         padding: 38px 0;
@@ -465,6 +487,7 @@
         font-size: 18px;
         line-height: 1.65;
       }
+
     }
 
   </style>
@@ -982,88 +1005,41 @@
        MOBILE EDITION SWITCHER
        ========================= -->
 
-  <script>
+<script>
 
-    function showOriginalEdition() {
+  function showOriginalEdition() {
 
-      if (window.innerWidth <= 768) {
+    document.body.classList.add("original-edition");
 
-        const mobileEdition =
-          document.getElementById("mobileEdition");
-
-        const originalEdition =
-          document.getElementById("originalEdition");
-
-
-        mobileEdition.style.display = "none";
-
-        originalEdition.classList.add(
-          "original-mobile-active"
-        );
-
-
-        window.scrollTo({
-          top: document.getElementById("issue").offsetTop,
-          behavior: "smooth"
-        });
-
-      }
-
-    }
-
-
-    function showMobileEdition() {
-
-      if (window.innerWidth <= 768) {
-
-        const mobileEdition =
-          document.getElementById("mobileEdition");
-
-        const originalEdition =
-          document.getElementById("originalEdition");
-
-
-        originalEdition.classList.remove(
-          "original-mobile-active"
-        );
-
-        mobileEdition.style.display = "block";
-
-
-        window.scrollTo({
-          top: document.getElementById("issue").offsetTop,
-          behavior: "smooth"
-        });
-
-      }
-
-    }
-
-
-    /* Reset presentation if phone orientation or window size changes */
-
-    window.addEventListener("resize", function () {
-
-      const mobileEdition =
-        document.getElementById("mobileEdition");
-
-      const originalEdition =
-        document.getElementById("originalEdition");
-
-
-      if (window.innerWidth > 768) {
-
-        mobileEdition.style.display = "";
-
-        originalEdition.classList.remove(
-          "original-mobile-active"
-        );
-
-      }
-
+    window.scrollTo({
+      top: document.getElementById("issue").offsetTop,
+      behavior: "smooth"
     });
 
-  </script>
+  }
+
+
+  function showMobileEdition() {
+
+    document.body.classList.remove("original-edition");
+
+    window.scrollTo({
+      top: document.getElementById("issue").offsetTop,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  window.addEventListener("resize", function () {
+
+    if (window.innerWidth > 768) {
+      document.body.classList.remove("original-edition");
+    }
+
+  });
+
+</script>
 
 
 </body>
