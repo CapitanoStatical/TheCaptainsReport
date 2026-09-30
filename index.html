@@ -1796,73 +1796,68 @@
 
 
       </article>
-          </div>
+            </div>
 
 
     <!-- =========================
          BOTTOM BACK BUTTON
          ========================= -->
 
-    <div class="reader-controls" style="margin-top:45px;">
+    <div
+      class="reader-controls"
+      style="margin-top: 45px;"
+    >
 
-      <a
-        class="btn"
-        href="#home"
-        onclick="showPage('home')"
-      >
+      <a class="back-button" href="#">
         ← BACK TO HOME
       </a>
 
     </div>
 
-
   </section>
-
 
 
   <!-- =========================
-       HOME PAGE
+       HOMEPAGE
        ========================= -->
 
-  <section
-    id="home"
-    class="page active"
-  >
+  <main class="home">
 
-    <div class="hero">
+    <p class="label">
+      LATEST ISSUE
+    </p>
 
-      <h1>
-        THE CAPTAINS REPORT
-      </h1>
+    <h2 class="issue-date">
+      September 2026
+    </h2>
 
-      <p>
-        A Sea of Thieves Community Newspaper
-      </p>
+    <p class="issue-number">
+      VOLUME 1 • ISSUE 3
+    </p>
 
-      <div class="home-buttons">
+    <img
+      class="cover"
+      src="september-2026-page-1.png"
+      alt="September 2026 cover of The Captains Report"
+    >
 
-        <a
-          class="btn"
-          href="#latest"
-          onclick="showPage('latest')"
-        >
-          READ LATEST ISSUE
-        </a>
+    <h3 class="headline">
+      SEASON 21 SETS SAIL
+    </h3>
 
-        <a
-          class="btn"
-          href="#archive"
-          onclick="showPage('archive')"
-        >
-          VIEW ARCHIVE
-        </a>
+    <p class="deck">
+      Season 21 arrives September 17 with new rewards,
+      recurring events and another major sandbox experiment.
+    </p>
 
-      </div>
+    <a
+      class="read-button"
+      href="#issue"
+    >
+      READ THE ISSUE
+    </a>
 
-    </div>
-
-  </section>
-
+  </main>
 
 
   <!-- =========================
@@ -1870,130 +1865,51 @@
        ========================= -->
 
   <section
+    class="archive-note"
     id="archive"
-    class="page"
   >
-
-    <div class="archive-container">
-
-      <h1>
-        ISSUE ARCHIVE
-      </h1>
-
-      <p>
-        Previous issues of The Captains Report will appear here.
-      </p>
-
-    </div>
-
   </section>
 
 
-
   <!-- =========================
-       JAVASCRIPT
+       MOBILE EDITION SWITCHER
        ========================= -->
 
-  <script>
+<script>
 
-    function showPage(pageId) {
+  function showOriginalEdition() {
 
-      const pages =
-        document.querySelectorAll(".page");
+    document.body.classList.add("original-edition");
 
-      pages.forEach(function(page) {
+    window.scrollTo({
+      top: document.getElementById("issue").offsetTop,
+      behavior: "smooth"
+    });
 
-        page.classList.remove("active");
-
-      });
-
-
-      const selectedPage =
-        document.getElementById(pageId);
-
-      if (selectedPage) {
-
-        selectedPage.classList.add("active");
-
-      }
+  }
 
 
-      document.body.classList.remove(
-        "original-edition"
-      );
+  function showMobileEdition() {
+
+    document.body.classList.remove("original-edition");
+
+    window.scrollTo({
+      top: document.getElementById("issue").offsetTop,
+      behavior: "smooth"
+    });
+
+  }
 
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+  window.addEventListener("resize", function () {
 
+    if (window.innerWidth > 768) {
+      document.body.classList.remove("original-edition");
     }
 
+  });
 
-
-    function showOriginalEdition() {
-
-      document.body.classList.add(
-        "original-edition"
-      );
-
-
-      const issue =
-        document.getElementById("latest");
-
-      if (issue) {
-
-        issue.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      }
-
-    }
-
-
-
-    function showMobileEdition() {
-
-      document.body.classList.remove(
-        "original-edition"
-      );
-
-
-      const issue =
-        document.getElementById("latest");
-
-      if (issue) {
-
-        issue.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      }
-
-    }
-
-
-
-    window.addEventListener(
-      "resize",
-      function() {
-
-        if (window.innerWidth > 768) {
-
-          document.body.classList.remove(
-            "original-edition"
-          );
-
-        }
-
-      }
-    );
-
-  </script>
+</script>
 
 
 </body>
