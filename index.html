@@ -12,6 +12,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #e7e3d8;
@@ -19,144 +23,111 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
-    /* ---------- HEADER ---------- */
+    /* HEADER */
 
     header {
-      width: 100%;
       text-align: center;
-      padding: 42px 24px 0;
+      padding: 30px 20px 12px;
+      border-bottom: 1px solid #171717;
     }
 
     .masthead {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6vw, 86px);
-      font-weight: 500;
+      font-size: clamp(42px, 6vw, 78px);
+      font-weight: normal;
       letter-spacing: 3px;
       line-height: 1;
     }
 
     .byline {
-      margin: 14px 0 26px;
-      font-size: 15px;
+      margin: 10px 0 0;
+      font-size: 12px;
       font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
 
-    /* ---------- NAVIGATION ---------- */
+    /* NAVIGATION */
 
     nav {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 44px;
-
-      border-top: 2px solid #171717;
-      border-bottom: 2px solid #171717;
-
-      padding: 15px 20px;
+      gap: 38px;
+      padding: 12px 20px;
+      border-bottom: 1px solid #171717;
     }
 
     nav a {
       color: #171717;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 13px;
       font-weight: bold;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: opacity 0.2s ease;
+      letter-spacing: 1px;
     }
 
     nav a:hover {
-      opacity: 0.55;
+      text-decoration: underline;
     }
 
-    /* ---------- MAIN PAGE ---------- */
+    /* HOMEPAGE */
 
-    main {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .latest {
+    .home {
       text-align: center;
-      padding: 70px 0;
+      padding: 55px 20px 80px;
     }
 
-    .section-label {
-      margin: 0 0 10px;
-      font-size: 17px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    .label {
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
 
     .issue-date {
       margin: 0;
-      font-size: clamp(36px, 5vw, 62px);
-      font-weight: 500;
-      letter-spacing: 1px;
+      font-size: clamp(40px, 5vw, 58px);
+      font-weight: normal;
     }
 
     .issue-number {
-      margin: 10px 0 35px;
-      font-size: 15px;
+      margin: 8px 0 28px;
+      font-size: 12px;
       font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
 
-    .issue-placeholder {
-      width: min(650px, 100%);
-      aspect-ratio: 1 / 1;
-      margin: 0 auto 34px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid #777268;
-      background: #ded9cc;
-
-      font-size: 16px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    .cover {
+      display: block;
+      width: min(90%, 520px);
+      height: auto;
+      margin: 0 auto 30px;
+      border: 1px solid rgba(0, 0, 0, .35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
     }
 
     .headline {
-      margin: 0 0 8px;
-      font-size: clamp(30px, 4vw, 48px);
-      font-weight: 500;
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: normal;
       text-transform: uppercase;
     }
 
-    .subtitle {
-      max-width: 720px;
-      margin: 0 auto 30px;
-      font-size: 18px;
+    .deck {
+      max-width: 700px;
+      margin: 10px auto 25px;
+      font-size: 16px;
       line-height: 1.5;
     }
 
-    /* ---------- BUTTON ---------- */
-
     .read-button {
       display: inline-block;
-      padding: 15px 32px;
-
-      border: 2px solid #171717;
-
+      padding: 13px 26px;
+      border: 1px solid #171717;
       color: #171717;
-      background: transparent;
-
       text-decoration: none;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
+      letter-spacing: 1.5px;
+      transition: .2s;
     }
 
     .read-button:hover {
@@ -164,12 +135,82 @@
       color: #e7e3d8;
     }
 
-    /* ---------- MOBILE ---------- */
+    /* FULL ISSUE READER */
 
-    @media (max-width: 650px) {
+    .reader {
+      display: none;
+      padding: 45px 20px 80px;
+      text-align: center;
+    }
 
+    .reader:target {
+      display: block;
+    }
+
+    .reader:target ~ .home {
+      display: none;
+    }
+
+    .reader-title {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: normal;
+    }
+
+    .reader-subtitle {
+      margin: 8px 0 30px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+    .reader-controls {
+      margin-bottom: 30px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid #171717;
+      color: #171717;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .back-button:hover {
+      background: #171717;
+      color: #e7e3d8;
+    }
+
+    .pages {
+      width: min(100%, 1250px);
+      margin: auto;
+    }
+
+    .newspaper-page {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 40px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .14);
+    }
+
+    /* ARCHIVE PLACEHOLDER */
+
+    .archive-note {
+      max-width: 600px;
+      margin: 70px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
       header {
-        padding-top: 28px;
+        padding-top: 24px;
       }
 
       .masthead {
@@ -180,76 +221,132 @@
         gap: 20px;
       }
 
-      nav a {
-        font-size: 12px;
-        letter-spacing: 1px;
+      .home {
+        padding-top: 38px;
       }
 
-      .latest {
-        padding: 45px 0;
+      .cover {
+        width: 100%;
+      }
+
+      .pages {
+        width: 100%;
+      }
+
+      .newspaper-page {
+        margin-bottom: 20px;
       }
     }
   </style>
 </head>
 
-
 <body>
 
-  <header>
-
-    <h1 class="masthead">
-      THE CAPTAINS REPORT
-    </h1>
-
-    <p class="byline">
-      Written by Capitano Statical
-    </p>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="#">Latest Issue</a>
-      <a href="#">Archive</a>
-    </nav>
-
+  <header id="home">
+    <h1 class="masthead">THE CAPTAINS REPORT</h1>
+    <p class="byline">WRITTEN BY CAPITANO STATICAL</p>
   </header>
 
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#issue">LATEST ISSUE</a>
+    <a href="#archive">ARCHIVE</a>
+  </nav>
 
-  <main>
 
-    <section class="latest">
+  <!-- FULL SEPTEMBER ISSUE -->
 
-      <p class="section-label">
-        Latest Issue
-      </p>
+  <section class="reader" id="issue">
 
-      <h2 class="issue-date">
-        September 2026
-      </h2>
+    <h2 class="reader-title">September 2026</h2>
+    <p class="reader-subtitle">VOLUME 1 • ISSUE 3</p>
 
-      <p class="issue-number">
-        Volume 1 • Issue 3
-      </p>
+    <div class="reader-controls">
+      <a class="back-button" href="#">← BACK TO HOME</a>
+    </div>
 
-      <div class="issue-placeholder">
-        Newspaper Cover Goes Here
-      </div>
+    <div class="pages">
 
-      <h3 class="headline">
-        Season 21 Sets Sail
-      </h3>
+      <img
+        class="newspaper-page"
+        src="september-2026-page-1.png"
+        alt="The Captains Report September 2026 Page 1"
+      >
 
-      <p class="subtitle">
-        Season 21 arrives September 17 with new rewards,
-        recurring events and another major sandbox experiment.
-      </p>
+      <img
+        class="newspaper-page"
+        src="september-2026-page-2.png"
+        alt="The Captains Report September 2026 Page 2"
+        loading="lazy"
+      >
 
-      <a class="read-button" href="#">
-        Read The Issue
-      </a>
+      <img
+        class="newspaper-page"
+        src="september-2026-page-3.png"
+        alt="The Captains Report September 2026 Page 3"
+        loading="lazy"
+      >
 
-    </section>
+      <img
+        class="newspaper-page"
+        src="september-2026-page-4.png"
+        alt="The Captains Report September 2026 Page 4"
+        loading="lazy"
+      >
+
+      <img
+        class="newspaper-page"
+        src="september-2026-page-5.png"
+        alt="The Captains Report September 2026 Page 5"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="reader-controls">
+      <a class="back-button" href="#">← BACK TO HOME</a>
+    </div>
+
+  </section>
+
+
+  <!-- HOMEPAGE -->
+
+  <main class="home">
+
+    <p class="label">LATEST ISSUE</p>
+
+    <h2 class="issue-date">September 2026</h2>
+
+    <p class="issue-number">
+      VOLUME 1 • ISSUE 3
+    </p>
+
+    <img
+      class="cover"
+      src="september-2026-page-1.png"
+      alt="September 2026 cover of The Captains Report"
+    >
+
+    <h3 class="headline">
+      Season 21 Sets Sail
+    </h3>
+
+    <p class="deck">
+      Season 21 arrives September 17 with new rewards,
+      recurring events and another major sandbox experiment.
+    </p>
+
+    <a class="read-button" href="#issue">
+      READ THE ISSUE
+    </a>
 
   </main>
 
+
+  <section class="archive-note" id="archive">
+  </section>
+
 </body>
+
 </html>
