@@ -141,9 +141,11 @@
       color: #171717;
       background: transparent;
       text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 1.5px;
+      cursor: pointer;
       transition: .2s;
     }
 
@@ -192,7 +194,7 @@
 
 
     /* =========================
-       DESKTOP NEWSPAPER
+       DESKTOP / ORIGINAL NEWSPAPER
        ========================= */
 
     .desktop-newspaper {
@@ -210,6 +212,17 @@
       height: auto;
       margin: 0 auto 40px;
       box-shadow: 0 8px 28px rgba(0, 0, 0, .14);
+    }
+
+
+    /* =========================
+       ORIGINAL EDITION MOBILE CONTROL
+       ========================= */
+
+    .mobile-original-controls {
+      display: none;
+      margin: 0 auto 30px;
+      text-align: center;
     }
 
 
@@ -408,18 +421,33 @@
       }
 
 
-      /* Hide original newspaper pages on phones */
+      /* Original newspaper hidden by default on phone */
 
       .desktop-newspaper {
         display: none;
       }
 
 
-      /* Show reformatted mobile edition */
+      /* Reformatted mobile edition shown by default */
 
       .mobile-newspaper {
         display: block;
       }
+
+
+      /* This is shown by JavaScript when original mode is selected */
+
+      .desktop-newspaper.original-mobile-active {
+        display: block;
+      }
+
+
+      /* Back to mobile button only appears in original mobile mode */
+
+      .desktop-newspaper.original-mobile-active .mobile-original-controls {
+        display: block;
+      }
+
 
       .mobile-story {
         padding: 38px 0;
@@ -510,10 +538,29 @@
 
 
     <!-- ==================================
-         DESKTOP ORIGINAL NEWSPAPER
+         ORIGINAL FIVE-PAGE NEWSPAPER
          ================================== -->
 
-    <div class="desktop-newspaper">
+    <div
+      class="desktop-newspaper"
+      id="originalEdition"
+    >
+
+
+      <!-- Only visible when original edition is selected on mobile -->
+
+      <div class="mobile-original-controls">
+
+        <button
+          class="original-button"
+          type="button"
+          onclick="showMobileEdition()"
+        >
+          ← BACK TO MOBILE EDITION
+        </button>
+
+      </div>
+
 
       <div class="pages">
 
@@ -560,7 +607,10 @@
          MOBILE DIGITAL EDITION
          ================================== -->
 
-    <div class="mobile-newspaper">
+    <div
+      class="mobile-newspaper"
+      id="mobileEdition"
+    >
 
 
       <!-- MOBILE EXPLANATION -->
@@ -572,12 +622,13 @@
           report, reformatted for easier reading on smaller screens.
         </p>
 
-        <a
+        <button
           class="original-button"
-          href="september-2026-page-1.png"
+          type="button"
+          onclick="showOriginalEdition()"
         >
           VIEW ORIGINAL EDITION
-        </a>
+        </button>
 
       </div>
 
@@ -925,6 +976,94 @@
     id="archive"
   >
   </section>
+
+
+  <!-- =========================
+       MOBILE EDITION SWITCHER
+       ========================= -->
+
+  <script>
+
+    function showOriginalEdition() {
+
+      if (window.innerWidth <= 768) {
+
+        const mobileEdition =
+          document.getElementById("mobileEdition");
+
+        const originalEdition =
+          document.getElementById("originalEdition");
+
+
+        mobileEdition.style.display = "none";
+
+        originalEdition.classList.add(
+          "original-mobile-active"
+        );
+
+
+        window.scrollTo({
+          top: document.getElementById("issue").offsetTop,
+          behavior: "smooth"
+        });
+
+      }
+
+    }
+
+
+    function showMobileEdition() {
+
+      if (window.innerWidth <= 768) {
+
+        const mobileEdition =
+          document.getElementById("mobileEdition");
+
+        const originalEdition =
+          document.getElementById("originalEdition");
+
+
+        originalEdition.classList.remove(
+          "original-mobile-active"
+        );
+
+        mobileEdition.style.display = "block";
+
+
+        window.scrollTo({
+          top: document.getElementById("issue").offsetTop,
+          behavior: "smooth"
+        });
+
+      }
+
+    }
+
+
+    /* Reset presentation if phone orientation or window size changes */
+
+    window.addEventListener("resize", function () {
+
+      const mobileEdition =
+        document.getElementById("mobileEdition");
+
+      const originalEdition =
+        document.getElementById("originalEdition");
+
+
+      if (window.innerWidth > 768) {
+
+        mobileEdition.style.display = "";
+
+        originalEdition.classList.remove(
+          "original-mobile-active"
+        );
+
+      }
+
+    });
+
+  </script>
 
 
 </body>
