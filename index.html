@@ -572,7 +572,80 @@
       }
 
     }
+      .rumor-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
 
+    }
+
+
+    /* =========================
+       SMALL SITE AD
+       ========================= */
+
+    .site-promo {
+      display: none;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: min(320px, calc(100% - 30px));
+      padding: 18px;
+      background: #e7e3d8;
+      border: 1px solid #171717;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+      z-index: 9999;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .site-promo.show {
+      display: block;
+    }
+
+    .site-promo-close {
+      position: absolute;
+      top: 7px;
+      right: 10px;
+      border: 0;
+      background: transparent;
+      color: #171717;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .site-promo-label {
+      margin: 0 0 8px;
+      font-size: 9px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .site-promo-title {
+      margin: 0 25px 8px 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .site-promo-text {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .site-promo {
+        right: 15px;
+        bottom: 15px;
+        width: calc(100% - 30px);
+      }
+    }
+
+
+  </style>
+</head>
+
+
+<body>
   </style>
 </head>
 
@@ -1869,13 +1942,64 @@
     id="archive"
   >
   </section>
+</section>
 
+<!-- ONE-TIME ADVERTISEMENT -->
+<div class="site-promo" id="sitePromo">
+
+  <button
+    class="site-promo-close"
+    onclick="closeSitePromo()"
+    aria-label="Close advertisement"
+  >
+    ×
+  </button>
+
+  <p class="site-promo-label">ADVERTISEMENT</p>
+
+  <img
+    src="KINGTHEDEEZ AD.png"
+    alt="King The Deez Boosting advertisement"
+    style="width: 100%; height: auto; display: block;"
+  >
+
+</div>
+
+<!-- MOBILE EDITION SWITCHER -->
+<script>
 
   <!-- =========================
        MOBILE EDITION SWITCHER
        ========================= -->
 
 <script>
+<script>
+
+  /* ONE-TIME ADVERTISEMENT */
+
+  function closeSitePromo() {
+    const promo = document.getElementById("sitePromo");
+
+    if (promo) {
+      promo.classList.remove("show");
+    }
+
+    localStorage.setItem("captainsReportKingTheDeezAdSeen", "true");
+  }
+
+  window.addEventListener("load", function () {
+    const promo = document.getElementById("sitePromo");
+    const hasSeenPromo = localStorage.getItem(
+      "captainsReportKingTheDeezAdSeen"
+    );
+
+    if (promo && !hasSeenPromo) {
+      setTimeout(function () {
+        promo.classList.add("show");
+      }, 1500);
+    }
+  });
+
 
   function showOriginalEdition() {
 
