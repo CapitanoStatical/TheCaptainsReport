@@ -1947,12 +1947,13 @@
 <div class="site-promo" id="sitePromo">
 
   <button
-    class="site-promo-close"
-    onclick="closeSitePromo()"
-    aria-label="Close advertisement"
-  >
-    ×
-  </button>
+  class="site-promo-close"
+  type="button"
+  onclick="document.getElementById('sitePromo').style.display='none'; localStorage.setItem('captainsReportKingTheDeezAdSeen','true');"
+  aria-label="Close advertisement"
+>
+  ×
+</button>
 
   <p class="site-promo-label">ADVERTISEMENT</p>
 
