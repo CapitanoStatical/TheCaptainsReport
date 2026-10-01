@@ -602,16 +602,27 @@
       display: block;
     }
 
-    .site-promo-close {
-      position: absolute;
-      top: 7px;
-      right: 10px;
-      border: 0;
-      background: transparent;
-      color: #171717;
-      font-size: 22px;
-      cursor: pointer;
-    }
+   .site-promo-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 100000;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #171717;
+  border-radius: 50%;
+  background: #e7e3d8;
+  color: #171717;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
 
     .site-promo-label {
       margin: 0 0 8px;
