@@ -602,23 +602,26 @@
       display: block;
     }
 
- .site-promo .site-promo-close {
-  display: block;
+.site-promo .site-promo-close {
+  position: absolute;
+  top: 48px;
+  right: 22px;
   width: 32px;
   height: 32px;
-  margin: -10px -10px 6px auto;
   padding: 0;
+  margin: 0;
   border: 0;
   background: transparent;
-  color: #171717;
+  color: white;
   font-family: Arial, sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   line-height: 32px;
   text-align: center;
   cursor: pointer;
+  z-index: 10;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
-
     .site-promo-label {
       margin: 0 0 8px;
       font-size: 9px;
