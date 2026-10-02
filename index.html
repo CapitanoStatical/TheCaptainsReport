@@ -568,7 +568,13 @@
       }
 
     }
-     
+      .rumor-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+    }
+
 
     /* =========================
        SMALL SITE AD
@@ -2062,7 +2068,29 @@ window.addEventListener("resize", function () {
 
 });
 
+
+  function showMobileEdition() {
+
+    document.body.classList.remove("original-edition");
+
+    window.scrollTo({
+      top: document.getElementById("issue").offsetTop,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  window.addEventListener("resize", function () {
+
+    if (window.innerWidth > 768) {
+      document.body.classList.remove("original-edition");
+    }
+
+  });
+
 </script>
+
 
 </body>
 
