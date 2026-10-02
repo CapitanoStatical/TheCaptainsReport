@@ -337,33 +337,24 @@
 <!-- =========================        ARCHIVE        ========================= -->
 <section class="archive-note" id="archive">
 </section>
-<!-- ONE-TIME ADVERTISEMENT -->
-<div class="site-promo" id="sitePromo">
+<!-- ADVERTISEMENT — ONCE PER PAGE LOAD -->
+<div class="site-promo show" id="sitePromo">
 <button class="site-promo-close" type="button" onclick="closeSitePromo()" aria-label="Close advertisement">   × </button>
 <p class="site-promo-label">ADVERTISEMENT</p>
 <img src="KINGTHEDEEZ AD.png" alt="King The Deez Boosting advertisement" style="width: 100%; height: auto; display: block;">
 </div>
 <!-- MOBILE EDITION SWITCHER -->
 <script>
-  /* ONE-TIME ADVERTISEMENT */
+  /* ADVERTISEMENT — SHOW ONCE PER PAGE LOAD */
   function closeSitePromo() {
     const promo = document.getElementById("sitePromo");
     if (promo) promo.classList.remove("show");
-
-    try {
-      localStorage.setItem("captainsReportKingTheDeezAdSeen", "true");
-    } catch (error) {}
   }
 
   window.addEventListener("load", function () {
     const promo = document.getElementById("sitePromo");
-    let hasSeenPromo = false;
 
-    try {
-      hasSeenPromo = localStorage.getItem("captainsReportKingTheDeezAdSeen") === "true";
-    } catch (error) {}
-
-    if (promo && !hasSeenPromo) {
+    if (promo) {
       setTimeout(function () {
         promo.classList.add("show");
       }, 1500);
