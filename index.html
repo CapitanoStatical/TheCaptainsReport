@@ -1996,9 +1996,21 @@ z-index: 10;
   });
 
 
-  function showOriginalEdition() {
+ function showOriginalEdition() {
 
-    document.body.classList.add("original-edition");
+  if (window.innerWidth <= 768) {
+
+    const mobileEdition =
+      document.getElementById("mobileEdition");
+
+    const originalEdition =
+      document.getElementById("originalEdition");
+
+    mobileEdition.style.display = "none";
+
+    originalEdition.classList.add(
+      "original-mobile-active"
+    );
 
     window.scrollTo({
       top: document.getElementById("issue").offsetTop,
@@ -2006,6 +2018,55 @@ z-index: 10;
     });
 
   }
+
+}
+
+
+function showMobileEdition() {
+
+  if (window.innerWidth <= 768) {
+
+    const mobileEdition =
+      document.getElementById("mobileEdition");
+
+    const originalEdition =
+      document.getElementById("originalEdition");
+
+    originalEdition.classList.remove(
+      "original-mobile-active"
+    );
+
+    mobileEdition.style.display = "block";
+
+    window.scrollTo({
+      top: document.getElementById("issue").offsetTop,
+      behavior: "smooth"
+    });
+
+  }
+
+}
+
+
+window.addEventListener("resize", function () {
+
+  const mobileEdition =
+    document.getElementById("mobileEdition");
+
+  const originalEdition =
+    document.getElementById("originalEdition");
+
+  if (window.innerWidth > 768) {
+
+    mobileEdition.style.display = "";
+
+    originalEdition.classList.remove(
+      "original-mobile-active"
+    );
+
+  }
+
+});
 
 
   function showMobileEdition() {
