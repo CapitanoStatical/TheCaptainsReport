@@ -1,390 +1,3655 @@
-<html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Captains Report | Capitano Statical</title>
-<style>     * {       box-sizing: border-box;     }      html {       scroll-behavior: smooth;     }      body {       margin: 0;       background: #e7e3d8;       color: #171717;       font-family: Georgia, "Times New Roman", serif;     }       /* =========================        HEADER        ========================= */      header {       text-align: center;       padding: 30px 20px 12px;       border-bottom: 1px solid #171717;     }      .masthead {       margin: 0;       font-size: clamp(42px, 6vw, 78px);       font-weight: normal;       letter-spacing: 3px;       line-height: 1;     }      .byline {       margin: 10px 0 0;       font-size: 12px;       font-weight: bold;       letter-spacing: 1.5px;     }       /* =========================        NAVIGATION        ========================= */      nav {       display: flex;       justify-content: center;       gap: 38px;       padding: 12px 20px;       border-bottom: 1px solid #171717;     }      nav a {       color: #171717;       text-decoration: none;       font-size: 13px;       font-weight: bold;       letter-spacing: 1px;     }      nav a:hover {       text-decoration: underline;     }       /* =========================        HOMEPAGE        ========================= */      .home {       text-align: center;       padding: 55px 20px 80px;     }      .label {       margin: 0 0 8px;       font-size: 12px;       font-weight: bold;       letter-spacing: 2px;     }      .issue-date {       margin: 0;       font-size: clamp(40px, 5vw, 58px);       font-weight: normal;     }      .issue-number {       margin: 8px 0 28px;       font-size: 12px;       font-weight: bold;       letter-spacing: 1.5px;     }      .cover {       display: block;       width: min(90%, 520px);       height: auto;       margin: 0 auto 30px;       border: 1px solid rgba(0, 0, 0, .35);       box-shadow: 0 10px 30px rgba(0, 0, 0, .12);     }      .headline {       margin: 0;       font-size: clamp(28px, 4vw, 42px);       font-weight: normal;       text-transform: uppercase;     }      .deck {       max-width: 700px;       margin: 10px auto 25px;       font-size: 16px;       line-height: 1.5;     }       /* =========================        BUTTONS        ========================= */      .read-button,     .back-button,     .original-button {       display: inline-block;       padding: 13px 26px;       border: 1px solid #171717;       color: #171717;       background: transparent;       text-decoration: none;       font-family: Georgia, "Times New Roman", serif;       font-size: 12px;       font-weight: bold;       letter-spacing: 1.5px;       cursor: pointer;       transition: .2s;     }      .read-button:hover,     .back-button:hover,     .original-button:hover {       background: #171717;       color: #e7e3d8;     }       /* =========================        ISSUE READER        ========================= */      .reader {       display: none;       padding: 45px 20px 80px;       text-align: center;     }      .reader:target {       display: block;     }      .reader:target \~ .home {       display: none;     }      .reader-title {       margin: 0;       font-size: clamp(34px, 5vw, 54px);       font-weight: normal;     }      .reader-subtitle {       margin: 8px 0 30px;       font-size: 12px;       font-weight: bold;       letter-spacing: 1.5px;     }      .reader-controls {       margin: 0 0 30px;     }       /* =========================        DESKTOP / ORIGINAL NEWSPAPER        ========================= */      .desktop-newspaper {       display: block;     }      .pages {       width: min(100%, 1250px);       margin: auto;     }      .newspaper-page {       display: block;       width: 100%;       height: auto;       margin: 0 auto 40px;       box-shadow: 0 8px 28px rgba(0, 0, 0, .14);     }       /* =========================        ORIGINAL EDITION MOBILE CONTROL        ========================= */      .mobile-original-controls {       display: none;       margin: 0 auto 30px;       text-align: center;     }       /* =========================        MOBILE DIGITAL EDITION        ========================= */      .mobile-newspaper {       display: none;     }      .mobile-edition-heading {       max-width: 650px;       margin: 0 auto 30px;       text-align: center;     }      .mobile-edition-heading p {       margin: 0 auto 18px;       font-size: 14px;       line-height: 1.5;     }       /* =========================        MOBILE STORY        ========================= */      .mobile-story {       max-width: 680px;       margin: 0 auto;       padding: 42px 0;       border-bottom: 1px solid rgba(23, 23, 23, .35);       text-align: left;     }      .mobile-kicker {       margin: 0 0 8px !important;       text-align: center;       font-size: 11px !important;       font-weight: bold;       letter-spacing: 2px;       text-transform: uppercase;     }      .mobile-story h2 {       margin: 0;       text-align: center;       font-size: 38px;       font-weight: normal;       line-height: 1;       text-transform: uppercase;     }      .mobile-story h3 {       margin: 38px 0 12px;       text-align: center;       font-size: 27px;       font-weight: normal;       line-height: 1.1;       text-transform: uppercase;     }      .mobile-subtitle {       max-width: 590px;       margin: 12px auto 25px !important;       text-align: center;       font-size: 16px !important;       font-weight: bold;       line-height: 1.4 !important;     }      .mobile-story p {       margin: 0 0 18px;       font-size: 18px;       line-height: 1.65;     }       /* =========================        ARTICLE IMAGES        ========================= */      .story-image {       display: block;       width: 100%;       height: auto;       margin: 20px auto 28px;       border: 1px solid rgba(23, 23, 23, .2);       box-shadow: 0 5px 18px rgba(0, 0, 0, .10);     }       /* =========================        AT A GLANCE        ========================= */      .mobile-info-box {       margin: 36px 0 42px;       padding: 25px 0;       border-top: 2px solid #171717;       border-bottom: 2px solid #171717;     }      .mobile-info-box h3 {       margin: 0 0 23px;       text-align: center;     }      .mobile-info-item {       margin-bottom: 18px;       text-align: left;     }      .mobile-info-item:last-child {       margin-bottom: 0;     }      .mobile-info-item strong {       display: block;       margin-bottom: 3px;       font-size: 15px;       text-transform: uppercase;     }      .mobile-info-item p {       margin: 0;       font-size: 16px;       line-height: 1.45;     }       /* =========================        STORY DIVIDER        ========================= */      .story-divider {       width: 80px;       height: 1px;       margin: 45px auto;       background: #171717;     }       /* =========================        CONTINUOUS MOBILE EDITION EXTRAS        ========================= */      .clean-art {       display: block;       width: 100%;       height: auto;       margin: 20px auto 28px;     }      .title-with-art {       display: flex;       align-items: center;       justify-content: center;       gap: 14px;       margin-top: 38px;     }      .title-with-art h3 {       margin: 0;     }      .title-art {       width: 86px;       max-height: 100px;       object-fit: contain;       flex: 0 0 auto;     }      .rumor-images {       display: grid;       grid-template-columns: 1fr 1fr;       gap: 12px;       align-items: center;       margin: 20px auto 28px;     }      .rumor-images img {       display: block;       width: 100%;       height: auto;       object-fit: contain;     }      .status-line {       margin: 12px 0 !important;       font-size: 16px !important;       font-weight: bold;       text-transform: uppercase;     }      .schedule-block {       margin: 24px 0;       padding: 22px 0;       border-top: 1px solid rgba(23, 23, 23, .35);       border-bottom: 1px solid rgba(23, 23, 23, .35);     }      .schedule-block p {       margin-bottom: 12px;     }      .captains-signoff {       margin-top: 28px !important;       font-style: italic;     }       /* =========================        ARCHIVE        ========================= */      .archive-note {       max-width: 600px;       margin: 70px auto;       padding: 0 20px;       text-align: center;     }       /* =========================        MOBILE        ========================= */      @media (max-width: 768px) {        header {         padding: 24px 14px 10px;       }        .masthead {         font-size: clamp(34px, 10vw, 52px);         letter-spacing: 1px;       }        .byline {         font-size: 10px;       }        nav {         gap: 18px;         padding: 12px 8px;       }        nav a {         font-size: 11px;       }        .home {         padding: 38px 16px 60px;       }        .cover {         width: 100%;         max-width: 500px;       }        .reader {         padding: 35px 18px 60px;       }         /* =========================          NORMAL MOBILE VERSION          ========================= */        .desktop-newspaper {         display: none;       }        .mobile-newspaper {         display: block;       }         /* =========================          ORIGINAL EDITION SELECTED          ========================= */      .desktop-newspaper.original-mobile-active {   display: block; }  .desktop-newspaper.original-mobile-active .mobile-original-controls {   display: block; }        body.original-edition .reader {         padding: 45px 20px 80px;       }        body.original-edition .pages {         width: min(100%, 1250px);         margin: auto;       }        body.original-edition .newspaper-page {         display: block;         width: 100%;         height: auto;         margin: 0 auto 40px;       }         /* =========================          MOBILE ARTICLE STYLING          ========================= */        .mobile-story {         padding: 38px 0;       }        .mobile-story h2 {         font-size: clamp(32px, 10vw, 44px);       }        .mobile-story h3 {         font-size: 25px;       }        .mobile-story p {         font-size: 18px;         line-height: 1.65;       }        .title-with-art {         gap: 10px;       }        .title-art {         width: 74px;         max-height: 86px;       }        .rumor-images {         grid-template-columns: 1fr 1fr;         gap: 8px;       }      }       /* =========================        ORIGINAL EDITION MODE        ========================= */      body.original-edition .mobile-newspaper {       display: none !important;     }      body.original-edition .desktop-newspaper {       display: block !important;     }      body.original-edition .mobile-original-controls {       display: block !important;     }      body.original-edition .pages {       width: min(100%, 1250px);       margin: auto;     }      body.original-edition .newspaper-page {       display: block;       width: 100%;       height: auto;       margin: 0 auto 40px;     }       /* =========================        SMALL SITE AD        ========================= */      .site-promo {       display: none;       position: fixed;       right: 20px;       bottom: 20px;     width: min(260px, calc(100% - 30px));       padding: 18px;       background: #e7e3d8;       border: 1px solid #171717;       box-shadow: 0 8px 30px rgba(0, 0, 0, .25);       z-index: 9999;       font-family: Georgia, "Times New Roman", serif;     }      .site-promo.show {       display: block;     }  .site-promo .site-promo-close {   display: block;   width: 32px;   height: 32px;   margin: -10px -10px -38px auto;   padding: 0;   border: 0;   background: transparent;   color: white;   font-family: Arial, sans-serif;   font-size: 24px;   font-weight: bold;   line-height: 32px;   text-align: center;   cursor: pointer;   position: relative; z-index: 10;   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9); }     .site-promo-label {       margin: 0 0 8px;       font-size: 9px;       font-weight: bold;       letter-spacing: 2px;     }      .site-promo-title {       margin: 0 25px 8px 0;       font-size: 20px;       font-weight: normal;     }      .site-promo-text {       margin: 0;       font-size: 13px;       line-height: 1.4;     }      @media (max-width: 768px) {       .site-promo {         right: 15px;         bottom: 15px;         width: calc(100% - 30px);       }     }     </style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- ============================================================
+       BASIC WEBSITE INFORMATION
+       ============================================================
+       This section tells the browser basic information about the
+       website.
+
+       - UTF-8 allows normal symbols and special characters.
+       - viewport makes the site scale correctly on phones.
+       - title is what appears in the browser tab.
+       ============================================================ -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>The Captains Report | Capitano Statical</title>
+
+
+  <style>
+
+    /* ============================================================
+       THE CAPTAINS REPORT — MAIN STYLESHEET
+       ============================================================
+
+       This controls the appearance of the entire website.
+
+       MAIN SECTIONS:
+
+       1. GLOBAL WEBSITE STYLING
+       2. HEADER
+       3. NAVIGATION
+       4. HOMEPAGE / LATEST ISSUE
+       5. BUTTONS
+       6. ISSUE READER
+       7. ORIGINAL NEWSPAPER EDITION
+       8. MOBILE DIGITAL EDITION
+       9. MOBILE STORY STYLING
+       10. ARTICLE IMAGES
+       11. AT-A-GLANCE INFORMATION BOXES
+       12. STORY DIVIDERS
+       13. MOBILE EDITION EXTRAS
+       14. ARCHIVE
+       15. MOBILE SCREEN RULES
+       16. ORIGINAL EDITION MODE
+       17. SITE ADVERTISEMENT
+
+       IMPORTANT:
+       Most monthly updates should NOT require changing this CSS.
+       The actual monthly newspaper content is farther down in
+       the HTML.
+
+       ============================================================ */
+
+
+    /* ============================================================
+       1. GLOBAL WEBSITE STYLING
+       ============================================================ */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      /* Main newspaper-style background color */
+      background: #e7e3d8;
+
+      /* Main text color */
+      color: #171717;
+
+      /* Newspaper-style serif font */
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+
+    /* ============================================================
+       2. HEADER
+       ============================================================
+       Controls the large:
+       
+       THE CAPTAINS REPORT
+       WRITTEN BY CAPITANO STATICAL
+
+       area at the very top of the website.
+       ============================================================ */
+
+    header {
+      text-align: center;
+      padding: 30px 20px 12px;
+      border-bottom: 1px solid #171717;
+    }
+
+    .masthead {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 78px);
+      font-weight: normal;
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+
+    .byline {
+      margin: 10px 0 0;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+
+    /* ============================================================
+       3. NAVIGATION
+       ============================================================
+       Controls the navigation underneath the masthead:
+
+       HOME
+       LATEST ISSUE
+       ARCHIVE
+
+       The actual links themselves appear later in the HTML.
+       ============================================================ */
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 38px;
+      padding: 12px 20px;
+      border-bottom: 1px solid #171717;
+    }
+
+    nav a {
+      color: #171717;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* ============================================================
+       4. HOMEPAGE / LATEST ISSUE
+       ============================================================
+       Controls the homepage where visitors see:
+
+       LATEST ISSUE
+       Month / Year
+       Volume / Issue Number
+       Newspaper Cover
+       Main Headline
+       Description
+       READ THE ISSUE button
+       ============================================================ */
+
+    .home {
+      text-align: center;
+      padding: 55px 20px 80px;
+    }
+
+    .label {
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .issue-date {
+      margin: 0;
+      font-size: clamp(40px, 5vw, 58px);
+      font-weight: normal;
+    }
+
+    .issue-number {
+      margin: 8px 0 28px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+    /*
+       This controls the newspaper cover displayed
+       on the homepage.
+    */
+
+    .cover {
+      display: block;
+      width: min(90%, 520px);
+      height: auto;
+      margin: 0 auto 30px;
+      border: 1px solid rgba(0, 0, 0, .35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+    }
+
+    .headline {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    .deck {
+      max-width: 700px;
+      margin: 10px auto 25px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+
+    /* ============================================================
+       5. BUTTONS
+       ============================================================
+       These three classes control the main website buttons:
+
+       .read-button
+           READ THE ISSUE
+
+       .back-button
+           BACK TO HOME
+
+       .original-button
+           VIEW ORIGINAL EDITION
+           BACK TO MOBILE EDITION
+       ============================================================ */
+
+    .read-button,
+    .back-button,
+    .original-button {
+      display: inline-block;
+      padding: 13px 26px;
+      border: 1px solid #171717;
+      color: #171717;
+      background: transparent;
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    /*
+       Button appearance when the mouse is hovering over it.
+    */
+
+    .read-button:hover,
+    .back-button:hover,
+    .original-button:hover {
+      background: #171717;
+      color: #e7e3d8;
+    }
+
+
+    /* ============================================================
+       6. ISSUE READER
+       ============================================================
+       The issue reader contains the actual newspaper.
+
+       It remains hidden until the visitor selects the issue.
+
+       IMPORTANT:
+       The current Latest Issue uses:
+
+           id="issue"
+
+       Do not casually rename that ID because navigation and
+       JavaScript farther down the file reference it.
+       ============================================================ */
+
+    .reader {
+      display: none;
+      padding: 45px 20px 80px;
+      text-align: center;
+    }
+
+    /*
+       When the URL points to #issue, display the issue reader.
+    */
+
+    .reader:target {
+      display: block;
+    }
+
+    /*
+       Hide the homepage while the issue reader is open.
+    */
+
+    .reader:target ~ .home {
+      display: none;
+    }
+
+    .reader-title {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: normal;
+    }
+
+    .reader-subtitle {
+      margin: 8px 0 30px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+    .reader-controls {
+      margin: 0 0 30px;
+    }
+
+
+    /* ============================================================
+       7. DESKTOP / ORIGINAL NEWSPAPER EDITION
+       ============================================================
+       This displays the five completed newspaper page images.
+
+       On desktop:
+           Original Edition is shown normally.
+
+       On mobile:
+           The continuous digital edition is shown first.
+           Readers can choose VIEW ORIGINAL EDITION to see these
+           full newspaper pages instead.
+       ============================================================ */
+
+    .desktop-newspaper {
+      display: block;
+    }
+
+    /*
+       Maximum width of the original newspaper pages.
+    */
+
+    .pages {
+      width: min(100%, 1250px);
+      margin: auto;
+    }
+
+    /*
+       Controls each individual full newspaper page image.
+    */
+
+    .newspaper-page {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 40px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .14);
+    }
+
+
+    /* ============================================================
+       8. ORIGINAL EDITION — MOBILE CONTROLS
+       ============================================================
+       This contains the:
+
+           ← BACK TO MOBILE EDITION
+
+       button.
+
+       It only appears when somebody on mobile has selected the
+       Original Edition.
+       ============================================================ */
+
+    .mobile-original-controls {
+      display: none;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+
+    /* ============================================================
+       9. MOBILE DIGITAL EDITION
+       ============================================================
+       The mobile edition reformats the newspaper into a long,
+       continuous article layout that is easier to read on phones.
+
+       Desktop users normally see the original newspaper instead.
+       ============================================================ */
+
+    .mobile-newspaper {
+      display: none;
+    }
+
+    /*
+       Introductory text and VIEW ORIGINAL EDITION button.
+    */
+
+    .mobile-edition-heading {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .mobile-edition-heading p {
+      margin: 0 auto 18px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+
+    /* ============================================================
+       10. MOBILE STORY STYLING
+       ============================================================
+       Each newspaper page is represented by a:
+
+           <article class="mobile-story">
+
+       Inside those articles are the individual stories from
+       the printed newspaper.
+       ============================================================ */
+
+    .mobile-story {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 42px 0;
+      border-bottom: 1px solid rgba(23, 23, 23, .35);
+      text-align: left;
+    }
+
+    /*
+       Small labels such as:
+
+           SEPTEMBER 2026
+           OCTOBER 2026
+    */
+
+    .mobile-kicker {
+      margin: 0 0 8px !important;
+      text-align: center;
+      font-size: 11px !important;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /*
+       Main story headlines.
+    */
+
+    .mobile-story h2 {
+      margin: 0;
+      text-align: center;
+      font-size: 38px;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    /*
+       Smaller headlines inside a story.
+    */
+
+    .mobile-story h3 {
+      margin: 38px 0 12px;
+      text-align: center;
+      font-size: 27px;
+      font-weight: normal;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    /*
+       Subtitle / deck beneath a headline.
+    */
+
+    .mobile-subtitle {
+      max-width: 590px;
+      margin: 12px auto 25px !important;
+      text-align: center;
+      font-size: 16px !important;
+      font-weight: bold;
+      line-height: 1.4 !important;
+    }
+
+    /*
+       Normal article paragraph text.
+    */
+
+    .mobile-story p {
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+
+    /* ============================================================
+       11. ARTICLE IMAGES
+       ============================================================
+       Standard styling for images placed inside mobile stories.
+
+       Example:
+
+       <img class="story-image"
+            src="example.png"
+            alt="Description">
+       ============================================================ */
+
+    .story-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 20px auto 28px;
+      border: 1px solid rgba(23, 23, 23, .2);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, .10);
+    }
+
+
+    /* ============================================================
+       12. AT-A-GLANCE INFORMATION BOXES
+       ============================================================
+       Used for sections such as:
+
+           SEASON 21 AT A GLANCE
+           COMMUNITY WEEKEND AT A GLANCE
+           PASS AT A GLANCE
+
+       These boxes create a compact summary of important details.
+       ============================================================ */
+
+    .mobile-info-box {
+      margin: 36px 0 42px;
+      padding: 25px 0;
+      border-top: 2px solid #171717;
+      border-bottom: 2px solid #171717;
+    }
+
+    .mobile-info-box h3 {
+      margin: 0 0 23px;
+      text-align: center;
+    }
+
+    .mobile-info-item {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .mobile-info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .mobile-info-item strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .mobile-info-item p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+
+    /* ============================================================
+       13. STORY DIVIDER
+       ============================================================
+       Small horizontal line separating stories in the continuous
+       mobile edition.
+       ============================================================ */
+
+    .story-divider {
+      width: 80px;
+      height: 1px;
+      margin: 45px auto;
+      background: #171717;
+    }
+
+
+    /* ============================================================
+       14. CONTINUOUS MOBILE EDITION — SPECIAL ELEMENTS
+       ============================================================
+       These classes are used for special layouts that don't fit
+       the normal headline + image + paragraph structure.
+       ============================================================ */
+
+
+    /*
+       Image without the normal article-image border/shadow.
+    */
+
+    .clean-art {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 20px auto 28px;
+    }
+
+
+    /*
+       Places a small piece of artwork beside a section title.
+
+       Currently used for sections such as:
+
+           REAPERS WATCH
+           CAPTAINS LOG
+           PAH-PAH-PARLEY?
+    */
+
+    .title-with-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .title-with-art h3 {
+      margin: 0;
+    }
+
+    .title-art {
+      width: 86px;
+      max-height: 100px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+
+    /*
+       Two-image grid used by TAVERN RUMORS.
+    */
+
+    .rumor-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: center;
+      margin: 20px auto 28px;
+    }
+
+    .rumor-images img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+
+    /*
+       Used for:
+
+           STATUS: UNCONFIRMED
+           REPORT VERDICT: LIKELY
+    */
+
+    .status-line {
+      margin: 12px 0 !important;
+      font-size: 16px !important;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+
+    /*
+       Used for calendar / schedule sections.
+    */
+
+    .schedule-block {
+      margin: 24px 0;
+      padding: 22px 0;
+      border-top: 1px solid rgba(23, 23, 23, .35);
+      border-bottom: 1px solid rgba(23, 23, 23, .35);
+    }
+
+    .schedule-block p {
+      margin-bottom: 12px;
+    }
+
+
+    /*
+       Capitano Statical signature at the end of Captain's Log.
+    */
+
+    .captains-signoff {
+      margin-top: 28px !important;
+      font-style: italic;
+    }
+
+
+    /* ============================================================
+       15. ARCHIVE
+       ============================================================
+       The Archive is where previous editions of
+       The Captains Report will live.
+
+       IMPORTANT FOR MONTHLY UPDATES:
+
+       Before replacing the current Latest Issue, preserve the
+       previous issue in the Archive.
+
+       Example:
+
+           September 2026 — Volume 1 • Issue 3
+
+       October can then become the new Latest Issue without
+       September disappearing.
+
+       The actual Archive HTML appears later in this file.
+       ============================================================ */
+
+    .archive-note {
+      max-width: 600px;
+      margin: 70px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+
+    /* ============================================================
+       16. MOBILE SCREEN RULES
+       ============================================================
+       Everything inside this media query activates when the
+       browser width is 768 pixels or smaller.
+
+       This is what makes the website work properly on phones.
+       ============================================================ */
+
+    @media (max-width: 768px) {
+
+      /* ----------------------------
+         MOBILE HEADER
+         ---------------------------- */
+
+      header {
+        padding: 24px 14px 10px;
+      }
+
+      .masthead {
+        font-size: clamp(34px, 10vw, 52px);
+        letter-spacing: 1px;
+      }
+
+      .byline {
+        font-size: 10px;
+      }
+
+
+      /* ----------------------------
+         MOBILE NAVIGATION
+         ---------------------------- */
+
+      nav {
+        gap: 18px;
+        padding: 12px 8px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+
+      /* ----------------------------
+         MOBILE HOMEPAGE
+         ---------------------------- */
+
+      .home {
+        padding: 38px 16px 60px;
+      }
+
+      .cover {
+        width: 100%;
+        max-width: 500px;
+      }
+
+
+      /* ----------------------------
+         MOBILE ISSUE READER
+         ---------------------------- */
+
+      .reader {
+        padding: 35px 18px 60px;
+      }
+
+
+      /* ==========================================================
+         NORMAL MOBILE VERSION
+
+         Hide the five full newspaper pages and display the
+         continuous mobile edition instead.
+         ========================================================== */
+
+      .desktop-newspaper {
+        display: none;
+      }
+
+      .mobile-newspaper {
+        display: block;
+      }
+
+
+      /* ==========================================================
+         ORIGINAL EDITION SELECTED ON MOBILE
+
+         When the reader presses VIEW ORIGINAL EDITION,
+         JavaScript adds the appropriate class and the full
+         newspaper pages become visible.
+         ========================================================== */
+
+      .desktop-newspaper.original-mobile-active {
+        display: block;
+      }
+
+      .desktop-newspaper.original-mobile-active
+      .mobile-original-controls {
+        display: block;
+      }
+
+      body.original-edition .reader {
+        padding: 45px 20px 80px;
+      }
+
+      body.original-edition .pages {
+        width: min(100%, 1250px);
+        margin: auto;
+      }
+
+      body.original-edition .newspaper-page {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 40px;
+      }
+
+
+      /* ==========================================================
+         MOBILE ARTICLE TYPOGRAPHY
+         ========================================================== */
+
+      .mobile-story {
+        padding: 38px 0;
+      }
+
+      .mobile-story h2 {
+        font-size: clamp(32px, 10vw, 44px);
+      }
+
+      .mobile-story h3 {
+        font-size: 25px;
+      }
+
+      .mobile-story p {
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .title-with-art {
+        gap: 10px;
+      }
+
+      .title-art {
+        width: 74px;
+        max-height: 86px;
+      }
+
+      .rumor-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+    }
+
+
+    /* ============================================================
+       17. ORIGINAL EDITION MODE
+       ============================================================
+       JavaScript adds:
+
+           original-edition
+
+       to the <body> when a mobile reader presses:
+
+           VIEW ORIGINAL EDITION
+
+       This hides the continuous mobile version and displays the
+       actual newspaper pages.
+
+       IMPORTANT:
+       Do not rename "original-edition" unless the JavaScript is
+       changed at the same time.
+       ============================================================ */
+
+    body.original-edition .mobile-newspaper {
+      display: none !important;
+    }
+
+    body.original-edition .desktop-newspaper {
+      display: block !important;
+    }
+
+    body.original-edition .mobile-original-controls {
+      display: block !important;
+    }
+
+    body.original-edition .pages {
+      width: min(100%, 1250px);
+      margin: auto;
+    }
+
+    body.original-edition .newspaper-page {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 40px;
+    }
+
+
+    /* ============================================================
+       18. SMALL SITE ADVERTISEMENT
+       ============================================================
+       Controls the promotional advertisement that appears in the
+       bottom-right corner of the website.
+
+       The actual advertisement HTML and JavaScript appear near
+       the bottom of the file.
+
+       Current advertisement image:
+
+           KINGTHEDEEZ AD.png
+       ============================================================ */
+
+    .site-promo {
+      display: none;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+
+      width: min(260px, calc(100% - 30px));
+
+      padding: 18px;
+
+      background: #e7e3d8;
+      border: 1px solid #171717;
+
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+
+      /*
+         Keep advertisement above the rest of the website.
+      */
+
+      z-index: 9999;
+
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+
+    /*
+       JavaScript adds the "show" class when the advertisement
+       should become visible.
+    */
+
+    .site-promo.show {
+      display: block;
+    }
+
+
+    /*
+       White X button displayed over the advertisement.
+    */
+
+    .site-promo .site-promo-close {
+      display: block;
+
+      width: 32px;
+      height: 32px;
+
+      margin: -10px -10px -38px auto;
+      padding: 0;
+
+      border: 0;
+      background: transparent;
+
+      color: white;
+
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 32px;
+
+      text-align: center;
+      cursor: pointer;
+
+      position: relative;
+      z-index: 10;
+
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+    }
+
+
+    /*
+       Small "ADVERTISEMENT" label.
+    */
+
+    .site-promo-label {
+      margin: 0 0 8px;
+      font-size: 9px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+
+    /*
+       Optional advertisement title.
+    */
+
+    .site-promo-title {
+      margin: 0 25px 8px 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+
+    /*
+       Optional advertisement description.
+    */
+
+    .site-promo-text {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+
+    /*
+       Make advertisement fit smaller phone screens.
+    */
+
+    @media (max-width: 768px) {
+
+      .site-promo {
+        right: 15px;
+        bottom: 15px;
+        width: calc(100% - 30px);
+      }
+
+    }
+
+  </style>
+
 </head>
 <body>
-<!-- =========================        HEADER        ========================= -->
-<header id="home">
-<h1 class="masthead">       THE CAPTAINS REPORT     </h1>
-<p class="byline">       WRITTEN BY CAPITANO STATICAL     </p>
-</header>
-<!-- =========================        NAVIGATION        ========================= -->
-<nav>
-<a href="#">       HOME     </a>
-<a href="#issue">       LATEST ISSUE     </a>
-<a href="#archive">       ARCHIVE     </a>
-</nav>
-<!-- =========================        SEPTEMBER 2026 ISSUE        ========================= -->
-<section class="reader" id="issue">
-<h2 class="reader-title">       September 2026     </h2>
-<p class="reader-subtitle">       VOLUME 1 • ISSUE 3     </p>
-<div class="reader-controls">
-<a class="back-button" href="#">         ← BACK TO HOME       </a>
-</div>
-<!-- ==================================          ORIGINAL FIVE-PAGE NEWSPAPER          ================================== -->
-<div class="desktop-newspaper" id="originalEdition">
-<!-- Only visible when original edition is selected on mobile -->
-<div class="mobile-original-controls">
-<button class="original-button" type="button" onclick="showMobileEdition()">           ← BACK TO MOBILE EDITION         </button>
-</div>
-<div class="pages">
-<img class="newspaper-page" src="september-2026-page-1.png" alt="The Captains Report September 2026 Page 1">
-<img class="newspaper-page" src="september-2026-page-2.png" alt="The Captains Report September 2026 Page 2" loading="lazy">
-<img class="newspaper-page" src="september-2026-page-3.png" alt="The Captains Report September 2026 Page 3" loading="lazy">
-<img class="newspaper-page" src="september-2026-page-4.png" alt="The Captains Report September 2026 Page 4" loading="lazy">
-<img class="newspaper-page" src="september-2026-page-5.png" alt="The Captains Report September 2026 Page 5" loading="lazy">
-</div>
-</div>
-<!-- ==================================          MOBILE DIGITAL EDITION          ================================== -->
-<div class="mobile-newspaper" id="mobileEdition">
-<!-- MOBILE EXPLANATION -->
-<div class="mobile-edition-heading">
-<p>           The Captains Report mobile edition — the same monthly           report, reformatted for easier reading on smaller screens.         </p>
-<button class="original-button" type="button" onclick="showOriginalEdition()">           VIEW ORIGINAL EDITION         </button>
-</div>
-<!-- ==================================            SEPTEMBER 2026            ================================== -->
-<article class="mobile-story">
-<p class="mobile-kicker">           SEPTEMBER 2026         </p>
-<!-- ==================================              MAIN HEADLINE              ================================== -->
-<h2>           SEASON 21 SETS SAIL         </h2>
-<p class="mobile-subtitle">           Season 21 arrives September 17 with new rewards, recurring events and another major sandbox experiment         </p>
-<!-- ==================================              A NEW SEASON BEGINS              ================================== -->
-<h3>           A NEW SEASON BEGINS         </h3>
-<img class="story-image" src="season-21.png" alt="Sea of Thieves Season 21">
-<p>           Season 21 arrives September 17, and this one is going to look a little different.         </p>
-<p>           Rather than launching alongside one massive new feature, Rare is putting more attention on the world that is already there.         </p>
-<p>           Recurring Live Events will play a bigger role throughout the Season, Custom Seas will continue to expand, and a major experiment will try to get crews spending more time sailing across the shared world.         </p>
-<p>           The Season Pass isn't going anywhere. A new free reward track arrives with another Star Prize waiting at level 50, while the Premium Tier brings the new “Mutiny's Mark” collection.         </p>
-<p>           Outpost shops are also getting some much-needed attention, with new cosmetics arriving for players to earn and purchase with gold. The Pirate Emporium will still receive new stock, including the returning “Bleakheart Groom”, but Rare says a larger change to its cosmetic strategy is on the way.         </p>
-<p>           The biggest change, however, may be what Season 21 takes away. Diving to Voyages, Tall Tales and Raids will be disabled as Rare tests whether keeping crews on the same server for longer can bring more life back to the sandbox.         </p>
-<!-- ==================================              SEASON 21 AT A GLANCE              ================================== -->
-<div class="mobile-info-box">
-<h3>             SEASON 21 AT A GLANCE           </h3>
-<div class="mobile-info-item">
-<strong>               SEPTEMBER 17th             </strong>
-<p>               Season 21 begins             </p>
-</div>
-<div class="mobile-info-item">
-<strong>               NO DIVING             </strong>
-<p>               Voyages, Tall Tales and Raids will REQUIRE sailing             </p>
-</div>
-<div class="mobile-info-item">
-<strong>               NO HEADLINE FEATURE             </strong>
-<p>               Major features are no longer tied to Season launches             </p>
-</div>
-<div class="mobile-info-item">
-<strong>               PORTAL HOPPING             </strong>
-<p>               Changing servers will reset your Emissary Grade             </p>
-</div>
-<div class="mobile-info-item">
-<strong>               NEW REWARDS             </strong>
-<p>               A new Season Pass and Premium Tier arrive             </p>
-</div>
-<div class="mobile-info-item">
-<strong>               MORE LIVE EVENTS             </strong>
-<p>               Recurring events take a bigger role throughout the Season             </p>
-</div>
-</div>
-<!-- ==================================              NO MORE EASY ESCAPE              ================================== -->
-<h3>           NO MORE EASY ESCAPE         </h3>
-<p class="mobile-subtitle">           Rare expands its Season 21 experiments to include Portal Hopping         </p>
-<img class="story-image" src="portal-hopping.png" alt="Let's Talk About Portal Hopping Developer Update" loading="lazy">
-<p>           In the latest Sea of Thieves Developer Update, Production Director Drew Stevens discusses a major change to portal hopping coming with Season 21. Crews will still be able to use the Sea of the Damned to move between servers, but they will no longer be able to carry their Emissary Grade with them.         </p>
-<p>           The change will be especially noticeable for Grade Five Reapers, who could previously portal hop while keeping their Grade and immediately begin hunting Emissaries on the new server.         </p>
-<p>           Stevens explained that this works with Rare's goal of making each server feel like its own “living story.” The team wants crews to see threats developing around them and have time to react, rather than having a fully established Reaper suddenly arrive from another server.         </p>
-<p>           Rare acknowledges that the change won't appeal to everyone, but believes crews should build their reputation and influence on the seas they're currently sailing.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              MUSIC OF THE MONTH              ================================== -->
-<h3>           MUSIC OF THE MONTH         </h3>
-<img class="story-image" src="weatherbound.png" alt="Weatherbound" loading="lazy">
-<p>           Arriving alongside Season 21 is a brand-new track from the Sea of Thieves Audio Team. “Weatherbound” can already be heard accompanying the Season 21 title screen, bringing a new sound to the start of the latest Season.         </p>
-<p>           The track officially releases on September 11 across music streaming platforms, giving pirates a chance to take the sounds of Season 21 with them beyond the seas.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              TWITCH DROPS              ================================== -->
-<h3>           TWITCH DROPS         </h3>
-<p class="mobile-subtitle">           NEW REWARDS ARRIVE SEPTEMBER 18–23         </p>
-<img class="story-image" src="twitch-drops.png" alt="September 2026 Twitch Drops" loading="lazy">
-<p>           Twitch Drops return this month with another set of rewards for pirates tuning in to participating Sea of Thieves streamers.         </p>
-<p>           From September 18 through September 23, players can earn Gold and Renown, along with the Drum Show-Off Emote, Lazybeard Title, Twilight Hunter Fishing Rod and Graveyard Gladiator Pistol.         </p>
-<p>           Those who stick around for the full six hours can also claim the new and exclusive Fishbone Throwing Knives.         </p>
-<p>           Make sure your Sea of Thieves and Twitch accounts are linked before watching to earn the rewards.         </p>
-</article>
-<!-- ==================================            CONTINUOUS MOBILE EDITION            NEWSPAPER PAGE 2 CONTENT            ================================== -->
-<article class="mobile-story">
-<!-- ==================================              GOLDEN SANDS RETURNS              ================================== -->
-<h2>           GOLDEN SANDS RETURNS         </h2>
-<p class="mobile-subtitle">           Fan-favorite Outpost wins the community vote and is heading to Custom Seas         </p>
-<img class="story-image" src="golden-sands-returns.png" alt="Golden Sands Legendary Location community vote" loading="lazy">
-<p>           The votes are in, and Golden Sands has won by a landslide. Production Director Drew Stevens revealed the results of the Legendary Location community vote during September's Sea of Thieves Developer Update, confirming that the original Golden Sands Outpost will be the next classic location rebuilt for Custom Seas.         </p>
-<p>           The original Golden Sands Outpost, as it existed before its transformation into Port Merrick, will now be restored as the next Legendary Location for Custom Seas. Rare will be digging back through its archives to rebuild the classic Outpost and prepare it for use within Custom Seas.         </p>
-<p>           Stevens was quick to note, however, that these old locations aren't simply “sitting on a shelf ready to go.” Bringing Golden Sands back will require the team to restore the location, set it up for Custom Seas, polish it and put it through testing before players can return.         </p>
-<p>           Old Boot Fort, which finished second in the vote, and Lost Sands, which came in third, aren't being forgotten either. Rare plans to bring both to Custom Seas after Golden Sands, working through the locations in the order decided by the community.         </p>
-<p>           For now, there's no release date for Golden Sands. Rare says each location will arrive when it's ready.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              BUGS GO PUBLIC              ================================== -->
-<h2>           BUGS GO PUBLIC         </h2>
-<p class="mobile-subtitle">           Rare trials a new way for players to report and prioritize problems         </p>
-<img class="story-image" src="bugs-go-public.png" alt="Sea of Thieves bug reporting" loading="lazy">
-<p>           Reporting a troublesome bug is about to become a much more public affair. Rare has opened a new Bug Reporting section on the official Sea of Thieves Forums, giving players a place to raise issues publicly while allowing the community to add information and upvote the problems affecting them most.         </p>
-<p>           The announcement follows a recent bug bash by the Game Health team, which Stevens said has already tackled a number of commonly reported problems. These include the elusive “Mast bug”, inconsistent barrel inventories, Ancient Megalodons failing to release rewards, stingy Merchants, and several issues that can appear after migrating between servers.         </p>
-<p>           Rare is treating the new reporting system as a trial, rather than a permanent replacement from day one. The team will watch how the system is used and see whether giving the community a more public role helps identify the problems that need attention most.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              A NEW LOOK AT COSMETICS              ================================== -->
-<h2>           A NEW LOOK AT COSMETICS         </h2>
-<p class="mobile-subtitle">           Rare responds to player feedback with changes to how cosmetics are released         </p>
-<img class="story-image" src="cast-iron-weapon-set.png" alt="Sea of Thieves Cast Iron weapon set" loading="lazy">
-<p>           Rare has heard the complaints surrounding the Pirate Emporium, and changes are on the way. During September's Developer Update, Production Director Drew Stevens addressed the growing imbalance between cosmetics sold through the Emporium and those players can earn or purchase while actually playing the game.         </p>
-<p>           Stevens explained that the Pirate Emporium remains an important part of funding the continued development of Sea of Thieves, now in its ninth year, and isn't going anywhere. However, Rare is changing how cosmetics will be divided between the Emporium and the rest of the game.         </p>
-<p>           Beginning in October, the Emporium will lean more heavily into brand collaborations, real-world seasonal items and cosmetics inspired by Rare's catalogue of games. Rare is also moving away from releasing a complete cosmetic set every month, instead focusing on smaller bundles of high-quality items.         </p>
-<p>           Meanwhile, Outpost shops will continue receiving new stock every month, with Rare promising a much stronger selection. Each Season will also introduce a mini-set celebrating a legendary character from Sea of Thieves lore, while Pirate Legends will gain access to an exclusive set they can earn each Season.         </p>
-<p>           Season 21 kicks off the new approach with Merrick's Fisherman's Fable set, the Pirate Legend-exclusive Courteous Knave set, and the new Cast Iron set, beginning with its weapons in September.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              PAH-PAH-PARLEY?              ================================== -->
-<div class="title-with-art">
-<h2>             PAH-PAH-PARLEY?           </h2>
-<img class="title-art" src="parley-pennant.png" alt="Parley Pennant" loading="lazy">
-</div>
-<p class="mobile-subtitle">           A new flag gives friendly crews a way to signal their intentions         </p>
-<p>           Sea of Thieves is celebrating Talk Like a Pirate Day from September 17–22, and this year's celebration is bringing something permanent to the seas.         </p>
-<p>           The new Parley Pennant will be added to every crew's Flag Box, giving pirates a way to signal that they would rather talk than immediately open fire. Of course, raising the pennant doesn't guarantee the other crew will play along — this is still Sea of Thieves, after all.         </p>
-<p>           There's also a reward for pirates willing to put the new signal to the test. During the event, crews who approach three other ships while flying the Parley Pennant will unlock the Parley Proficiency Sails.         </p>
-<p>           Unlike the event challenge, the pennant itself isn't going anywhere when the celebration ends. It will remain permanently available after Talk Like a Pirate Day, giving crews another way to communicate their intentions before deciding whether it's time to talk — or fight.         </p>
-</article>
-<!-- ==================================            CONTINUOUS MOBILE EDITION            NEWSPAPER PAGE 3 CONTENT            ================================== -->
-<article class="mobile-story">
-<!-- ==================================              TAVERN RUMORS              ================================== -->
-<h2>           TAVERN RUMORS         </h2>
-<!-- Two Tavern Rumors images stay side-by-side -->
-<div class="rumor-images">
-<img src="tavern-rumors-main.png" alt="Tavern Rumors" loading="lazy">
-<img src="tavern-rumors.png" alt="Tavern Rumors cosmetics" loading="lazy">
-</div>
-<!-- ==================================              HALLOWEEN TREATS?              ================================== -->
-<h3>           HALLOWEEN TREATS?         </h3>
-<p>           Rumors of this year's Halloween celebrations are already beginning to spread. Sources shared images reportedly showing a new Banshee costume and a mysterious piece of candy that pirates may be collecting during the event.         </p>
-<p class="status-line">           STATUS: UNCONFIRMED         </p>
-<p class="status-line">           REPORT VERDICT: LIKELY         </p>
-<!-- ==================================              25 YEARS OF XBOX              ================================== -->
-<h3>           25 YEARS OF XBOX         </h3>
-<p>           A celebration of Xbox history may soon be sailing into Sea of Thieves. A leak of what appears to be a new set of Xbox 25th Anniversary Sails, though when — and how — pirates will be able to get their hands on them remains unknown.         </p>
-<p class="status-line">           STATUS: UNCONFIRMED         </p>
-<p class="status-line">           REPORT VERDICT: LIKELY         </p>
-<div class="story-divider"></div>
-<!-- ==================================              MIDWEEK MAYHEM              ================================== -->
-<h2>           MIDWEEK MAYHEM         </h2>
-<p class="mobile-subtitle">           Pirates still have two reasons to set sail during the week, with recurring Live Events taking over Tuesdays and Wednesdays.         </p>
-<img class="story-image" src="midweek-mayhem.png" alt="Fight Nights and Emissaries of Fortune" loading="lazy">
-<!-- FIGHT NIGHTS -->
-<h3>           FIGHT NIGHTS — EVERY TUESDAY         </h3>
-<p>           Pledge to the Guardians of Fortune or Servants of the Flame and take to the Hourglass for 24 hours of increased Allegiance and gold from Faction Battles.         </p>
-<!-- EMISSARIES OF FORTUNE -->
-<h3>           EMISSARIES OF FORTUNE — EVERY WEDNESDAY         </h3>
-<p>           Raise an Emissary Flag and climb the Grades to earn boosted rewards, regardless of which Trading Company you represent.         </p>
-<p>           Both events begin at 10am UTC and run for 24 hours, giving pirates back-to-back days to chase extra rewards.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              PLUNDERING THE PASS              ================================== -->
-<h2>           PLUNDERING THE PASS         </h2>
-<p class="mobile-subtitle">           Season 21 brings a new reward track, a new Star Prize and the Mutiny's Mark collection         </p>
-<img class="story-image" src="season-21-pass.png" alt="Sea of Thieves Season 21 Pass" loading="lazy">
-<p>           Season 21 brings another 50 levels of rewards for pirates to work through, with both the free Season Pass and an optional Premium Tier offering new cosmetics throughout the Season.         </p>
-<p>           The free track once again includes rewards from the Pirate Emporium alongside gold, Doubloons, Ancient Coins and new cosmetics earned simply by raising Renown. Reaching level 50 will also unlock Season 21's new Star Prize, continuing the system introduced in Season 20.         </p>
-<p>           For pirates looking for more, the Season 21 Premium Tier introduces the Mutiny's Mark collection, with pieces unlocked as players progress through the Pass.         </p>
-<!-- ==================================              PASS AT A GLANCE              ================================== -->
-<div class="mobile-info-box">
-<h3>             PASS AT A GLANCE           </h3>
-<div class="mobile-info-item">
-<strong>               50 Renown Levels             </strong>
-</div>
-<div class="mobile-info-item">
-<strong>               425 Doubloons             </strong>
-</div>
-<div class="mobile-info-item">
-<strong>               9 Cosmetic Choices             </strong>
-</div>
-<div class="mobile-info-item">
-<strong>               1 New Star Prize             </strong>
-</div>
-<div class="mobile-info-item">
-<strong>               10 Voyages to Choose From             </strong>
-</div>
-</div>
-</article>
-<!-- ==================================            CONTINUOUS MOBILE EDITION            NEWSPAPER PAGE 4 CONTENT            ================================== -->
-<article class="mobile-story">
-<!-- ==================================              THE BILGE RATS ARE BACK              ================================== -->
-<h2>           THE BILGE RATS ARE BACK         </h2>
-<p class="mobile-subtitle">           Old Voyages return for a weekend of Doubloons, Ashen treasure and extra rewards         </p>
-<img class="story-image" src="bilge-rats-weekender.png" alt="Bilge Rats Weekender" loading="lazy">
-<p>           The Bilge Rats are calling pirates back into action with a special Weekender running from September 11–14, bringing a pair of familiar Voyages back to the seas for a limited time.         </p>
-<p>           During the event, crews can once again take on the Smugglers' Doubloon Run and Recovery of a Secret Shipment as Special Voyages. Pirates willing to brave the Devil's Roar will also find Ashen Message in a Bottle Voyages, offering another reason to sail through the region's fiery waters.         </p>
-<p>           Completing three Ashen Message in a Bottle Voyages during the Weekender will reward crews with 300 Doubloons, while Ashen treasure handed in throughout the event will earn increased Gold and Reputation.         </p>
-<p>           Whether you're returning for an old Voyage or simply looking to fill your pockets, the Bilge Rats are making this a profitable weekend to set sail.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              FORTUNE FAVORS THE BOLD              ================================== -->
-<h2>           FORTUNE FAVORS THE BOLD         </h2>
-<p class="mobile-subtitle">           Gold &amp; Glory returns September 25–28 with boosted rewards across the seas         </p>
-<img class="story-image" src="gold-and-glory.png" alt="Gold and Glory Weekend" loading="lazy">
-<p>           Pirates looking to end September with heavier pockets will have their chance when Gold &amp; Glory Weekend returns from September 25–28.         </p>
-<p>           Throughout the event, crews can earn increased Gold and Reputation from their adventures, alongside boosted Guild Reputation and Renown.         </p>
-<p>           Hourglass fighters aren't being left out either, with increased Allegiance available for those willing to battle for their Faction.         </p>
-<p>           Whether you're working through the Season 21 Pass, climbing the Emissary ranks or fighting your way through the Hourglass, it'll be one of the most rewarding weekends of the month to set sail.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              MORE PIRATE PLUNDER              ================================== -->
-<h2>           MORE PIRATE PLUNDER         </h2>
-<p class="mobile-subtitle">           Extra rewards, a sale and a golden Xbox join the Talk Like a Pirate Day celebrations         </p>
-<p>           The Talk Like a Pirate Day celebrations stretch beyond the new Parley Pennant, with several extra rewards and promotions appearing throughout September.         </p>
-<p>           From September 18–21, the Pirate Emporium will hold a special sale with up to 30% off Captaincy items, avian pets and emotes. Xbox Game Pass subscribers can also claim the Vociferous Speaking Trumpet, while selected Microsoft Rewards Ancient Coin bundles come with the Loquacious Figurehead as a bonus.         </p>
-<p>           Pirates in eligible regions can even enter a special Microsoft Rewards sweepstakes for a Golden Legends Xbox Series X and controller, along with one year of Xbox Game Pass Premium.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              THE MONTH AHEAD              ================================== -->
-<h2>           THE MONTH AHEAD         </h2>
-<p class="mobile-subtitle">           Mark your calendars — September is packed with reasons to set sail         </p>
-<div class="schedule-block">
-<p>
-<strong>SEPT. 11</strong><br>             🎵 Weatherbound Releases<br>             🏴‍☠️ Bilge Rats Weekender Begins           </p>
-<p>
-<strong>SEPT. 17</strong><br>             🌊 Season 21 Sets Sail<br>             🏳️ Talk Like a Pirate Day Celebrations Begin           </p>
-<p>
-<strong>SEPT. 18</strong><br>             📺 Twitch Drops Begin<br>             🛍 Talk Like a Pirate Day Emporium Sale Begins           </p>
-<p>
-<strong>SEPT. 19</strong><br>             🦜 Talk Like a Pirate Day           </p>
-<p>
-<strong>SEPT. 22</strong><br>             🏳️ Talk Like a Pirate Day Celebrations End           </p>
-<p>
-<strong>SEPT. 23</strong><br>             📺 Twitch Drops End           </p>
-<p>
-<strong>SEPT. 25</strong><br>             💰 Gold &amp; Glory Weekend Begins           </p>
-<p>
-<strong>SEPT. 28</strong><br>             💰 Gold &amp; Glory Weekend Ends           </p>
-<p>
-<strong>               EVERY TUESDAY — FIGHT NIGHTS • EVERY WEDNESDAY — EMISSARIES OF FORTUNE             </strong>
-</p>
-</div>
-<div class="story-divider"></div>
-<!-- ==================================              COMMUNITY SPOTLIGHT              ================================== -->
-<h2>           COMMUNITY SPOTLIGHT         </h2>
-<p class="mobile-subtitle">           CRAFTING THE SEA OF THIEVES         </p>
-<img class="story-image" src="community-spotlight.png" alt="ChloeSaurasCrafts Sea of Thieves creations" loading="lazy">
-<p>           After eight years on Etsy, ChloeSaurasCrafts begins a new chapter with a shop of her own.         </p>
-<p>           For years, ChloeSaurasCrafts has been a familiar name within the Sea of Thieves community, bringing items from the game into the real world through handmade props, replicas and collectibles.         </p>
-<p>           But after eight years on Etsy, that chapter has unexpectedly come to an end.         </p>
-<p>           Chloe recently announced that her Etsy store had been taken down after a Ferryman Flintlock prop was listed on the platform. According to Chloe, the closure came despite eight years of selling through Etsy, hundreds of five-star reviews and no previous cases against her shop.         </p>
-<p>           It was a frustrating end to a storefront that had built quite the history. Before its removal, Chloe's Etsy shop had accumulated around 2,300 sales and more than 450 reviews, with creations ranging from miniature treasure chests to full-size Sea of Thieves weapon props.         </p>
-<p>           Rather than let that bring her crafting voyage to an end, Chloe has decided to move on from Etsy altogether. ChloeSaurasCrafts now has a shop of its own, where she plans to continue expanding her collection and once again offer life-size weapon props alongside her other creations. Her gallery already showcases an impressive history of Sea of Thieves work, including the Ferryman set, Gilded Phoenix weapons, treasure chests, Eye of Reach replicas and even the Box of Wondrous Secrets.         </p>
-<p>           For a creator who has spent years turning treasures from the Sea of Thieves into something pirates can actually hold, losing the old storefront may mark the end of one voyage — but certainly not the end of the journey.         </p>
-</article>
-<!-- ==================================            CONTINUOUS MOBILE EDITION            NEWSPAPER PAGE 5 CONTENT            ================================== -->
-<article class="mobile-story">
-<!-- ==================================              SEASON 21: WHAT TO WATCH              ================================== -->
-<h2>           SEASON 21: WHAT TO WATCH         </h2>
-<p class="mobile-subtitle">           The new Season is almost here — but its biggest changes may take time to judge.         </p>
-<img class="story-image" src="season-21-what-to-watch.png" alt="Sea of Thieves Season 21" loading="lazy">
-<p>           Season 21 sets sail on September 17, and while new rewards and cosmetics will immediately grab attention, some of the Season's most important changes won't be measured by what appears in the Pirate Log.         </p>
-<p>           Rare's experiment with removing diving to Voyages, Tall Tales and Raids could fundamentally change how crews move around the world. The idea is simple: if pirates spend more time sailing instead of disappearing beneath the waves, servers may begin to feel more alive. The real test will be whether that creates more unexpected encounters — or simply leaves crews spending more time travelling to the adventures they wanted to play.         </p>
-<p>           Rare's experiment with removing diving to Voyages, Tall Tales and Raids could fundamentally change how crews move around the world. The idea is simple: if pirates spend more time sailing instead of disappearing beneath the waves, servers may begin to feel more alive. The real test will be whether that creates more unexpected encounters — or simply leaves crews spending more time travelling to the adventures they wanted to play.         </p>
-<p>           Portal Hopping will be another one to watch. Crews can still travel through the Sea of the Damned to find another server, but losing Emissary Grade in the process should make hopping a much more expensive decision. For Reapers in particular, it could mean threats develop naturally on a server instead of arriving at Grade Five without warning.         </p>
-<p>           Then there's the world surrounding those experiments. Recurring Live Events are taking a larger role, Outpost stores are receiving more attention and Rare's new approach to cosmetics begins taking shape. Individually, none may transform the game overnight, but together they point toward a Season focused less on adding another enormous feature and more on changing how pirates use the world already around them. By the end of Season 21, the question may not be what Rare added — but whether the Sea of Thieves itself feels more alive.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              REAPERS WATCH              ================================== -->
-<div class="title-with-art">
-<div>
-<h2>               REAPERS WATCH             </h2>
-<p class="mobile-subtitle" style="margin-bottom: 0 !important;">               DIVIDED OVER DIVING             </p>
-</div>
-<img class="title-art" src="reapers-watch.png" alt="Reapers Watch" loading="lazy">
-</div>
-<p>           One of Season 21's biggest experiments is also becoming one of its most debated. When the new Season begins, crews will no longer be able to dive directly to Voyages, Tall Tales or Raid Voyages, forcing pirates to sail across the shared world to reach their destination.         </p>
-<p>           Rare's goal is to keep ships on servers longer and encourage the unpredictable encounters that have always been at the heart of Sea of Thieves. For some players, that's exactly what Adventure has been missing.         </p>
-<p>           Diving made reaching an activity faster, but it also allowed ships to disappear from a server almost instantly, potentially cutting short the stories and encounters developing around them.         </p>
-<p>           Not everyone is convinced. Other pirates argue that removing diving doesn't guarantee more meaningful interactions — it may simply mean longer journeys between activities. A crew interested in completing a particular Voyage may now spend more of its session sailing there rather than actually playing it, and some question whether players who don't want an encounter will suddenly become more willing to stick around for one.         </p>
-<p>           Reapers are caught directly in the middle of another part of the experiment. Portal Hopping will remain, but crews changing servers through the Sea of the Damned will lose their Emissary Grade. That means a Grade Five Reaper can no longer arrive on another server with its full Grade already established, something Rare hopes will allow threats to develop naturally within each server.         </p>
-<p>           Both changes are ultimately chasing the same idea: make each server feel like a living world rather than a collection of activities crews jump between.         </p>
-<p>           Whether removing one of the game's biggest shortcuts accomplishes that — or simply makes the journey longer — is something pirates won't truly know until Season 21 sets sail.         </p>
-<div class="story-divider"></div>
-<!-- ==================================              CAPTAINS LOG              ================================== -->
-<div class="title-with-art">
-<h2>             CAPTAINS LOG           </h2>
-<img class="title-art" src="captains-log.png" alt="Captain's Log" loading="lazy">
-</div>
-<p>           September is shaping up to be an interesting month for Sea of Thieves.         </p>
-<p>           Season 21 isn't built around one massive addition, but instead a number of changes that could have a noticeable effect on how the game is played.         </p>
-<p>           The removal of diving is probably the one I'm most interested to see in practice.         </p>
-<p>           I understand what Rare is trying to accomplish by keeping crews on servers longer, but whether that actually leads to more player encounters or just more time spent sailing is something we'll have to see for ourselves.         </p>
-<p>           This was also a bigger issue of The Captains Report than usual.         </p>
-<p>           There was simply a lot worth covering this month, and I wanted to give some of these stories more room rather than trying to squeeze everything into the usual format.         </p>
-<p>           I'm especially happy to start highlighting more of the community alongside the regular game news.         </p>
-<p>           With Season 21 beginning September 17 and October already looking interesting, there should be plenty to talk about in the next issue.         </p>
-<p class="captains-signoff">           — Capitano Statical         </p>
-</article>
-</div>
-<!-- =========================          BOTTOM BACK BUTTON          ========================= -->
-<div class="reader-controls" style="margin-top: 45px;">
-<a class="back-button" href="#">         ← BACK TO HOME       </a>
-</div>
-</section>
-<!-- =========================        HOMEPAGE        ========================= -->
-<main class="home">
-<p class="label">       LATEST ISSUE     </p>
-<h2 class="issue-date">       September 2026     </h2>
-<p class="issue-number">       VOLUME 1 • ISSUE 3     </p>
-<img class="cover" src="september-2026-page-1.png" alt="September 2026 cover of The Captains Report">
-<h3 class="headline">       SEASON 21 SETS SAIL     </h3>
-<p class="deck">       Season 21 arrives September 17 with new rewards,       recurring events and another major sandbox experiment.     </p>
-<a class="read-button" href="#issue">       READ THE ISSUE     </a>
-</main>
-<!-- =========================        ARCHIVE        ========================= -->
-<section class="archive-note" id="archive">
-</section>
-<!-- ADVERTISEMENT — ONCE PER PAGE LOAD -->
-<div class="site-promo show" id="sitePromo">
-<button class="site-promo-close" type="button" onclick="closeSitePromo()" aria-label="Close advertisement">   × </button>
-<p class="site-promo-label">ADVERTISEMENT</p>
-<img src="KINGTHEDEEZ AD.png" alt="King The Deez Boosting advertisement" style="width: 100%; height: auto; display: block;">
-</div>
-<!-- MOBILE EDITION SWITCHER -->
-<script>
-  /* ADVERTISEMENT — SHOW ONCE PER PAGE LOAD */
-  function closeSitePromo() {
-    const promo = document.getElementById("sitePromo");
-    if (promo) promo.classList.remove("show");
-  }
 
-  window.addEventListener("load", function () {
-    const promo = document.getElementById("sitePromo");
+  <!-- ============================================================
+       THE CAPTAINS REPORT — WEBSITE CODE MAP
+       ============================================================
 
-    if (promo) {
-      setTimeout(function () {
-        promo.classList.add("show");
-      }, 1500);
+       This file is organized into clearly marked sections so the
+       website can be updated each month without having to figure
+       out what every piece of code does.
+
+       MAIN WEBSITE AREAS:
+
+       1. HEADER
+          The Captains Report masthead and Capitano Statical byline.
+
+       2. NAVIGATION
+          HOME / LATEST ISSUE / ARCHIVE
+
+       3. LATEST ISSUE READER
+          The current month's newspaper.
+
+          The reader contains TWO versions:
+
+          A. ORIGINAL EDITION
+             The five completed newspaper page images.
+
+          B. MOBILE DIGITAL EDITION
+             The same stories reformatted into a continuous
+             phone-friendly layout.
+
+       4. HOMEPAGE
+          Shows the current month's cover, headline and
+          READ THE ISSUE button.
+
+       5. ARCHIVE
+          Stores previous issues after a new issue replaces them.
+
+       6. SITE ADVERTISEMENT
+          Small promotional pop-up.
+
+       7. JAVASCRIPT
+          Controls the advertisement and the Original Edition /
+          Mobile Edition switcher.
+
+
+       ============================================================
+       IMPORTANT — WHEN ADDING A NEW MONTH
+       ============================================================
+
+       BEFORE replacing the current issue:
+
+       1. Archive the previous issue.
+       2. Make sure its five newspaper pages remain available.
+       3. Preserve its mobile/digital edition.
+       4. Then replace the Latest Issue with the new month.
+       5. Update the homepage to advertise the new issue.
+
+       Example:
+
+       September 2026
+       Volume 1 • Issue 3
+
+       becomes an archived issue when:
+
+       October 2026
+       Volume 1 • Issue 4
+
+       becomes the Latest Issue.
+
+       ============================================================ -->
+
+
+  <!-- ============================================================
+       HEADER
+       ============================================================
+       Main website masthead.
+       This normally stays the same every month.
+       ============================================================ -->
+
+  <header id="home">
+
+    <h1 class="masthead">
+      THE CAPTAINS REPORT
+    </h1>
+
+    <p class="byline">
+      WRITTEN BY CAPITANO STATICAL
+    </p>
+
+  </header>
+
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================
+
+       HOME
+           Returns to the main homepage.
+
+       LATEST ISSUE
+           Opens the current issue using #issue.
+
+       ARCHIVE
+           Jumps to the archive section farther down the page.
+
+       IMPORTANT:
+       The current issue uses id="issue".
+       ============================================================ -->
+
+  <nav>
+
+    <a href="#">
+      HOME
+    </a>
+
+    <a href="#issue">
+      LATEST ISSUE
+    </a>
+
+    <a href="#archive">
+      ARCHIVE
+    </a>
+
+  </nav>
+
+
+  <!-- ============================================================
+       LATEST ISSUE READER
+       SEPTEMBER 2026 — VOLUME 1 • ISSUE 3
+       ============================================================
+
+       THIS IS CURRENTLY THE LATEST ISSUE.
+
+       When October 2026 becomes the Latest Issue, preserve this
+       September issue in the Archive BEFORE replacing this section.
+
+       The issue reader contains:
+
+       1. Issue title
+       2. Original five-page newspaper
+       3. Continuous mobile edition
+       4. Back-to-home controls
+
+       ============================================================ -->
+
+  <!--
+       IMPORTANT ID:
+       "issue" is used by:
+
+       - LATEST ISSUE navigation link
+       - READ THE ISSUE button
+       - JavaScript edition switcher
+
+       Do not rename it without updating those other areas.
+  -->
+
+  <section class="reader" id="issue">
+
+
+    <!-- ==========================================================
+         ISSUE TITLE
+         ========================================================== -->
+
+    <h2 class="reader-title">
+      September 2026
+    </h2>
+
+    <p class="reader-subtitle">
+      VOLUME 1 • ISSUE 3
+    </p>
+
+
+    <!-- ==========================================================
+         TOP BACK BUTTON
+         ========================================================== -->
+
+    <div class="reader-controls">
+
+      <a class="back-button" href="#">
+        ← BACK TO HOME
+      </a>
+
+    </div>
+
+
+    <!-- ==========================================================
+         ORIGINAL EDITION
+         FIVE FULL NEWSPAPER PAGES
+         ==========================================================
+
+         These are the actual completed newspaper page images.
+
+         CURRENT SEPTEMBER FILES:
+
+         september-2026-page-1.png
+         september-2026-page-2.png
+         september-2026-page-3.png
+         september-2026-page-4.png
+         september-2026-page-5.png
+
+         DESKTOP:
+         These pages display automatically.
+
+         MOBILE:
+         Readers normally see the digital edition first.
+         Pressing VIEW ORIGINAL EDITION displays these pages.
+
+         When a new issue is created, change these five filenames
+         to the new month's completed newspaper pages.
+
+         ========================================================== -->
+
+    <div class="desktop-newspaper" id="originalEdition">
+
+
+      <!-- ========================================================
+           MOBILE ORIGINAL-EDITION CONTROL
+
+           This button is only visible when a mobile reader is
+           viewing the full original newspaper pages.
+           ======================================================== -->
+
+      <div class="mobile-original-controls">
+
+        <button
+          class="original-button"
+          type="button"
+          onclick="showMobileEdition()"
+        >
+          ← BACK TO MOBILE EDITION
+        </button>
+
+      </div>
+
+
+      <!-- ========================================================
+           ORIGINAL NEWSPAPER PAGE IMAGES
+           ======================================================== -->
+
+      <div class="pages">
+
+        <!-- PAGE 1 -->
+        <img
+          class="newspaper-page"
+          src="september-2026-page-1.png"
+          alt="The Captains Report September 2026 Page 1"
+        >
+
+        <!-- PAGE 2 -->
+        <img
+          class="newspaper-page"
+          src="september-2026-page-2.png"
+          alt="The Captains Report September 2026 Page 2"
+          loading="lazy"
+        >
+
+        <!-- PAGE 3 -->
+        <img
+          class="newspaper-page"
+          src="september-2026-page-3.png"
+          alt="The Captains Report September 2026 Page 3"
+          loading="lazy"
+        >
+
+        <!-- PAGE 4 -->
+        <img
+          class="newspaper-page"
+          src="september-2026-page-4.png"
+          alt="The Captains Report September 2026 Page 4"
+          loading="lazy"
+        >
+
+        <!-- PAGE 5 -->
+        <img
+          class="newspaper-page"
+          src="september-2026-page-5.png"
+          alt="The Captains Report September 2026 Page 5"
+          loading="lazy"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         MOBILE DIGITAL EDITION
+         ==========================================================
+
+         This is the phone-friendly version of the newspaper.
+
+         Instead of displaying the five large newspaper images,
+         each story is written directly into the website.
+
+         The mobile edition is organized roughly by newspaper page:
+
+         ARTICLE 1 = PAGE 1 CONTENT
+         ARTICLE 2 = PAGE 2 CONTENT
+         ARTICLE 3 = PAGE 3 CONTENT
+         ARTICLE 4 = PAGE 4 CONTENT
+         ARTICLE 5 = PAGE 5 CONTENT
+
+         ========================================================== -->
+
+    <div class="mobile-newspaper" id="mobileEdition">
+
+
+      <!-- ========================================================
+           MOBILE EDITION INTRODUCTION
+           ======================================================== -->
+
+      <div class="mobile-edition-heading">
+
+        <p>
+          The Captains Report mobile edition — the same monthly
+          report, reformatted for easier reading on smaller screens.
+        </p>
+
+        <!--
+             Switches from the mobile edition to the five
+             original newspaper pages.
+        -->
+
+        <button
+          class="original-button"
+          type="button"
+          onclick="showOriginalEdition()"
+        >
+          VIEW ORIGINAL EDITION
+        </button>
+
+      </div>
+
+
+      <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 1
+           SEPTEMBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Season 21 Sets Sail
+           2. A New Season Begins
+           3. Season 21 At A Glance
+           4. No More Easy Escape
+           5. Music of the Month
+           6. Twitch Drops
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             MONTH LABEL
+             ====================================================== -->
+
+        <p class="mobile-kicker">
+          SEPTEMBER 2026
+        </p>
+
+
+        <!-- ======================================================
+             PAGE 1 MAIN HEADLINE
+             SEASON 21 SETS SAIL
+             ====================================================== -->
+
+        <h2>
+          SEASON 21 SETS SAIL
+        </h2>
+
+        <p class="mobile-subtitle">
+          Season 21 arrives September 17 with new rewards,
+          recurring events and another major sandbox experiment
+        </p>
+
+
+        <!-- ======================================================
+             STORY:
+             A NEW SEASON BEGINS
+             ====================================================== -->
+
+        <h3>
+          A NEW SEASON BEGINS
+        </h3>
+
+        <img
+          class="story-image"
+          src="season-21.png"
+          alt="Sea of Thieves Season 21"
+        >
+
+        <p>
+          Season 21 arrives September 17, and this one is going to
+          look a little different.
+        </p>
+
+        <p>
+          Rather than launching alongside one massive new feature,
+          Rare is putting more attention on the world that is
+          already there.
+        </p>
+
+        <p>
+          Recurring Live Events will play a bigger role throughout
+          the Season, Custom Seas will continue to expand, and a
+          major experiment will try to get crews spending more time
+          sailing across the shared world.
+        </p>
+
+        <p>
+          The Season Pass isn't going anywhere. A new free reward
+          track arrives with another Star Prize waiting at level 50,
+          while the Premium Tier brings the new “Mutiny's Mark”
+          collection.
+        </p>
+
+        <p>
+          Outpost shops are also getting some much-needed attention,
+          with new cosmetics arriving for players to earn and
+          purchase with gold. The Pirate Emporium will still receive
+          new stock, including the returning “Bleakheart Groom”, but
+          Rare says a larger change to its cosmetic strategy is on
+          the way.
+        </p>
+
+        <p>
+          The biggest change, however, may be what Season 21 takes
+          away. Diving to Voyages, Tall Tales and Raids will be
+          disabled as Rare tests whether keeping crews on the same
+          server for longer can bring more life back to the sandbox.
+        </p>
+
+
+        <!-- ======================================================
+             SEASON 21 AT A GLANCE
+             ======================================================
+
+             Compact summary of the main Season 21 changes.
+             ====================================================== -->
+
+        <div class="mobile-info-box">
+
+          <h3>
+            SEASON 21 AT A GLANCE
+          </h3>
+
+
+          <!-- SEPTEMBER 17 -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              SEPTEMBER 17th
+            </strong>
+
+            <p>
+              Season 21 begins
+            </p>
+
+          </div>
+
+
+          <!-- NO DIVING -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              NO DIVING
+            </strong>
+
+            <p>
+              Voyages, Tall Tales and Raids will REQUIRE sailing
+            </p>
+
+          </div>
+
+
+          <!-- NO HEADLINE FEATURE -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              NO HEADLINE FEATURE
+            </strong>
+
+            <p>
+              Major features are no longer tied to Season launches
+            </p>
+
+          </div>
+
+
+          <!-- PORTAL HOPPING -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              PORTAL HOPPING
+            </strong>
+
+            <p>
+              Changing servers will reset your Emissary Grade
+            </p>
+
+          </div>
+
+
+          <!-- NEW REWARDS -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              NEW REWARDS
+            </strong>
+
+            <p>
+              A new Season Pass and Premium Tier arrive
+            </p>
+
+          </div>
+
+
+          <!-- MORE LIVE EVENTS -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              MORE LIVE EVENTS
+            </strong>
+
+            <p>
+              Recurring events take a bigger role throughout
+              the Season
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ======================================================
+             STORY:
+             NO MORE EASY ESCAPE
+             ====================================================== -->
+
+        <h3>
+          NO MORE EASY ESCAPE
+        </h3>
+
+        <p class="mobile-subtitle">
+          Rare expands its Season 21 experiments to include
+          Portal Hopping
+        </p>
+
+        <img
+          class="story-image"
+          src="portal-hopping.png"
+          alt="Let's Talk About Portal Hopping Developer Update"
+          loading="lazy"
+        >
+
+        <p>
+          In the latest Sea of Thieves Developer Update, Production
+          Director Drew Stevens discusses a major change to portal
+          hopping coming with Season 21. Crews will still be able to
+          use the Sea of the Damned to move between servers, but they
+          will no longer be able to carry their Emissary Grade with
+          them.
+        </p>
+
+        <p>
+          The change will be especially noticeable for Grade Five
+          Reapers, who could previously portal hop while keeping
+          their Grade and immediately begin hunting Emissaries on
+          the new server.
+        </p>
+
+        <p>
+          Stevens explained that this works with Rare's goal of
+          making each server feel like its own “living story.” The
+          team wants crews to see threats developing around them and
+          have time to react, rather than having a fully established
+          Reaper suddenly arrive from another server.
+        </p>
+
+        <p>
+          Rare acknowledges that the change won't appeal to
+          everyone, but believes crews should build their reputation
+          and influence on the seas they're currently sailing.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             MUSIC OF THE MONTH
+             ====================================================== -->
+
+        <h3>
+          MUSIC OF THE MONTH
+        </h3>
+
+        <img
+          class="story-image"
+          src="weatherbound.png"
+          alt="Weatherbound"
+          loading="lazy"
+        >
+
+        <p>
+          Arriving alongside Season 21 is a brand-new track from the
+          Sea of Thieves Audio Team. “Weatherbound” can already be
+          heard accompanying the Season 21 title screen, bringing a
+          new sound to the start of the latest Season.
+        </p>
+
+        <p>
+          The track officially releases on September 11 across music
+          streaming platforms, giving pirates a chance to take the
+          sounds of Season 21 with them beyond the seas.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             TWITCH DROPS
+             ====================================================== -->
+
+        <h3>
+          TWITCH DROPS
+        </h3>
+
+        <p class="mobile-subtitle">
+          NEW REWARDS ARRIVE SEPTEMBER 18–23
+        </p>
+
+        <img
+          class="story-image"
+          src="twitch-drops.png"
+          alt="September 2026 Twitch Drops"
+          loading="lazy"
+        >
+
+        <p>
+          Twitch Drops return this month with another set of rewards
+          for pirates tuning in to participating Sea of Thieves
+          streamers.
+        </p>
+
+        <p>
+          From September 18 through September 23, players can earn
+          Gold and Renown, along with the Drum Show-Off Emote,
+          Lazybeard Title, Twilight Hunter Fishing Rod and Graveyard
+          Gladiator Pistol.
+        </p>
+
+        <p>
+          Those who stick around for the full six hours can also
+          claim the new and exclusive Fishbone Throwing Knives.
+        </p>
+
+        <p>
+          Make sure your Sea of Thieves and Twitch accounts are
+          linked before watching to earn the rewards.
+        </p>
+
+
+      </article>
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 1
+           ======================================================== -->
+            <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 2
+           SEPTEMBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Golden Sands Returns
+           2. Bugs Go Public
+           3. A New Look at Cosmetics
+           4. Pah-Pah-Parley?
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             STORY:
+             GOLDEN SANDS RETURNS
+             ====================================================== -->
+
+        <h2>
+          GOLDEN SANDS RETURNS
+        </h2>
+
+        <p class="mobile-subtitle">
+          Fan-favorite Outpost wins the community vote and is
+          heading to Custom Seas
+        </p>
+
+        <img
+          class="story-image"
+          src="golden-sands-returns.png"
+          alt="Golden Sands Legendary Location community vote"
+          loading="lazy"
+        >
+
+        <p>
+          The votes are in, and Golden Sands has won by a landslide.
+          Production Director Drew Stevens revealed the results of
+          the Legendary Location community vote during September's
+          Sea of Thieves Developer Update, confirming that the
+          original Golden Sands Outpost will be the next classic
+          location rebuilt for Custom Seas.
+        </p>
+
+        <p>
+          The original Golden Sands Outpost, as it existed before
+          its transformation into Port Merrick, will now be restored
+          as the next Legendary Location for Custom Seas. Rare will
+          be digging back through its archives to rebuild the
+          classic Outpost and prepare it for use within Custom Seas.
+        </p>
+
+        <p>
+          Stevens was quick to note, however, that these old
+          locations aren't simply “sitting on a shelf ready to go.”
+          Bringing Golden Sands back will require the team to restore
+          the location, set it up for Custom Seas, polish it and put
+          it through testing before players can return.
+        </p>
+
+        <p>
+          Old Boot Fort, which finished second in the vote, and Lost
+          Sands, which came in third, aren't being forgotten either.
+          Rare plans to bring both to Custom Seas after Golden Sands,
+          working through the locations in the order decided by the
+          community.
+        </p>
+
+        <p>
+          For now, there's no release date for Golden Sands. Rare
+          says each location will arrive when it's ready.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             BUGS GO PUBLIC
+             ====================================================== -->
+
+        <h2>
+          BUGS GO PUBLIC
+        </h2>
+
+        <p class="mobile-subtitle">
+          Rare trials a new way for players to report and
+          prioritize problems
+        </p>
+
+        <img
+          class="story-image"
+          src="bugs-go-public.png"
+          alt="Sea of Thieves bug reporting"
+          loading="lazy"
+        >
+
+        <p>
+          Reporting a troublesome bug is about to become a much more
+          public affair. Rare has opened a new Bug Reporting section
+          on the official Sea of Thieves Forums, giving players a
+          place to raise issues publicly while allowing the community
+          to add information and upvote the problems affecting them
+          most.
+        </p>
+
+        <p>
+          The announcement follows a recent bug bash by the Game
+          Health team, which Stevens said has already tackled a
+          number of commonly reported problems. These include the
+          elusive “Mast bug”, inconsistent barrel inventories,
+          Ancient Megalodons failing to release rewards, stingy
+          Merchants, and several issues that can appear after
+          migrating between servers.
+        </p>
+
+        <p>
+          Rare is treating the new reporting system as a trial,
+          rather than a permanent replacement from day one. The team
+          will watch how the system is used and see whether giving
+          the community a more public role helps identify the
+          problems that need attention most.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             A NEW LOOK AT COSMETICS
+             ====================================================== -->
+
+        <h2>
+          A NEW LOOK AT COSMETICS
+        </h2>
+
+        <p class="mobile-subtitle">
+          Rare responds to player feedback with changes to how
+          cosmetics are released
+        </p>
+
+        <img
+          class="story-image"
+          src="cast-iron-weapon-set.png"
+          alt="Sea of Thieves Cast Iron weapon set"
+          loading="lazy"
+        >
+
+        <p>
+          Rare has heard the complaints surrounding the Pirate
+          Emporium, and changes are on the way. During September's
+          Developer Update, Production Director Drew Stevens
+          addressed the growing imbalance between cosmetics sold
+          through the Emporium and those players can earn or
+          purchase while actually playing the game.
+        </p>
+
+        <p>
+          Stevens explained that the Pirate Emporium remains an
+          important part of funding the continued development of
+          Sea of Thieves, now in its ninth year, and isn't going
+          anywhere. However, Rare is changing how cosmetics will be
+          divided between the Emporium and the rest of the game.
+        </p>
+
+        <p>
+          Beginning in October, the Emporium will lean more heavily
+          into brand collaborations, real-world seasonal items and
+          cosmetics inspired by Rare's catalogue of games. Rare is
+          also moving away from releasing a complete cosmetic set
+          every month, instead focusing on smaller bundles of
+          high-quality items.
+        </p>
+
+        <p>
+          Meanwhile, Outpost shops will continue receiving new stock
+          every month, with Rare promising a much stronger selection.
+          Each Season will also introduce a mini-set celebrating a
+          legendary character from Sea of Thieves lore, while Pirate
+          Legends will gain access to an exclusive set they can earn
+          each Season.
+        </p>
+
+        <p>
+          Season 21 kicks off the new approach with Merrick's
+          Fisherman's Fable set, the Pirate Legend-exclusive
+          Courteous Knave set, and the new Cast Iron set, beginning
+          with its weapons in September.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             PAH-PAH-PARLEY?
+             ======================================================
+
+             This story uses a small image beside the title instead
+             of the normal full-width story image.
+
+             Image:
+             parley-pennant.png
+             ====================================================== -->
+
+        <div class="title-with-art">
+
+          <h2>
+            PAH-PAH-PARLEY?
+          </h2>
+
+          <img
+            class="title-art"
+            src="parley-pennant.png"
+            alt="Parley Pennant"
+            loading="lazy"
+          >
+
+        </div>
+
+        <p class="mobile-subtitle">
+          A new flag gives friendly crews a way to signal their
+          intentions
+        </p>
+
+        <p>
+          Sea of Thieves is celebrating Talk Like a Pirate Day from
+          September 17–22, and this year's celebration is bringing
+          something permanent to the seas.
+        </p>
+
+        <p>
+          The new Parley Pennant will be added to every crew's Flag
+          Box, giving pirates a way to signal that they would rather
+          talk than immediately open fire. Of course, raising the
+          pennant doesn't guarantee the other crew will play along —
+          this is still Sea of Thieves, after all.
+        </p>
+
+        <p>
+          There's also a reward for pirates willing to put the new
+          signal to the test. During the event, crews who approach
+          three other ships while flying the Parley Pennant will
+          unlock the Parley Proficiency Sails.
+        </p>
+
+        <p>
+          Unlike the event challenge, the pennant itself isn't going
+          anywhere when the celebration ends. It will remain
+          permanently available after Talk Like a Pirate Day, giving
+          crews another way to communicate their intentions before
+          deciding whether it's time to talk — or fight.
+        </p>
+
+
+      </article>
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 2
+           ======================================================== -->
+
+
+
+      <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 3
+           SEPTEMBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Tavern Rumors
+              - Halloween Treats?
+              - 25 Years of Xbox
+
+           2. Midweek Mayhem
+              - Fight Nights
+              - Emissaries of Fortune
+
+           3. Plundering the Pass
+              - Season 21 Pass
+              - Pass at a Glance
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             SECTION:
+             TAVERN RUMORS
+             ======================================================
+
+             Tavern Rumors is a recurring section of
+             The Captains Report.
+
+             IMPORTANT:
+             Rumors should clearly distinguish confirmed news from
+             leaks, speculation or unconfirmed information.
+
+             The two rumor images are displayed side-by-side.
+             ====================================================== -->
+
+        <h2>
+          TAVERN RUMORS
+        </h2>
+
+
+        <!-- TWO TAVERN RUMORS IMAGES -->
+
+        <div class="rumor-images">
+
+          <img
+            src="tavern-rumors-main.png"
+            alt="Tavern Rumors"
+            loading="lazy"
+          >
+
+          <img
+            src="tavern-rumors.png"
+            alt="Tavern Rumors cosmetics"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- ======================================================
+             TAVERN RUMOR #1:
+             HALLOWEEN TREATS?
+             ====================================================== -->
+
+        <h3>
+          HALLOWEEN TREATS?
+        </h3>
+
+        <p>
+          Rumors of this year's Halloween celebrations are already
+          beginning to spread. Sources shared images reportedly
+          showing a new Banshee costume and a mysterious piece of
+          candy that pirates may be collecting during the event.
+        </p>
+
+        <p class="status-line">
+          STATUS: UNCONFIRMED
+        </p>
+
+        <p class="status-line">
+          REPORT VERDICT: LIKELY
+        </p>
+
+
+        <!-- ======================================================
+             TAVERN RUMOR #2:
+             25 YEARS OF XBOX
+             ====================================================== -->
+
+        <h3>
+          25 YEARS OF XBOX
+        </h3>
+
+        <p>
+          A celebration of Xbox history may soon be sailing into
+          Sea of Thieves. A leak of what appears to be a new set of
+          Xbox 25th Anniversary Sails, though when — and how —
+          pirates will be able to get their hands on them remains
+          unknown.
+        </p>
+
+        <p class="status-line">
+          STATUS: UNCONFIRMED
+        </p>
+
+        <p class="status-line">
+          REPORT VERDICT: LIKELY
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             MIDWEEK MAYHEM
+             ======================================================
+
+             This section combines the two recurring weekday events:
+
+             TUESDAY:
+             Fight Nights
+
+             WEDNESDAY:
+             Emissaries of Fortune
+             ====================================================== -->
+
+        <h2>
+          MIDWEEK MAYHEM
+        </h2>
+
+        <p class="mobile-subtitle">
+          Pirates still have two reasons to set sail during the
+          week, with recurring Live Events taking over Tuesdays
+          and Wednesdays.
+        </p>
+
+        <img
+          class="story-image"
+          src="midweek-mayhem.png"
+          alt="Fight Nights and Emissaries of Fortune"
+          loading="lazy"
+        >
+
+
+        <!-- FIGHT NIGHTS -->
+
+        <h3>
+          FIGHT NIGHTS — EVERY TUESDAY
+        </h3>
+
+        <p>
+          Pledge to the Guardians of Fortune or Servants of the
+          Flame and take to the Hourglass for 24 hours of increased
+          Allegiance and gold from Faction Battles.
+        </p>
+
+
+        <!-- EMISSARIES OF FORTUNE -->
+
+        <h3>
+          EMISSARIES OF FORTUNE — EVERY WEDNESDAY
+        </h3>
+
+        <p>
+          Raise an Emissary Flag and climb the Grades to earn
+          boosted rewards, regardless of which Trading Company
+          you represent.
+        </p>
+
+        <p>
+          Both events begin at 10am UTC and run for 24 hours, giving
+          pirates back-to-back days to chase extra rewards.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             PLUNDERING THE PASS
+             ====================================================== -->
+
+        <h2>
+          PLUNDERING THE PASS
+        </h2>
+
+        <p class="mobile-subtitle">
+          Season 21 brings a new reward track, a new Star Prize
+          and the Mutiny's Mark collection
+        </p>
+
+        <img
+          class="story-image"
+          src="season-21-pass.png"
+          alt="Sea of Thieves Season 21 Pass"
+          loading="lazy"
+        >
+
+        <p>
+          Season 21 brings another 50 levels of rewards for pirates
+          to work through, with both the free Season Pass and an
+          optional Premium Tier offering new cosmetics throughout
+          the Season.
+        </p>
+
+        <p>
+          The free track once again includes rewards from the Pirate
+          Emporium alongside gold, Doubloons, Ancient Coins and new
+          cosmetics earned simply by raising Renown. Reaching level
+          50 will also unlock Season 21's new Star Prize, continuing
+          the system introduced in Season 20.
+        </p>
+
+        <p>
+          For pirates looking for more, the Season 21 Premium Tier
+          introduces the Mutiny's Mark collection, with pieces
+          unlocked as players progress through the Pass.
+        </p>
+
+
+        <!-- ======================================================
+             PASS AT A GLANCE
+             ====================================================== -->
+
+        <div class="mobile-info-box">
+
+          <h3>
+            PASS AT A GLANCE
+          </h3>
+
+
+          <!-- RENOWN LEVELS -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              50 Renown Levels
+            </strong>
+
+          </div>
+
+
+          <!-- DOUBLOONS -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              425 Doubloons
+            </strong>
+
+          </div>
+
+
+          <!-- COSMETIC CHOICES -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              9 Cosmetic Choices
+            </strong>
+
+          </div>
+
+
+          <!-- STAR PRIZE -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              1 New Star Prize
+            </strong>
+
+          </div>
+
+
+          <!-- VOYAGES -->
+
+          <div class="mobile-info-item">
+
+            <strong>
+              10 Voyages to Choose From
+            </strong>
+
+          </div>
+
+        </div>
+
+
+      </article>
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 3
+           ======================================================== -->
+            <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 4
+           SEPTEMBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. The Bilge Rats Are Back
+           2. Fortune Favors the Bold
+           3. More Pirate Plunder
+           4. The Month Ahead
+           5. Community Spotlight
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             STORY:
+             THE BILGE RATS ARE BACK
+             ====================================================== -->
+
+        <h2>
+          THE BILGE RATS ARE BACK
+        </h2>
+
+        <p class="mobile-subtitle">
+          Old Voyages return for a weekend of Doubloons,
+          Ashen treasure and extra rewards
+        </p>
+
+        <img
+          class="story-image"
+          src="bilge-rats-weekender.png"
+          alt="Bilge Rats Weekender"
+          loading="lazy"
+        >
+
+        <p>
+          The Bilge Rats are calling pirates back into action with
+          a special Weekender running from September 11–14, bringing
+          a pair of familiar Voyages back to the seas for a limited
+          time.
+        </p>
+
+        <p>
+          During the event, crews can once again take on the
+          Smugglers' Doubloon Run and Recovery of a Secret Shipment
+          as Special Voyages. Pirates willing to brave the Devil's
+          Roar will also find Ashen Message in a Bottle Voyages,
+          offering another reason to sail through the region's
+          fiery waters.
+        </p>
+
+        <p>
+          Completing three Ashen Message in a Bottle Voyages during
+          the Weekender will reward crews with 300 Doubloons, while
+          Ashen treasure handed in throughout the event will earn
+          increased Gold and Reputation.
+        </p>
+
+        <p>
+          Whether you're returning for an old Voyage or simply
+          looking to fill your pockets, the Bilge Rats are making
+          this a profitable weekend to set sail.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             FORTUNE FAVORS THE BOLD
+             ======================================================
+             Gold & Glory Weekend section.
+             ====================================================== -->
+
+        <h2>
+          FORTUNE FAVORS THE BOLD
+        </h2>
+
+        <p class="mobile-subtitle">
+          Gold &amp; Glory returns September 25–28 with boosted
+          rewards across the seas
+        </p>
+
+        <img
+          class="story-image"
+          src="gold-and-glory.png"
+          alt="Gold and Glory Weekend"
+          loading="lazy"
+        >
+
+        <p>
+          Pirates looking to end September with heavier pockets will
+          have their chance when Gold &amp; Glory Weekend returns
+          from September 25–28.
+        </p>
+
+        <p>
+          Throughout the event, crews can earn increased Gold and
+          Reputation from their adventures, alongside boosted Guild
+          Reputation and Renown.
+        </p>
+
+        <p>
+          Hourglass fighters aren't being left out either, with
+          increased Allegiance available for those willing to battle
+          for their Faction.
+        </p>
+
+        <p>
+          Whether you're working through the Season 21 Pass,
+          climbing the Emissary ranks or fighting your way through
+          the Hourglass, it'll be one of the most rewarding weekends
+          of the month to set sail.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             MORE PIRATE PLUNDER
+             ======================================================
+             Additional Talk Like a Pirate Day promotions.
+             ====================================================== -->
+
+        <h2>
+          MORE PIRATE PLUNDER
+        </h2>
+
+        <p class="mobile-subtitle">
+          Extra rewards, a sale and a golden Xbox join the
+          Talk Like a Pirate Day celebrations
+        </p>
+
+        <p>
+          The Talk Like a Pirate Day celebrations stretch beyond
+          the new Parley Pennant, with several extra rewards and
+          promotions appearing throughout September.
+        </p>
+
+        <p>
+          From September 18–21, the Pirate Emporium will hold a
+          special sale with up to 30% off Captaincy items, avian
+          pets and emotes. Xbox Game Pass subscribers can also
+          claim the Vociferous Speaking Trumpet, while selected
+          Microsoft Rewards Ancient Coin bundles come with the
+          Loquacious Figurehead as a bonus.
+        </p>
+
+        <p>
+          Pirates in eligible regions can even enter a special
+          Microsoft Rewards sweepstakes for a Golden Legends
+          Xbox Series X and controller, along with one year of
+          Xbox Game Pass Premium.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             SECTION:
+             THE MONTH AHEAD
+             ======================================================
+             Calendar of important September Sea of Thieves dates.
+
+             This section uses the .schedule-block style.
+
+             When creating a future issue, replace these dates with
+             that month's events.
+             ====================================================== -->
+
+        <h2>
+          THE MONTH AHEAD
+        </h2>
+
+        <p class="mobile-subtitle">
+          Mark your calendars — September is packed with reasons
+          to set sail
+        </p>
+
+
+        <!-- ======================================================
+             SEPTEMBER EVENT CALENDAR
+             ====================================================== -->
+
+        <div class="schedule-block">
+
+
+          <!-- SEPTEMBER 11 -->
+
+          <p>
+            <strong>SEPT. 11</strong><br>
+            🎵 Weatherbound Releases<br>
+            🏴‍☠️ Bilge Rats Weekender Begins
+          </p>
+
+
+          <!-- SEPTEMBER 17 -->
+
+          <p>
+            <strong>SEPT. 17</strong><br>
+            🌊 Season 21 Sets Sail<br>
+            🏳️ Talk Like a Pirate Day Celebrations Begin
+          </p>
+
+
+          <!-- SEPTEMBER 18 -->
+
+          <p>
+            <strong>SEPT. 18</strong><br>
+            📺 Twitch Drops Begin<br>
+            🛍 Talk Like a Pirate Day Emporium Sale Begins
+          </p>
+
+
+          <!-- SEPTEMBER 19 -->
+
+          <p>
+            <strong>SEPT. 19</strong><br>
+            🦜 Talk Like a Pirate Day
+          </p>
+
+
+          <!-- SEPTEMBER 22 -->
+
+          <p>
+            <strong>SEPT. 22</strong><br>
+            🏳️ Talk Like a Pirate Day Celebrations End
+          </p>
+
+
+          <!-- SEPTEMBER 23 -->
+
+          <p>
+            <strong>SEPT. 23</strong><br>
+            📺 Twitch Drops End
+          </p>
+
+
+          <!-- SEPTEMBER 25 -->
+
+          <p>
+            <strong>SEPT. 25</strong><br>
+            💰 Gold &amp; Glory Weekend Begins
+          </p>
+
+
+          <!-- SEPTEMBER 28 -->
+
+          <p>
+            <strong>SEPT. 28</strong><br>
+            💰 Gold &amp; Glory Weekend Ends
+          </p>
+
+
+          <!-- RECURRING WEEKLY EVENTS -->
+
+          <p>
+            <strong>
+              EVERY TUESDAY — FIGHT NIGHTS •
+              EVERY WEDNESDAY — EMISSARIES OF FORTUNE
+            </strong>
+          </p>
+
+
+        </div>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             RECURRING SECTION:
+             COMMUNITY SPOTLIGHT
+             ======================================================
+
+             This section highlights a Sea of Thieves community
+             creator, project or other community contribution.
+
+             SEPTEMBER SPOTLIGHT:
+             ChloeSaurasCrafts
+
+             For future issues, replace:
+             - Subtitle
+             - Image
+             - Article text
+             ====================================================== -->
+
+        <h2>
+          COMMUNITY SPOTLIGHT
+        </h2>
+
+        <p class="mobile-subtitle">
+          CRAFTING THE SEA OF THIEVES
+        </p>
+
+        <img
+          class="story-image"
+          src="community-spotlight.png"
+          alt="ChloeSaurasCrafts Sea of Thieves creations"
+          loading="lazy"
+        >
+
+        <p>
+          After eight years on Etsy, ChloeSaurasCrafts begins a new
+          chapter with a shop of her own.
+        </p>
+
+        <p>
+          For years, ChloeSaurasCrafts has been a familiar name
+          within the Sea of Thieves community, bringing items from
+          the game into the real world through handmade props,
+          replicas and collectibles.
+        </p>
+
+        <p>
+          But after eight years on Etsy, that chapter has
+          unexpectedly come to an end.
+        </p>
+
+        <p>
+          Chloe recently announced that her Etsy store had been
+          taken down after a Ferryman Flintlock prop was listed on
+          the platform. According to Chloe, the closure came despite
+          eight years of selling through Etsy, hundreds of five-star
+          reviews and no previous cases against her shop.
+        </p>
+
+        <p>
+          It was a frustrating end to a storefront that had built
+          quite the history. Before its removal, Chloe's Etsy shop
+          had accumulated around 2,300 sales and more than 450
+          reviews, with creations ranging from miniature treasure
+          chests to full-size Sea of Thieves weapon props.
+        </p>
+
+        <p>
+          Rather than let that bring her crafting voyage to an end,
+          Chloe has decided to move on from Etsy altogether.
+          ChloeSaurasCrafts now has a shop of its own, where she
+          plans to continue expanding her collection and once again
+          offer life-size weapon props alongside her other
+          creations. Her gallery already showcases an impressive
+          history of Sea of Thieves work, including the Ferryman
+          set, Gilded Phoenix weapons, treasure chests, Eye of Reach
+          replicas and even the Box of Wondrous Secrets.
+        </p>
+
+        <p>
+          For a creator who has spent years turning treasures from
+          the Sea of Thieves into something pirates can actually
+          hold, losing the old storefront may mark the end of one
+          voyage — but certainly not the end of the journey.
+        </p>
+
+
+      </article>
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 4
+           ======================================================== -->
+
+
+
+      <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 5
+           SEPTEMBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Season 21: What to Watch
+           2. Reapers Watch
+           3. Captain's Log
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             STORY:
+             SEASON 21 — WHAT TO WATCH
+             ====================================================== -->
+
+        <h2>
+          SEASON 21: WHAT TO WATCH
+        </h2>
+
+        <p class="mobile-subtitle">
+          The new Season is almost here — but its biggest changes
+          may take time to judge.
+        </p>
+
+        <img
+          class="story-image"
+          src="season-21-what-to-watch.png"
+          alt="Sea of Thieves Season 21"
+          loading="lazy"
+        >
+
+        <p>
+          Season 21 sets sail on September 17, and while new rewards
+          and cosmetics will immediately grab attention, some of the
+          Season's most important changes won't be measured by what
+          appears in the Pirate Log.
+        </p>
+
+        <p>
+          Rare's experiment with removing diving to Voyages, Tall
+          Tales and Raids could fundamentally change how crews move
+          around the world. The idea is simple: if pirates spend
+          more time sailing instead of disappearing beneath the
+          waves, servers may begin to feel more alive. The real test
+          will be whether that creates more unexpected encounters —
+          or simply leaves crews spending more time travelling to
+          the adventures they wanted to play.
+        </p>
+
+        <p>
+          Portal Hopping will be another one to watch. Crews can
+          still travel through the Sea of the Damned to find another
+          server, but losing Emissary Grade in the process should
+          make hopping a much more expensive decision. For Reapers
+          in particular, it could mean threats develop naturally on
+          a server instead of arriving at Grade Five without
+          warning.
+        </p>
+
+        <p>
+          Then there's the world surrounding those experiments.
+          Recurring Live Events are taking a larger role, Outpost
+          stores are receiving more attention and Rare's new
+          approach to cosmetics begins taking shape. Individually,
+          none may transform the game overnight, but together they
+          point toward a Season focused less on adding another
+          enormous feature and more on changing how pirates use the
+          world already around them. By the end of Season 21, the
+          question may not be what Rare added — but whether the Sea
+          of Thieves itself feels more alive.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             RECURRING SECTION:
+             REAPERS WATCH
+             ======================================================
+
+             Reapers Watch is an editorial / analysis section.
+
+             SEPTEMBER TOPIC:
+             DIVIDED OVER DIVING
+
+             This section uses a small Reapers Watch image beside
+             the title.
+
+             For future issues:
+             Keep the REAPERS WATCH branding but replace the
+             subtitle and article content.
+             ====================================================== -->
+
+        <div class="title-with-art">
+
+          <div>
+
+            <h2>
+              REAPERS WATCH
+            </h2>
+
+            <p
+              class="mobile-subtitle"
+              style="margin-bottom: 0 !important;"
+            >
+              DIVIDED OVER DIVING
+            </p>
+
+          </div>
+
+          <img
+            class="title-art"
+            src="reapers-watch.png"
+            alt="Reapers Watch"
+            loading="lazy"
+          >
+
+        </div>
+
+        <p>
+          One of Season 21's biggest experiments is also becoming
+          one of its most debated. When the new Season begins, crews
+          will no longer be able to dive directly to Voyages, Tall
+          Tales or Raid Voyages, forcing pirates to sail across the
+          shared world to reach their destination.
+        </p>
+
+        <p>
+          Rare's goal is to keep ships on servers longer and
+          encourage the unpredictable encounters that have always
+          been at the heart of Sea of Thieves. For some players,
+          that's exactly what Adventure has been missing.
+        </p>
+
+        <p>
+          Diving made reaching an activity faster, but it also
+          allowed ships to disappear from a server almost instantly,
+          potentially cutting short the stories and encounters
+          developing around them.
+        </p>
+
+        <p>
+          Not everyone is convinced. Other pirates argue that
+          removing diving doesn't guarantee more meaningful
+          interactions — it may simply mean longer journeys between
+          activities. A crew interested in completing a particular
+          Voyage may now spend more of its session sailing there
+          rather than actually playing it, and some question whether
+          players who don't want an encounter will suddenly become
+          more willing to stick around for one.
+        </p>
+
+        <p>
+          Reapers are caught directly in the middle of another part
+          of the experiment. Portal Hopping will remain, but crews
+          changing servers through the Sea of the Damned will lose
+          their Emissary Grade. That means a Grade Five Reaper can
+          no longer arrive on another server with its full Grade
+          already established, something Rare hopes will allow
+          threats to develop naturally within each server.
+        </p>
+
+        <p>
+          Both changes are ultimately chasing the same idea: make
+          each server feel like a living world rather than a
+          collection of activities crews jump between.
+        </p>
+
+        <p>
+          Whether removing one of the game's biggest shortcuts
+          accomplishes that — or simply makes the journey longer —
+          is something pirates won't truly know until Season 21
+          sets sail.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             RECURRING SECTION:
+             CAPTAINS LOG
+             ======================================================
+
+             Captain's Log is the personal closing column written
+             by Capitano Statical.
+
+             This should normally appear near the end of every
+             monthly issue.
+
+             Keep the CAPTAINS LOG branding and replace the text
+             with the new month's closing thoughts.
+
+             Image:
+             captains-log.png
+             ====================================================== -->
+
+        <div class="title-with-art">
+
+          <h2>
+            CAPTAINS LOG
+          </h2>
+
+          <img
+            class="title-art"
+            src="captains-log.png"
+            alt="Captain's Log"
+            loading="lazy"
+          >
+
+        </div>
+
+        <p>
+          September is shaping up to be an interesting month for
+          Sea of Thieves.
+        </p>
+
+        <p>
+          Season 21 isn't built around one massive addition, but
+          instead a number of changes that could have a noticeable
+          effect on how the game is played.
+        </p>
+
+        <p>
+          The removal of diving is probably the one I'm most
+          interested to see in practice.
+        </p>
+
+        <p>
+          I understand what Rare is trying to accomplish by keeping
+          crews on servers longer, but whether that actually leads
+          to more player encounters or just more time spent sailing
+          is something we'll have to see for ourselves.
+        </p>
+
+        <p>
+          This was also a bigger issue of The Captains Report than
+          usual.
+        </p>
+
+        <p>
+          There was simply a lot worth covering this month, and I
+          wanted to give some of these stories more room rather than
+          trying to squeeze everything into the usual format.
+        </p>
+
+        <p>
+          I'm especially happy to start highlighting more of the
+          community alongside the regular game news.
+        </p>
+
+        <p>
+          With Season 21 beginning September 17 and October already
+          looking interesting, there should be plenty to talk about
+          in the next issue.
+        </p>
+
+
+        <!-- ======================================================
+             CAPITANO STATICAL SIGN-OFF
+             ====================================================== -->
+
+        <p class="captains-signoff">
+          — Capitano Statical
+        </p>
+
+
+      </article>
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 5
+           ======================================================== -->
+
+
+    <!-- ==========================================================
+         END OF MOBILE DIGITAL EDITION
+         ========================================================== -->
+
+    </div>
+
+
+    <!-- ==========================================================
+         BOTTOM BACK BUTTON
+         ==========================================================
+         Appears after the entire issue so a reader doesn't have
+         to scroll all the way back to the top to return home.
+         ========================================================== -->
+
+    <div
+      class="reader-controls"
+      style="margin-top: 45px;"
+    >
+
+      <a class="back-button" href="#">
+        ← BACK TO HOME
+      </a>
+
+    </div>
+
+
+  <!-- ============================================================
+       END OF SEPTEMBER 2026 LATEST ISSUE READER
+       ============================================================ -->
+
+  </section>
+    <!-- ============================================================
+       HOMEPAGE
+       ============================================================
+
+       This is the main landing page visitors see when they first
+       open The Captains Report.
+
+       CURRENTLY DISPLAYED:
+       September 2026
+       Volume 1 • Issue 3
+
+       IMPORTANT — MONTHLY UPDATE:
+
+       When a new issue becomes the Latest Issue, update:
+
+       1. Month / Year
+       2. Volume / Issue Number
+       3. Cover image
+       4. Main headline
+       5. Short description / deck
+
+       The READ THE ISSUE button points to:
+
+           #issue
+
+       That ID belongs to the Latest Issue reader above.
+
+       ============================================================ -->
+
+  <main class="home">
+
+
+    <!-- ==========================================================
+         LATEST ISSUE LABEL
+         ========================================================== -->
+
+    <p class="label">
+      LATEST ISSUE
+    </p>
+
+
+    <!-- ==========================================================
+         CURRENT ISSUE MONTH / YEAR
+         ========================================================== -->
+
+    <h2 class="issue-date">
+      September 2026
+    </h2>
+
+
+    <!-- ==========================================================
+         CURRENT VOLUME / ISSUE NUMBER
+         ========================================================== -->
+
+    <p class="issue-number">
+      VOLUME 1 • ISSUE 3
+    </p>
+
+
+    <!-- ==========================================================
+         CURRENT ISSUE COVER
+
+         Normally use Page 1 of the newspaper as the cover image.
+
+         CURRENT FILE:
+         september-2026-page-1.png
+         ========================================================== -->
+
+    <img
+      class="cover"
+      src="september-2026-page-1.png"
+      alt="September 2026 cover of The Captains Report"
+    >
+
+
+    <!-- ==========================================================
+         CURRENT ISSUE MAIN HEADLINE
+         ========================================================== -->
+
+    <h3 class="headline">
+      SEASON 21 SETS SAIL
+    </h3>
+
+
+    <!-- ==========================================================
+         CURRENT ISSUE DESCRIPTION / DECK
+         ========================================================== -->
+
+    <p class="deck">
+      Season 21 arrives September 17 with new rewards,
+      recurring events and another major sandbox experiment.
+    </p>
+
+
+    <!-- ==========================================================
+         READ THE ISSUE BUTTON
+
+         href="#issue" opens the current Latest Issue reader.
+
+         IMPORTANT:
+         Keep this connected to the same ID used by the current
+         Latest Issue section.
+         ========================================================== -->
+
+    <a
+      class="read-button"
+      href="#issue"
+    >
+      READ THE ISSUE
+    </a>
+
+
+  </main>
+
+  <!-- ============================================================
+       END OF HOMEPAGE
+       ============================================================ -->
+
+
+
+  <!-- ============================================================
+       ARCHIVE
+       ============================================================
+
+       This section is reserved for PREVIOUS issues of
+       The Captains Report.
+
+       CURRENT STATUS:
+
+       The Archive is currently empty because September 2026 is
+       still being displayed as the Latest Issue.
+
+       OUR NEXT STEP:
+
+       September 2026
+       Volume 1 • Issue 3
+
+       will be moved/preserved here BEFORE October replaces it as
+       the Latest Issue.
+
+       The archived September issue should preserve:
+
+       - September cover
+       - Volume 1 • Issue 3
+       - All five original newspaper pages
+       - Full September mobile edition
+       - Original Edition / Mobile Edition switching
+
+       Then:
+
+       October 2026
+       Volume 1 • Issue 4
+
+       will become the new Latest Issue.
+
+       IMPORTANT:
+
+       Archived issues will need their OWN unique IDs.
+
+       For example:
+
+           Current issue:
+           id="issue"
+
+           September archive:
+           id="september-2026"
+
+       This prevents buttons and JavaScript from accidentally
+       opening the wrong issue.
+
+       ============================================================ -->
+
+
+  <!--
+       id="archive" is the destination used by the ARCHIVE
+       navigation button at the top of the website.
+  -->
+
+  <section
+    class="archive-note"
+    id="archive"
+  >
+
+    <!--
+         ARCHIVE CONTENT WILL GO HERE.
+
+         We are intentionally leaving this empty for the moment.
+
+         NEXT CODING STEP:
+         Build the September 2026 Archive entry here.
+    -->
+
+  </section>
+
+
+  <!-- ============================================================
+       END OF ARCHIVE
+       ============================================================ -->
+
+
+
+  <!-- ============================================================
+       SITE PROMO / ADVERTISEMENT
+       ============================================================
+
+       This is the small advertisement that appears over the
+       website.
+
+       CURRENT IMAGE:
+
+           KINGTHEDEEZ AD.png
+
+       The advertisement is controlled by JavaScript below.
+
+       The X button calls:
+
+           closeSitePromo()
+
+       IMPORTANT:
+       This section is separate from the monthly newspaper.
+
+       It does NOT need to be changed when adding a new issue
+       unless you want to change the advertisement itself.
+
+       ============================================================ -->
+
+  <div
+    class="site-promo show"
+    id="sitePromo"
+  >
+
+
+    <!-- ==========================================================
+         ADVERTISEMENT CLOSE BUTTON
+         ========================================================== -->
+
+    <button
+      class="site-promo-close"
+      type="button"
+      onclick="closeSitePromo()"
+      aria-label="Close advertisement"
+    >
+      ×
+    </button>
+
+
+    <!-- ==========================================================
+         ADVERTISEMENT LABEL
+         ========================================================== -->
+
+    <p class="site-promo-label">
+      ADVERTISEMENT
+    </p>
+
+
+    <!-- ==========================================================
+         ADVERTISEMENT IMAGE
+
+         To replace the advertisement later, either:
+
+         1. Replace KINGTHEDEEZ AD.png with another file using the
+            same filename
+
+         OR
+
+         2. Change the src="" below to the new filename.
+         ========================================================== -->
+
+    <img
+      src="KINGTHEDEEZ AD.png"
+      alt="King The Deez Boosting advertisement"
+      style="
+        width: 100%;
+        height: auto;
+        display: block;
+      "
+    >
+
+
+  </div>
+
+  <!-- ============================================================
+       END OF SITE PROMO / ADVERTISEMENT
+       ============================================================ -->
+
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================
+
+       This is the interactive part of the website.
+
+       CURRENTLY IT CONTROLS:
+
+       1. Advertisement close/show behavior
+
+       2. Mobile Edition ↔ Original Edition switching
+
+
+       IMPORTANT:
+
+       Be careful when changing IDs used by this JavaScript.
+
+       Current important IDs/classes include:
+
+           sitePromo
+           issue
+           original-edition
+
+       If those names are changed in the HTML, the corresponding
+       JavaScript must also be updated.
+
+       ============================================================ -->
+
+  <script>
+
+
+    /* ============================================================
+       ADVERTISEMENT — CLOSE BUTTON
+       ============================================================
+
+       Called when the visitor presses the white X on the ad.
+
+       This removes the "show" class, causing the advertisement
+       to disappear.
+       ============================================================ */
+
+    function closeSitePromo() {
+
+      const promo = document.getElementById("sitePromo");
+
+      if (promo) {
+        promo.classList.remove("show");
+      }
+
     }
-  });
 
-  /* ORIGINAL / MOBILE EDITION SWITCHER */
-  const normalViewport = "width=device-width, initial-scale=1.0";
-  const desktopViewport = "width=1250";
 
-  function setViewport(content) {
-    const viewport = document.querySelector('meta[name="viewport"]');
-    if (viewport) viewport.setAttribute("content", content);
-  }
+    /* ============================================================
+       ADVERTISEMENT — SHOW AFTER PAGE LOAD
+       ============================================================
 
-  function showOriginalEdition() {
-    document.body.classList.add("original-edition");
-    setViewport(desktopViewport);
+       Once the website finishes loading:
 
-    const issue = document.getElementById("issue");
-    if (issue) issue.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+       1. Find the advertisement.
+       2. Wait 1.5 seconds.
+       3. Add the "show" class.
 
-  function showMobileEdition() {
-    setViewport(normalViewport);
-    document.body.classList.remove("original-edition");
+       1500 milliseconds = 1.5 seconds.
 
-    const issue = document.getElementById("issue");
-    if (issue) issue.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-</script>
+       To change the delay later, change:
 
-</body></html>
+           1500
+
+       Example:
+
+           3000 = 3 seconds
+           5000 = 5 seconds
+
+       ============================================================ */
+
+    window.addEventListener("load", function () {
+
+      const promo = document.getElementById("sitePromo");
+
+      if (promo) {
+
+        setTimeout(function () {
+
+          promo.classList.add("show");
+
+        }, 1500);
+
+      }
+
+    });
+
+
+
+    /* ============================================================
+       ORIGINAL EDITION / MOBILE EDITION SWITCHER
+       ============================================================
+
+       Phones normally use the continuous mobile edition.
+
+       If the reader presses:
+
+           VIEW ORIGINAL EDITION
+
+       the website switches to a desktop-width viewport so the
+       actual newspaper pages can be viewed.
+
+       Pressing:
+
+           ← BACK TO MOBILE EDITION
+
+       restores the normal phone layout.
+
+       ============================================================ */
+
+
+    /* ------------------------------------------------------------
+       NORMAL MOBILE VIEWPORT
+
+       Used for the standard responsive website.
+       ------------------------------------------------------------ */
+
+    const normalViewport =
+      "width=device-width, initial-scale=1.0";
+
+
+    /* ------------------------------------------------------------
+       ORIGINAL NEWSPAPER VIEWPORT
+
+       The original newspaper layout was designed around a
+       1250-pixel viewing width.
+
+       When Original Edition is selected on mobile, the viewport
+       changes to this width.
+       ------------------------------------------------------------ */
+
+    const desktopViewport =
+      "width=1250";
+
+
+    /* ============================================================
+       FUNCTION:
+       setViewport()
+
+       Changes the browser's viewport meta tag.
+
+       This helper function is used by both edition-switching
+       functions below.
+       ============================================================ */
+
+    function setViewport(content) {
+
+      const viewport =
+        document.querySelector('meta[name="viewport"]');
+
+      if (viewport) {
+        viewport.setAttribute("content", content);
+      }
+
+    }
+
+
+    /* ============================================================
+       FUNCTION:
+       showOriginalEdition()
+
+       Runs when the reader presses:
+
+           VIEW ORIGINAL EDITION
+
+       WHAT IT DOES:
+
+       1. Adds "original-edition" to the body.
+       2. Changes viewport to desktop/newspaper width.
+       3. Scrolls back to the top of the current issue.
+
+       The CSS from Part 1 sees the "original-edition" class and:
+
+       - hides the mobile edition
+       - displays the five newspaper pages
+       - displays the Back to Mobile Edition button
+
+       ============================================================ */
+
+    function showOriginalEdition() {
+
+      document.body.classList.add("original-edition");
+
+      setViewport(desktopViewport);
+
+
+      /*
+         Find the current Latest Issue.
+      */
+
+      const issue =
+        document.getElementById("issue");
+
+
+      /*
+         Scroll smoothly back to the beginning of the issue.
+      */
+
+      if (issue) {
+
+        issue.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    }
+
+
+    /* ============================================================
+       FUNCTION:
+       showMobileEdition()
+
+       Runs when the reader presses:
+
+           ← BACK TO MOBILE EDITION
+
+       WHAT IT DOES:
+
+       1. Restores the normal responsive viewport.
+       2. Removes the "original-edition" class.
+       3. Scrolls back to the beginning of the current issue.
+
+       ============================================================ */
+
+    function showMobileEdition() {
+
+      setViewport(normalViewport);
+
+      document.body.classList.remove("original-edition");
+
+
+      /*
+         Find the current Latest Issue.
+      */
+
+      const issue =
+        document.getElementById("issue");
+
+
+      /*
+         Scroll smoothly back to the beginning of the issue.
+      */
+
+      if (issue) {
+
+        issue.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    }
+
+
+    /* ============================================================
+       END OF JAVASCRIPT
+       ============================================================ */
+
+  </script>
+
+
+
+  <!-- ============================================================
+       END OF THE CAPTAINS REPORT WEBSITE
+       ============================================================
+
+       MONTHLY UPDATE CHECKLIST:
+
+       BEFORE PUBLISHING A NEW ISSUE:
+
+       [ ] Archive the previous issue
+
+       [ ] Preserve its five original newspaper page images
+
+       [ ] Preserve its mobile/digital edition
+
+       [ ] Change Latest Issue month/year
+
+       [ ] Change Volume / Issue number
+
+       [ ] Replace the five original newspaper page images
+
+       [ ] Replace the mobile stories
+
+       [ ] Update homepage cover
+
+       [ ] Update homepage headline
+
+       [ ] Update homepage description
+
+       [ ] Test HOME button
+
+       [ ] Test LATEST ISSUE button
+
+       [ ] Test ARCHIVE button
+
+       [ ] Test READ THE ISSUE button
+
+       [ ] Test VIEW ORIGINAL EDITION on mobile
+
+       [ ] Test BACK TO MOBILE EDITION
+
+       [ ] Test advertisement close button
+
+       [ ] Test website on desktop
+
+       [ ] Test website on mobile
+
+
+       CURRENT ISSUE BEFORE OCTOBER UPDATE:
+
+       SEPTEMBER 2026
+       VOLUME 1 • ISSUE 3
+
+
+       NEXT ISSUE:
+
+       OCTOBER 2026
+       VOLUME 1 • ISSUE 4
+
+       ============================================================ -->
+
+
+</body>
+
+</html>
+      
