@@ -1207,7 +1207,7 @@
        Do not rename it without updating those other areas.
   -->
 
-  <section class="reader" id="issue">
+  <section class="reader" id="september-2026">
 
 
     <!-- ==========================================================
@@ -1278,7 +1278,7 @@
         <button
           class="original-button"
           type="button"
-          onclick="showMobileEdition()"
+          onclick="showMobileEdition('september-2026')"
         >
           ← BACK TO MOBILE EDITION
         </button>
@@ -1377,7 +1377,7 @@
         <button
           class="original-button"
           type="button"
-          onclick="showOriginalEdition()"
+          onclick="showOriginalEdition('september-2026')"
         >
           VIEW ORIGINAL EDITION
         </button>
@@ -3210,28 +3210,51 @@
        navigation button at the top of the website.
   -->
 
-  <section
-    class="archive-note"
-    id="archive"
+ <section
+  class="archive-note"
+  id="archive"
+>
+
+  <!-- ============================================================
+       SEPTEMBER 2026 ARCHIVE ENTRY
+       VOLUME 1 • ISSUE 3
+       ============================================================ -->
+
+  <p class="label">
+    ARCHIVE
+  </p>
+
+  <h2 class="issue-date">
+    Previous Issues
+  </h2>
+
+  <h3>
+    September 2026
+  </h3>
+
+  <p class="issue-number">
+    VOLUME 1 • ISSUE 3
+  </p>
+
+  <img
+    class="cover"
+    src="september-2026-page-1.png"
+    alt="The Captains Report September 2026"
   >
 
-    <!--
-         ARCHIVE CONTENT WILL GO HERE.
+  <a
+    class="read-button"
+    href="#september-2026"
+  >
+    READ SEPTEMBER 2026
+  </a>
 
-         We are intentionally leaving this empty for the moment.
-
-         NEXT CODING STEP:
-         Build the September 2026 Archive entry here.
-    -->
-
-  </section>
-
-
+</section>
   <!-- ============================================================
        END OF ARCHIVE
        ============================================================ -->
 
-
+</section>
 
   <!-- ============================================================
        SITE PROMO / ADVERTISEMENT
@@ -3502,7 +3525,7 @@
 
        ============================================================ */
 
-    function showOriginalEdition() {
+    function showOriginalEdition(readerId) {
 
       document.body.classList.add("original-edition");
 
@@ -3514,7 +3537,7 @@
       */
 
       const issue =
-        document.getElementById("issue");
+        document.getElementById(readerId);
 
 
       /*
@@ -3549,7 +3572,7 @@
 
        ============================================================ */
 
-    function showMobileEdition() {
+    function showMobileEdition(readerId) {
 
       setViewport(normalViewport);
 
@@ -3561,7 +3584,7 @@
       */
 
       const issue =
-        document.getElementById("issue");
+        document.getElementById(readerId);
 
 
       /*
