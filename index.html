@@ -815,30 +815,7 @@
          newspaper pages become visible.
          ========================================================== */
 
-      .desktop-newspaper.original-mobile-active {
-        display: block;
-      }
-
-      .desktop-newspaper.original-mobile-active
-      .mobile-original-controls {
-        display: block;
-      }
-
-      body.original-edition .reader {
-        padding: 45px 20px 80px;
-      }
-
-      body.original-edition .pages {
-        width: min(100%, 1250px);
-        margin: auto;
-      }
-
-      body.original-edition .newspaper-page {
-        display: block;
-        width: 100%;
-        height: auto;
-        margin: 0 auto 40px;
-      }
+            
 
 
       /* ==========================================================
@@ -882,40 +859,29 @@
     /* ============================================================
        17. ORIGINAL EDITION MODE
        ============================================================
-       JavaScript adds:
-
-           original-edition
-
-       to the <body> when a mobile reader presses:
-
-           VIEW ORIGINAL EDITION
-
-       This hides the continuous mobile version and displays the
-       actual newspaper pages.
-
-       IMPORTANT:
-       Do not rename "original-edition" unless the JavaScript is
-       changed at the same time.
+       Original Edition mode is applied only to the issue being
+       viewed. This prevents archived issues from interfering with
+       the current issue.
        ============================================================ */
 
-    body.original-edition .mobile-newspaper {
+    .reader.original-edition-active .mobile-newspaper {
       display: none !important;
     }
 
-    body.original-edition .desktop-newspaper {
+    .reader.original-edition-active .desktop-newspaper {
       display: block !important;
     }
 
-    body.original-edition .mobile-original-controls {
+    .reader.original-edition-active .mobile-original-controls {
       display: block !important;
     }
 
-    body.original-edition .pages {
+    .reader.original-edition-active .pages {
       width: min(100%, 1250px);
       margin: auto;
     }
 
-    body.original-edition .newspaper-page {
+    .reader.original-edition-active .newspaper-page {
       display: block;
       width: 100%;
       height: auto;
@@ -1180,6 +1146,1710 @@
     </a>
 
   </nav>
+
+<!-- ============================================================
+     LATEST ISSUE READER
+     OCTOBER 2026 — VOLUME 1 • ISSUE 4
+     ============================================================ -->
+
+<section class="reader" id="issue">
+
+  <h2 class="reader-title">
+    October 2026
+  </h2>
+
+  <p class="reader-subtitle">
+    VOLUME 1 • ISSUE 4
+  </p>
+
+  <div class="reader-controls">
+
+    <a class="back-button" href="#">
+      ← BACK TO HOME
+    </a>
+
+  </div>
+  <!-- ==========================================================
+       ORIGINAL EDITION
+       OCTOBER 2026 — FIVE FULL NEWSPAPER PAGES
+       ========================================================== -->
+
+  <div class="desktop-newspaper" id="octoberOriginalEdition">
+
+    <!-- ========================================================
+         MOBILE ORIGINAL-EDITION CONTROL
+         ======================================================== -->
+
+    <div class="mobile-original-controls">
+
+      <button
+        class="original-button"
+        type="button"
+        onclick="showMobileEdition('issue')"
+      >
+        ← BACK TO MOBILE EDITION
+      </button>
+
+    </div>
+
+
+    <!-- ========================================================
+         ORIGINAL NEWSPAPER PAGE IMAGES
+         ======================================================== -->
+
+    <div class="pages">
+
+      <!-- PAGE 1 -->
+      <img
+        class="newspaper-page"
+        src="october-2026-page-1.png"
+        alt="The Captains Report October 2026 Page 1"
+      >
+
+      <!-- PAGE 2 -->
+      <img
+        class="newspaper-page"
+        src="october-2026-page-2.png"
+        alt="The Captains Report October 2026 Page 2"
+        loading="lazy"
+      >
+
+      <!-- PAGE 3 -->
+      <img
+        class="newspaper-page"
+        src="october-2026-page-3.png"
+        alt="The Captains Report October 2026 Page 3"
+        loading="lazy"
+      >
+
+      <!-- PAGE 4 -->
+      <img
+        class="newspaper-page"
+        src="october-2026-page-4.png"
+        alt="The Captains Report October 2026 Page 4"
+        loading="lazy"
+      >
+
+      <!-- PAGE 5 -->
+      <img
+        class="newspaper-page"
+        src="october-2026-page-5.png"
+        alt="The Captains Report October 2026 Page 5"
+        loading="lazy"
+      >
+
+    </div>
+
+  </div>
+    <!-- ==========================================================
+       MOBILE DIGITAL EDITION
+       OCTOBER 2026
+       ========================================================== -->
+
+  <div class="mobile-newspaper" id="octoberMobileEdition">
+
+    <!-- ========================================================
+         MOBILE EDITION INTRODUCTION
+         ======================================================== -->
+
+    <div class="mobile-edition-heading">
+
+      <p>
+        The Captains Report mobile edition — the same monthly
+        report, reformatted for easier reading on smaller screens.
+      </p>
+
+      <button
+        class="original-button"
+        type="button"
+        onclick="showOriginalEdition('issue')"
+      >
+        VIEW ORIGINAL EDITION
+      </button>
+
+    </div>
+    <!-- ========================================================
+         MOBILE EDITION — NEWSPAPER PAGE 1
+         OCTOBER 2026
+         ========================================================
+
+         STORIES ON THIS PAGE:
+
+         1. The Damned Return
+         2. Festival of the Damned
+         3. October At A Glance
+         4. Dress For The Occasion
+         5. Music of the Month
+         6. Twitch Drops
+
+         ======================================================== -->
+
+    <article class="mobile-story">
+
+
+      <!-- ======================================================
+           MONTH LABEL
+           ====================================================== -->
+
+      <p class="mobile-kicker">
+        OCTOBER 2026
+      </p>
+
+
+      <!-- ======================================================
+           PAGE 1 MAIN HEADLINE
+           THE DAMNED RETURN
+           ====================================================== -->
+
+      <h2>
+        THE DAMNED RETURN
+      </h2>
+
+      <p class="mobile-subtitle">
+        Festival of the Damned brings tricks, treats and Soulflame
+        Skeletons to the seas
+      </p>
+
+
+      <!-- ======================================================
+           STORY:
+           FESTIVAL OF THE DAMNED
+           ====================================================== -->
+
+      <h3>
+        FESTIVAL OF THE DAMNED
+      </h3>
+
+      <img
+        class="story-image"
+        src="october-2026-festival-of-the-damned.png"
+        alt="Sea of Thieves Festival of the Damned"
+      >
+
+      <p>
+        Festival of the Damned returns October 27, bringing a week of
+        tricks, treats and new rewards to the Sea of Thieves.
+      </p>
+
+      <p>
+        Pirates joining the event will receive a “Bucket of Confections
+        Emote” and a “Soulflame Mask”, two items that play directly into
+        this year’s festivities.
+      </p>
+
+      <p>
+        While the Bucket of Confections is only available for the duration
+        of the event, the Soulflame Mask will remain in players’
+        collections after the Festival ends.
+      </p>
+
+      <p>
+        Crews can use the new emote to offer Ghoulish Confections to
+        pirates they meet across the seas. Sharing enough treats will
+        reward generous pirates with the ghostly “Spiritfire Makeup.”
+      </p>
+
+      <p>
+        The “Soulflame Mask” also brings a new twist to the Fort of the
+        Damned. Wearing it while visiting an active Fort can summon
+        Soulflame Skeletons, with each one defeated awarding a Doubloon
+        to everyone on the island. Pirates who defeat enough can also
+        unlock the “Candlelight of the Damned” Lantern.
+      </p>
+
+      <p>
+        Festival of the Damned runs October 27 through November 3,
+        immediately following Season 21 Community Weekend and carrying
+        this year’s Halloween celebrations into the opening days of
+        November.
+      </p>
+
+
+      <!-- ======================================================
+           OCTOBER AT A GLANCE
+           ====================================================== -->
+
+      <div class="mobile-info-box">
+
+        <h3>
+          OCTOBER AT A GLANCE
+        </h3>
+
+
+        <!-- OCTOBER 9 -->
+
+        <div class="mobile-info-item">
+
+          <strong>
+            OCTOBER 9th
+          </strong>
+
+          <p>
+            Maiden Voyage (Bard’s Mix) releases
+          </p>
+
+        </div>
+
+
+        <!-- OCTOBER 16–19 -->
+
+        <div class="mobile-info-item">
+
+          <strong>
+            OCTOBER 16th–19th
+          </strong>
+
+          <p>
+            Bilge Rats Weekender and Reaper Fortress Mega Stashes
+          </p>
+
+        </div>
+
+
+        <!-- OCTOBER 22 -->
+
+        <div class="mobile-info-item">
+
+          <strong>
+            OCTOBER 22nd
+          </strong>
+
+          <p>
+            Outfit Saving and Golden Sands
+          </p>
+
+        </div>
+
+
+        <!-- OCTOBER 23–26 -->
+
+        <div class="mobile-info-item">
+
+          <strong>
+            OCTOBER 23rd–26th
+          </strong>
+
+          <p>
+            Season 21 Community Weekend returns with up to 2.5× rewards
+          </p>
+
+        </div>
+
+
+        <!-- OCTOBER 27 – NOVEMBER 3 -->
+
+        <div class="mobile-info-item">
+
+          <strong>
+            OCTOBER 27th–NOVEMBER 3rd
+          </strong>
+
+          <p>
+            Festival of the Damned brings tricks, treats and Soulflame
+            Skeletons
+          </p>
+
+        </div>
+
+
+        <!-- OCTOBER 28 – NOVEMBER 3 -->
+
+        <div class="mobile-info-item">
+
+          <strong>
+            OCTOBER 28th–NOVEMBER 3rd
+          </strong>
+
+          <p>
+            Pirate Emporium Halloween Sale offers discounts of up to 30%
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================================
+           STORY:
+           DRESS FOR THE OCCASION
+           ====================================================== -->
+
+      <h3>
+        DRESS FOR THE OCCASION
+      </h3>
+
+      <p class="mobile-subtitle">
+        Outfit Saving arrives October 22, bringing saved looks and a
+        redesigned wardrobe to Sea of Thieves
+      </p>
+
+      <img
+        class="story-image"
+        src="october-2026-outfit-saving.png"
+        alt="Sea of Thieves Outfit Saving"
+        loading="lazy"
+      >
+
+      <p>
+        Pirates with overflowing wardrobes are finally getting a faster
+        way to switch between their favorite looks. Outfit Saving arrives
+        with the October Game Update on October 22, allowing players to
+        save complete ensembles and return to them without rebuilding an
+        outfit piece by piece.
+      </p>
+
+      <p>
+        Rare offered a closer look at the feature in September's Sea of
+        Thieves News, where Associate UX Director Andrew James explained
+        how the new wardrobe system will work. Players will be able to
+        dress their pirate, save the completed look to a dedicated slot
+        and quickly return to it whenever they want.
+      </p>
+
+      <p>
+        Saved outfits can be named, overwritten or deleted, and space
+        shouldn't be much of a concern. James says the system can support
+        hundreds of saved slots, leaving room for an outfit for just about
+        every occasion.
+      </p>
+
+      <p>
+        Outfit Saving is also bringing a larger change to the pirate
+        wardrobe. Rare is combining the Clothing and Vanity Chests into
+        a single system, allowing pirates to put together their entire
+        appearance without moving between separate locations. The team
+        acknowledges that this will leave plenty of categories inside one
+        chest, but believes the unified wardrobe will ultimately be easier
+        to use.
+      </p>
+            <!-- ======================================================
+           STORY DIVIDER
+           ====================================================== -->
+
+      <div class="story-divider"></div>
+
+
+            <!-- ======================================================
+           STORY:
+           MUSIC OF THE MONTH
+           ====================================================== -->
+
+      <h3>
+        MUSIC OF THE MONTH
+      </h3>
+
+      <img
+        class="story-image"
+        src="october-2026-maiden-voyage-bards-mix.png"
+        alt="Sea of Thieves Maiden Voyage Bard's Mix"
+        loading="lazy"
+      >
+
+      <p>
+        A familiar Sea of Thieves melody is getting a medieval makeover
+        this month with the release of “Maiden Voyage (Bard’s Mix).”
+      </p>
+
+      <p>
+        The new arrangement reimagines the classic Maiden Voyage theme
+        in the Bard’s Mix style, offering a different take on one of the
+        game’s most recognizable pieces of music. “Maiden Voyage
+        (Bard’s Mix)” releases October 9 across the usual music streaming
+        platforms, giving pirates another track from the Sea of Thieves
+        soundtrack to enjoy beyond the seas.
+      </p>
+
+
+      <!-- ======================================================
+           STORY DIVIDER
+           ====================================================== -->
+
+      <div class="story-divider"></div>
+
+
+      <!-- ======================================================
+           STORY:
+           TWITCH DROPS
+           ====================================================== -->
+
+      <h3>
+        TWITCH DROPS
+      </h3>
+
+      <p class="mobile-subtitle">
+        NEW REWARDS ARRIVE OCTOBER 23–26
+      </p>
+
+      <img
+        class="story-image"
+        src="october-2026-twitch-drops.png"
+        alt="Sea of Thieves October 2026 Twitch Drops"
+        loading="lazy"
+      >
+
+      <p>
+        Community Weekend brings another round of Twitch Drops from
+        October 23–26, with five rewards available simply by tuning in
+        to participating Sea of Thieves streams.
+      </p>
+
+      <p>
+        Pirates can earn the “Stalwart Sea Dog Bucket”, along with the
+        “Gilded Phoenix Wheel, Cannons and Capstan”. The final reward is
+        the “Bat Cutout Emote”, an exclusive new emote arriving just in
+        time for Halloween.
+      </p>
+
+      <p>
+        Unlike some previous campaigns, viewers won’t need to stick to
+        Partners — any participating Sea of Thieves streamer can help
+        viewers progress toward the Drops during the event.
+      </p>
+
+    </article>
+      <!-- ========================================================
+         END OF MOBILE NEWSPAPER PAGE 1
+         ======================================================== -->
+      <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 2
+           OCTOBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Golden Sands in October
+           2. Shanties for Sale
+           3. Honey, I Shrunk the Game
+           4. Still Talking Like a Pirate?
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             STORY:
+             GOLDEN SANDS IN OCTOBER
+             ====================================================== -->
+
+        <h2>
+          GOLDEN SANDS IN OCTOBER
+        </h2>
+
+        <p class="mobile-subtitle">
+          Last month’s Legendary Location winner is ready to make its
+          return to Custom Seas
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-golden-sands.png"
+          alt="Sea of Thieves Golden Sands Outpost"
+          loading="lazy"
+        >
+
+        <p>
+          Last month, Golden Sands Outpost won the community’s Legendary
+          Location vote by a landslide, earning its place as the next classic
+          location to be restored for Custom Seas. At the time, Rare couldn’t
+          say exactly when pirates would be able to return. Now, the wait is
+          over.
+        </p>
+
+        <p>
+          The original Golden Sands Outpost will return on October 22 as part
+          of this month’s game update, giving players the chance to visit the
+          island as it existed before the events that eventually transformed
+          it into Port Merrick.
+        </p>
+
+        <p>
+          Unlike the modern version found across today’s Adventure servers,
+          this Legendary Location recreates the original Golden Sands,
+          bringing back the familiar Outpost that served pirates for years
+          before Flameheart’s forces left it shrouded and abandoned.
+        </p>
+
+        <p>
+          Its return also marks the first payoff from September’s community
+          vote. Rare previously explained that restoring a Legendary Location
+          involves more than simply pulling an old version from the archives.
+          Each location must be rebuilt, prepared for Custom Seas and tested
+          before crews can return.
+        </p>
+
+        <p>
+          Golden Sands is only the beginning. Old Boot Fort and Lost Sands,
+          which finished second and third in the vote, are still planned to
+          follow, with Rare restoring the locations in the order chosen by the
+          community. After years of change and a month of waiting for the
+          winning location to be ready, the original Golden Sands is finally
+          about to welcome pirates back.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             SHANTIES FOR SALE
+             ====================================================== -->
+
+        <h3>
+          🎶 SHANTIES FOR SALE 🎶
+        </h3>
+
+        <p class="mobile-subtitle">
+          Rare reveals paid Pirate Emporium music and plans for fairer
+          bundle pricing
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-shanties-for-sale.png"
+          alt="Sea of Thieves Pirate Emporium Shanties"
+          loading="lazy"
+        >
+
+        <p>
+          Last month, Rare outlined a new direction for the Pirate Emporium,
+          with a greater focus on collaborations, seasonal releases and
+          cosmetics inspired by the studio’s back catalogue. Now, the team has
+          revealed another part of that strategy — shanties purchasable with
+          Ancient Coins.
+        </p>
+
+        <p>
+          Speaking in October’s Developer Update, Production Director Drew
+          Stevens revealed that Rare is working on festive shanties for the
+          Emporium, with the first planned to arrive later this year. “Jingle
+          Bells” was shown as an example, bringing a familiar real-world tune
+          to the instruments of the Sea of Thieves.
+        </p>
+
+        <p>
+          Pirates won’t need an entire crew to purchase the music either. Only
+          one pirate needs to own an Emporium shanty for the rest of the crew
+          to join in and play along. Rare says paid shanties won’t follow a
+          strict schedule and also intends to avoid selling melodies with
+          important ties to Sea of Thieves’ lore, keeping story-important
+          music separate from paid offerings.
+        </p>
+
+        <p>
+          The Emporium is also getting another change aimed at players’
+          wallets. Rare has begun work on fairer bundle pricing for pirates
+          who already own some of the items included in a bundle. Under the
+          planned system, the price would be recalculated to account for those
+          owned items rather than charging the normal bundle price regardless
+          of what is already in a player’s collection.
+        </p>
+
+        <p>
+          The change is still in its early stages and will head to Insiders
+          for testing before reaching the live game. Rare says the issue has
+          become increasingly important as older Emporium cosmetics appear
+          elsewhere, including in Season Passes, leaving some players with
+          only part of a bundle left to collect.
+        </p>
+
+        <p>
+          Together, the two announcements offer the latest look at an Emporium
+          strategy that Rare only began outlining last month: new kinds of
+          premium content on one side, and a fairer way to purchase it on the
+          other.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             HONEY, I SHRUNK THE GAME
+             ====================================================== -->
+
+        <h3>
+          HONEY, I SHRUNK THE GAME
+        </h3>
+
+        <p class="mobile-subtitle">
+          Rare plans major cuts to Sea of Thieves’ install size
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-install-size.png"
+          alt="Sea of Thieves install size reduction"
+          loading="lazy"
+        >
+
+        <p>
+          After eight years of updates, Sea of Thieves has gotten big —
+          literally. Rare is now working on a major overhaul aimed at
+          dramatically reducing the amount of storage the game takes up across
+          PC and consoles.
+        </p>
+
+        <p>
+          Production Director Drew Stevens detailed the work in October’s
+          Developer Update, revealing that Rare is targeting at least a 50%
+          reduction for 4K installations on PC and Xbox Series X. Non-4K
+          installations are expected to shrink by around 30%, with a similar
+          30% reduction targeted for PlayStation 5.
+        </p>
+
+        <p>
+          There is one catch. Moving to the new package format will require
+          players to redownload the entire game once when the change eventually
+          goes live. Rare says the inconvenience should pay off afterward,
+          with not only a much smaller overall installation but smaller monthly
+          game updates moving forward.
+        </p>
+
+        <p>
+          The work isn’t ready for the live seas just yet. Rare plans to roll
+          the new packaging out to Insiders first, where the team can test the
+          changes before bringing them to everyone else. No release date has
+          been announced.
+        </p>
+
+        <p>
+          For a game that has spent eight years getting bigger, Sea of Thieves
+          may finally be getting a little lighter!
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             STILL TALKING LIKE A PIRATE?
+             ====================================================== -->
+
+        <h3>
+          STILL TALKING LIKE A PIRATE?
+        </h3>
+
+        <p class="mobile-subtitle">
+          September’s celebration is over, but some rewards are still available
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-talk-like-a-pirate.png"
+          alt="Sea of Thieves Talk Like a Pirate Day rewards"
+          loading="lazy"
+        >
+
+        <p>
+          Talk Like a Pirate Day may have sailed by on September 19, but one
+          piece of the celebration is sticking around throughout October.
+        </p>
+
+        <p>
+          Eligible Game Pass subscribers can still claim the Vociferous
+          Speaking Trumpet through October 31, giving pirates a little more
+          time to pick up the commemorative cosmetic.
+        </p>
+
+        <p>
+          The Parley Pennant introduced alongside Season 21 isn’t disappearing
+          either. While the special challenge that asked three crews to raise
+          the flag together has ended, the Pennant itself remains a permanent
+          addition to the Flag Box, allowing crews to continue flying the new
+          symbol of peaceful intentions.
+        </p>
+
+        <p>
+          Pirates using Microsoft Rewards can also find the Loquacious
+          Figurehead included with updated Ancient Coin reward bundles, another
+          leftover from September’s Talk Like a Pirate Day celebrations.
+        </p>
+
+
+      </article>
+
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 2
+           ======================================================== -->
+        <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 3
+           OCTOBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Tavern Rumors — Halloween Treats
+           2. Tavern Rumors — Gears of War Again?
+           3. Weekday Warriors
+           4. Community Weekend At A Glance
+           5. All Hands On Deck
+           6. Rats Are Back In Business
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             SECTION:
+             TAVERN RUMORS
+             ====================================================== -->
+
+        <h2>
+          TAVERN RUMORS
+        </h2>
+
+
+        <!-- ======================================================
+             RUMOR:
+             HALLOWEEN TREATS - CONFIRMED
+             ====================================================== -->
+
+        <h3>
+          HALLOWEEN TREATS - CONFIRMED
+        </h3>
+
+        <img
+          class="story-image"
+          src="october-2026-tavern-rumors-halloween-treats.png"
+          alt="Sea of Thieves Festival of the Damned Ghoulish Confections"
+          loading="lazy"
+        >
+
+        <p>
+          Last month, The Captain’s Report spotted signs that something sweet
+          was brewing for this year’s Halloween celebrations. Images of a
+          mysterious confection had surfaced ahead of the event, leading us
+          to predict that pirates might soon be collecting — or sharing —
+          candy on the seas.
+        </p>
+
+        <p>
+          That rumor can officially be put to rest. Festival of the Damned
+          will introduce Ghoulish Confections, handed out using the new
+          “Bucket of Confections” Emote. Pirates are encouraged to offer the
+          treats to other crews, with those generous enough to share earning
+          the Spiritfire Makeup.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             RUMOR:
+             GEARS OF WAR AGAIN?
+             ====================================================== -->
+
+        <h3>
+          GEARS OF WAR AGAIN?
+        </h3>
+
+        <img
+          class="story-image"
+          src="october-2026-tavern-rumors-gears-of-war.png"
+          alt="Sea of Thieves rumored Gears of War sail"
+          loading="lazy"
+        >
+
+        <p>
+          With Gears of War: E-Day arriving this October, another familiar
+          symbol may be preparing to surface on the Sea of Thieves. Images
+          circulating among pirates appear to show a new red sail bearing the
+          unmistakable Crimson Omen, raising questions about whether another
+          Gears collaboration could be on the horizon.
+        </p>
+
+        <p class="status-line">
+          STATUS: UNCONFIRMED
+        </p>
+
+        <p class="status-line">
+          REPORT VERDICT: LIKELY
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             WEEKDAY WARRIORS
+             ====================================================== -->
+
+        <h3>
+          WEEKDAY WARRIORS
+        </h3>
+
+        <img
+          class="story-image"
+          src="midweek-mayhem.png"
+          alt="Sea of Thieves Weekday Warriors Live Events"
+          loading="lazy"
+        >
+
+        <p>
+          Pirates still have two reasons to set sail during the week, with
+          recurring Live Events taking over Tuesdays and Wednesdays.
+        </p>
+
+
+        <!-- ======================================================
+             FIGHT NIGHTS
+             ====================================================== -->
+
+        <div class="schedule-block">
+
+          <p>
+            <strong>FIGHT NIGHTS — EVERY TUESDAY</strong>
+          </p>
+
+          <p>
+            Pledge to the Guardians of Fortune or Servants of the Flame and
+            take to the Hourglass for 24 hours of increased Allegiance and
+            gold from Faction Battles.
+          </p>
+
+
+          <!-- ====================================================
+               EMISSARIES OF FORTUNE
+               ==================================================== -->
+
+          <p>
+            <strong>EMISSARIES OF FORTUNE — EVERY WEDNESDAY</strong>
+          </p>
+
+          <p>
+            Raise an Emissary Flag and climb the Grades to earn boosted
+            rewards, regardless of which Trading Company you represent.
+          </p>
+
+        </div>
+
+        <p>
+          Both events begin at 10am UTC and run for 24 hours, giving pirates
+          back-to-back days to chase extra rewards.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             COMMUNITY WEEKEND AT A GLANCE
+             ====================================================== -->
+
+        <div class="mobile-info-box">
+
+          <h3>
+            COMMUNITY WEEKEND AT A GLANCE:
+          </h3>
+
+          <div class="mobile-info-item">
+            <strong>
+              • UP TO 2.5× REWARDS
+            </strong>
+          </div>
+
+          <div class="mobile-info-item">
+            <strong>
+              • POP-UP PLUNDER RETURNS
+            </strong>
+          </div>
+
+          <div class="mobile-info-item">
+            <strong>
+              • PICTURE WALLS RETURN
+            </strong>
+          </div>
+
+          <div class="mobile-info-item">
+            <strong>
+              • VOYAGE OF WILD LUCK
+            </strong>
+          </div>
+
+          <div class="mobile-info-item">
+            <strong>
+              • POCKET PUMPKIN EMOTE
+            </strong>
+          </div>
+
+        </div>
+
+
+        <!-- ======================================================
+             STORY:
+             ALL HANDS ON DECK
+             ====================================================== -->
+
+        <h3>
+          ALL HANDS ON DECK
+        </h3>
+
+        <p class="mobile-subtitle">
+          Season 21 Community Weekend brings boosted rewards, Pop-Up Plunder
+          and Halloween tricks to the seas!
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-community-weekend.png"
+          alt="Sea of Thieves Season 21 Community Weekend"
+          loading="lazy"
+        >
+
+        <p>
+          Throughout the weekend, pirates can help raise the Community
+          Emissary Grade by watching participating Sea of Thieves streamers
+          on Twitch. As the community climbs through the Grades, rewards
+          increase for everyone, reaching 2.5× the usual rewards at Grade 5.
+        </p>
+
+        <p>
+          Pop-Up Plunder and Picture Walls will also make their return,
+          sending crews in search of hidden treasure and giving pirates
+          another chance to pose together across the seas. A new Picture Wall
+          at Golden Sands joins the lineup this time, arriving just as the
+          classic Outpost makes its return to Custom Seas.
+        </p>
+
+        <p>
+          Simply setting sail during the event will also earn pirates the
+          Season 21 Community Weekend Flag and a Voyage of Wild Luck.
+        </p>
+
+        <p>
+          There’s a Halloween twist too. Special Community Goals will
+          challenge crews to take maps from the Quest Board and complete them
+          together. If enough maps are completed across the community,
+          pirates can earn the seasonal Pocket Pumpkin Emote.
+        </p>
+
+        <p>
+          With bigger rewards, buried treasure and community-wide challenges
+          waiting on the horizon, there will be plenty of reasons for all
+          hands to be on deck this Community Weekend.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             RATS ARE BACK IN BUSINESS
+             ====================================================== -->
+
+        <h3>
+          RATS ARE BACK IN BUSINESS
+        </h3>
+
+        <p class="mobile-subtitle">
+          Bilge Rats Weekender brings Smuggler Voyages, Reaper Fortress Mega
+          Stashes and a higher chance at the Chest of Fortune
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-bilge-rats-weekender.png"
+          alt="Sea of Thieves Bilge Rats Weekender"
+          loading="lazy"
+        >
+
+        <p>
+          The Bilge Rats are back at it from October 16th–19th, bringing a
+          weekend of limited-time activities, treasure and trouble to the Sea
+          of Thieves. Crews can take on special Smuggler Voyages, put on
+          Firework Displays and complete event Challenges to earn extra
+          Doubloons along the way.
+        </p>
+
+        <p>
+          The biggest prize, however, may be waiting inside a Reaper Fortress.
+          Mega Stashes return for the Weekender, giving pirates a chance to
+          find a treasure-packed Vault after completing the World Event.
+          Particularly lucky crews may even discover a Chest of Fortune among
+          the spoils.
+        </p>
+
+        <p>
+          Even if fortune isn’t on your side, taking down a Reaper Fortress
+          won’t leave you empty-handed. Completing one during the Weekender
+          will award Doubloons regardless of which stash is waiting inside,
+          giving every crew a reason to take on the Fortress.
+        </p>
+
+        <p>
+          With Smuggler Voyages to complete, fireworks to light and Mega
+          Stashes waiting to be cracked open, the Bilge Rats are officially
+          back in business.
+        </p>
+
+
+      </article>
+
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 3
+           ======================================================== -->
+        <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 4
+           OCTOBER 2026
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Big Ships, Big Problems
+           2. Did Size Really Matter?
+           3. Tricks, Treats & 30% Off
+           4. Smoothing Out The Seas
+           5. Community Spotlight
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             STORY:
+             BIG SHIPS, BIG PROBLEMS
+             ====================================================== -->
+
+        <h2>
+          BIG SHIPS, BIG PROBLEMS
+        </h2>
+
+        <p class="mobile-subtitle">
+          Last Ship Standing shelves Galleons as Rare prepares six-Brigantine
+          testing
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-last-ship-standing.png"
+          alt="Sea of Thieves Last Ship Standing"
+          loading="lazy"
+        >
+
+        <p>
+          Rare’s plans to bring Galleons into Last Ship Standing have hit
+          rough waters. After testing battles featuring six Galleons and 24
+          pirates through the Insider Programme, the team found that server
+          performance wasn’t stable enough to deliver the experience they
+          wanted.
+        </p>
+
+        <p>
+          Reducing the battle to four Galleons and 16 pirates was considered,
+          but that created another problem. With fewer ships on the
+          battlefield, Rare felt the mode would lose too much of the chaotic
+          multi-ship combat that Last Ship Standing was designed around.
+        </p>
+
+        <p>
+          Rather than compromise the experience, Galleon testing has been put
+          on hold. Rare is instead preparing to test matches featuring six
+          Brigantines, keeping six crews in the fight while reducing the
+          strain caused by the much larger Galleons.
+        </p>
+
+        <p>
+          The change doesn’t necessarily mean Galleons are gone for good, but
+          for now Last Ship Standing’s biggest ships will have to remain on
+          the sidelines while Brigantines prepare to enter the battle.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             DID SIZE REALLY MATTER?
+             ====================================================== -->
+
+        <h3>
+          DID SIZE REALLY MATTER?
+        </h3>
+
+        <p class="mobile-subtitle">
+          Rare shares the results of their Big Ship, Little Ship matchmaking
+          experiment
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-big-ship-little-ship.png"
+          alt="Sea of Thieves Big Ship Little Ship matchmaking experiment"
+          loading="lazy"
+        >
+
+        <p>
+          After experimenting with separating ships by size earlier this year,
+          Rare has shared what it learned from Big Ship, Little Ship — and the
+          results weren’t quite as simple as bigger ships versus smaller ones.
+        </p>
+
+        <p>
+          During the experiment, Sloop crews took part in more high-risk
+          activities, suggesting that smaller crews may have felt more
+          confident taking chances when they knew other Sloops would make up
+          more of the seas around them. At the same time, however,
+          Sloop-versus-Sloop encounters actually decreased.
+        </p>
+
+        <p>
+          Rare also found that both versions of the experimental servers
+          remained populated for longer, although the team couldn’t identify
+          a single reason for the change. Community sentiment improved as the
+          experiment continued too, despite reactions remaining mixed overall.
+        </p>
+
+        <p>
+          So, did size really matter? Apparently — but not enough to declare
+          the experiment a complete success. Rare described the results as
+          “not a home run” and isn’t rushing to bring Big Ship, Little Ship
+          back in its current form.
+        </p>
+
+        <p>
+          The experiment may be over for now, but some of what Rare learned
+          could still influence how crews are matched across the seas in the
+          future.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             TRICKS, TREATS & 30% OFF
+             ====================================================== -->
+
+        <h3>
+          TRICKS, TREATS &amp; 30% OFF
+        </h3>
+
+        <p class="mobile-subtitle">
+          The Pirate Emporium celebrates Halloween with discounts of up to 30%
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-halloween-emporium-sale.png"
+          alt="Sea of Thieves Pirate Emporium Halloween Sale"
+          loading="lazy"
+        >
+
+        <p>
+          Halloween is creeping into the Pirate Emporium with a seasonal sale
+          running from October 28th through November 3rd, giving pirates a
+          chance to pick up some appropriately frightening cosmetics at a
+          discount.
+        </p>
+
+        <p>
+          Throughout the sale, selected items will be discounted by up to 30%,
+          with three spooky collections taking center stage: Jack O’ Looter,
+          Crimson Crypt and Graveyard Gladiator.
+        </p>
+
+        <p>
+          The Jack O’ Looter Collection brings its pumpkin-headed style back
+          to the Emporium, while the Crimson Crypt Collection offers a darker,
+          vampiric look for pirates wanting to embrace the night. The
+          Graveyard Gladiator Collection rounds out the featured lineup with
+          its battle-worn, undead-inspired appearance.
+        </p>
+
+        <p>
+          With Festival of the Damned beginning just one day earlier, the sale
+          arrives at the perfect time for crews looking to dress for the
+          occasion — whether that means pumpkins, vampires or something that
+          looks like it just crawled out of a grave.
+        </p>
+
+        <p>
+          The sale disappears alongside the Festival on November 3rd, so
+          pirates looking to give their wardrobe a Halloween makeover will
+          only have a limited time to take advantage of the discounts.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             STORY:
+             SMOOTHING OUT THE SEAS
+             ====================================================== -->
+
+        <h3>
+          SMOOTHING OUT THE SEAS
+        </h3>
+
+        <p class="mobile-subtitle">
+          Rare continues its game health work with new PC protections and more
+          control over how pirates aim
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-game-health.png"
+          alt="Sea of Thieves game health and PC settings"
+          loading="lazy"
+        >
+
+        <p>
+          Rare’s ongoing push to improve the health of Sea of Thieves
+          continues this month, with the team turning its attention toward PC
+          security, mouse controls and aiming options.
+        </p>
+
+        <p>
+          September introduced new protections designed to prevent players
+          from modifying certain game files on PC, part of Rare’s continuing
+          efforts to maintain a fair playing field. October builds on that
+          work with a new option allowing PC players to disable mouse
+          smoothing, giving those who prefer more direct mouse movement
+          greater control over their aim.
+        </p>
+
+        <p>
+          Rare is also looking beyond this month’s update. The team says it
+          wants to explore more officially supported options for aiming
+          sensitivities and controls, giving players greater flexibility
+          without forcing them to rely on unsupported changes.
+        </p>
+
+        <p>
+          There is a limit to that flexibility, however. Rare drew a
+          distinction between settings that improve how players control and
+          experience the game and changes that could provide a tactical
+          advantage, such as removing visual effects intended to affect
+          players during combat.
+        </p>
+
+        <p>
+          The goal is to give pirates more control over how the game feels to
+          play while keeping the seas fair for everyone sharing them.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+       <!-- ======================================================
+     RECURRING SECTION:
+     COMMUNITY SPOTLIGHT
+     ====================================================== -->
+
+<div class="title-with-art">
+
+  <div>
+
+    <h2>
+      COMMUNITY SPOTLIGHT
+    </h2>
+
+    <p
+      class="mobile-subtitle"
+      style="margin-bottom: 0 !important;"
+    >
+      QUESTS BEYOND THE GAME
+    </p>
+
+  </div>
+
+  <img
+    class="title-art"
+    src="community-spotlight-branding.png"
+    alt="Community Spotlight"
+    loading="lazy"
+  >
+
+</div>
+
+        <p>
+          This month’s Community Spotlight goes to AshTheRaider, creator of
+          SoT Quest Board. While looking around at some of the projects being
+          made by the Sea of Thieves community, I came across the Quest Board
+          and thought it was a really interesting project worth sharing with
+          other pirates.
+        </p>
+
+        <p>
+          SoT Quest Board is an unofficial fan-made project designed to give
+          pirates new challenges to tackle on the seas. Rather than deciding
+          what to do next, crews can use the Quest Board to generate
+          challenges and turn an ordinary session into something a little more
+          unpredictable.
+        </p>
+
+        <p>
+          Built using Godot and Krita, the project is still being developed
+          and has already expanded with new features and improvements. Ash has
+          also opened the project to ideas from fellow pirates, allowing
+          community members to submit their own challenges for consideration
+          — making SoT Quest Board a project shaped not only for the
+          community, but with it.
+        </p>
+
+        <p>
+          <strong>VISIT:</strong>
+          AshTheRaider on itch.io — SoT Quest Board
+          (https://ashtheraider.itch.io/sot-quest-board)
+        </p>
+
+
+      </article>
+
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 4
+           ======================================================== -->
+        <!-- ========================================================
+           MOBILE EDITION — NEWSPAPER PAGE 5
+           OCTOBER 2026
+           FINAL PAGE
+           ========================================================
+
+           STORIES ON THIS PAGE:
+
+           1. Sail Design Competition
+           2. Reapers Watch — Changing Tides at Rare
+           3. Captains Log
+
+           ======================================================== -->
+
+      <article class="mobile-story">
+
+
+        <!-- ======================================================
+             STORY:
+             SAIL DESIGN COMPETITION
+             ====================================================== -->
+
+        <h2>
+          SAIL DESIGN COMPETITION
+        </h2>
+
+        <p class="mobile-subtitle">
+          Sea of Thieves invites community artists to design a sail for the seas
+        </p>
+
+        <img
+          class="story-image"
+          src="october-2026-sail-design-competition.png"
+          alt="Sea of Thieves Sail Design Competition"
+          loading="lazy"
+        >
+
+        <p>
+          Pirates with an eye for design have a chance to leave their own mark
+          on the Sea of Thieves this month, with the Sail Design Competition
+          inviting members of the community to create a sail design of their
+          own.
+        </p>
+
+        <p>
+          The competition continues through Friday, October 23rd, giving
+          artists time to put together a design and submit their entry for
+          consideration. It’s another opportunity for the creativity of the
+          Sea of Thieves community to take center stage, this time with one of
+          the most recognizable parts of any ship as the canvas.
+        </p>
+
+        <p>
+          Over the years, sails have become an easy way for crews to show some
+          personality on the horizon, whether through elaborate artwork,
+          familiar symbols or a design that simply looks intimidating from a
+          distance. This competition puts that creativity directly into the
+          hands of the community and gives artists the chance to imagine what
+          they would want pirates to see approaching across the waves.
+        </p>
+
+        <p>
+          With entries open for only part of October, anyone planning to take
+          part will need to have their design ready before the October 23rd
+          deadline.
+        </p>
+
+
+        <!-- ======================================================
+             HOW TO ENTER
+             ====================================================== -->
+
+        <div class="mobile-info-box">
+
+          <h3>
+            HOW TO ENTER
+          </h3>
+
+          <p>
+            Create your own original sail design using Rare’s official
+            template, or draw your own version showing all seven sails of a
+            Galleon. Then post your design on X, Bluesky, Instagram, TikTok or
+            Threads using #SoTSailDesignComp, or submit it to the
+            #sot-sail-design-comp channel in the official Sea of Thieves
+            Discord. Entries close October 23rd at 23:59 UTC.
+          </p>
+
+          <p>
+            <strong>
+              *Generative AI cannot be used to create or modify an entry*
+            </strong>
+          </p>
+
+        </div>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+        <!-- ======================================================
+             SECTION:
+             REAPERS WATCH
+             ====================================================== -->
+
+        <div class="title-with-art">
+
+  <div>
+
+    <h2>
+      REAPERS WATCH
+    </h2>
+
+    <p
+      class="mobile-subtitle"
+      style="margin-bottom: 0 !important;"
+    >
+      CHANGING TIDES AT RARE
+    </p>
+
+  </div>
+
+  <img
+    class="title-art"
+    src="reapers-watch.png"
+    alt="Reapers Watch"
+    loading="lazy"
+  >
+
+</div>
+
+        <p>
+          October’s Developer Update opened on a more serious note than usual.
+          Before getting into the latest Sea of Thieves news, Production
+          Director Drew Stevens briefly addressed what he described as a
+          difficult period of change at Rare.
+        </p>
+
+        <p>
+          Those comments arrive during a much larger shake-up across Xbox.
+          Recent restructuring has included another round of job cuts across
+          Microsoft’s gaming division, while Rare itself has been moved under
+          the oversight of Activision alongside World’s Edge. Activision’s
+          role within Xbox has also expanded further, including responsibility
+          for a new team developing the next Halo title.
+        </p>
+
+        <p>
+          For Rare, that naturally raises questions. The studio has spent years
+          operating as one of Xbox’s most recognizable first-party developers,
+          and a move under Activision represents a significant change in where
+          it sits within Microsoft’s gaming organization.
+        </p>
+
+        <p>
+          What it means for Sea of Thieves, however, is much less clear.
+        </p>
+
+        <p>
+          There’s already plenty of speculation about whether Activision’s
+          involvement could eventually affect Rare’s games, development
+          structure or long-term direction. But at least for now, there has
+          been no announcement that Activision is taking over development of
+          Sea of Thieves, and Drew did not use the Developer Update to suggest
+          that the game’s plans were changing.
+        </p>
+
+        <p>
+          That’s an important distinction. The restructuring itself is real;
+          predictions about what it ultimately means for Sea of Thieves are
+          still just that — predictions.
+        </p>
+
+        <p>
+          For now, Rare continues moving ahead with Season 21 and its upcoming
+          updates. But after layoffs, restructuring and a new place for the
+          studio beneath Activision, there is understandably more attention
+          than usual on what comes next.
+        </p>
+
+        <p>
+          The seas may look familiar, but behind them, Rare is entering a very
+          different chapter.
+        </p>
+
+
+        <!-- ======================================================
+             STORY DIVIDER
+             ====================================================== -->
+
+        <div class="story-divider"></div>
+
+
+                <!-- ======================================================
+             RECURRING SECTION:
+             CAPTAINS LOG
+             ======================================================
+
+             Captain's Log is the personal closing column written
+             by Capitano Statical.
+
+             Keep the CAPTAINS LOG branding and replace the text
+             with the new month's closing thoughts.
+
+             Image:
+             captains-log.png
+             ====================================================== -->
+
+        <div class="title-with-art">
+
+          <h2>
+            CAPTAINS LOG
+          </h2>
+
+          <img
+            class="title-art"
+            src="captains-log.png"
+            alt="Captain's Log"
+            loading="lazy"
+          >
+
+        </div>
+
+        <p>
+          October ended up being an even busier month for Sea of Thieves than
+          I expected.
+        </p>
+
+        <p>
+          Between the return of Festival of the Damned, Community Weekend, the
+          Bilge Rats Weekender, Golden Sands returning to Custom Seas and
+          Outfit Saving finally arriving, there was a lot to cover this month
+          — and that was before getting into everything Rare discussed about
+          the future of the game.
+        </p>
+
+        <p>
+          This issue also gave me another chance to highlight more of the
+          community. I really enjoyed finding SoT Quest Board and being able to
+          share something I thought was interesting with other pirates, rather
+          than only focusing on official game news.
+        </p>
+
+        <p>
+          I’m especially interested to see how some of this month’s changes
+          actually play out. Outfit Saving is something pirates have wanted
+          for a long time, while the return of Golden Sands gives us another
+          piece of the game’s past to revisit. I’m also curious to see where
+          Rare takes Last Ship Standing after moving away from Galleons and
+          toward testing Brigantines.
+        </p>
+
+        <p>
+          Behind all of that, there are clearly changes happening at Rare as
+          well. I covered those separately in Reapers Watch, and for now I
+          think it’s better to see where things go rather than speculate about
+          what hasn’t been announced.
+        </p>
+
+        <p>
+          For now, though, October has plenty to keep us busy. There are
+          Fortresses to raid, pumpkins to collect, festivals to celebrate and
+          probably more than a few surprises still waiting beyond the horizon.
+        </p>
+
+        <p>
+          I’ll see you on the seas — and in the next issue.
+        </p>
+
+        <p class="captains-signoff">
+          — Capitano Statical
+        </p>
+
+
+      </article>
+
+
+      <!-- ========================================================
+           END OF MOBILE NEWSPAPER PAGE 5
+           END OF OCTOBER 2026 MOBILE EDITION
+           ======================================================== -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     END OF OCTOBER 2026 LATEST ISSUE READER
+     ============================================================ -->
 
 
   <!-- ============================================================
@@ -3045,8 +4715,8 @@
        open The Captains Report.
 
        CURRENTLY DISPLAYED:
-       September 2026
-       Volume 1 • Issue 3
+       October 2026
+       Volume 1 • Issue 4
 
        IMPORTANT — MONTHLY UPDATE:
 
@@ -3083,8 +4753,8 @@
          ========================================================== -->
 
     <h2 class="issue-date">
-      September 2026
-    </h2>
+  October 2026
+</h2>
 
 
     <!-- ==========================================================
@@ -3092,8 +4762,8 @@
          ========================================================== -->
 
     <p class="issue-number">
-      VOLUME 1 • ISSUE 3
-    </p>
+  VOLUME 1 • ISSUE 4
+</p>
 
 
     <!-- ==========================================================
@@ -3102,14 +4772,14 @@
          Normally use Page 1 of the newspaper as the cover image.
 
          CURRENT FILE:
-         september-2026-page-1.png
+october-2026-page-1.png
          ========================================================== -->
 
-    <img
-      class="cover"
-      src="september-2026-page-1.png"
-      alt="September 2026 cover of The Captains Report"
-    >
+   <img
+  class="cover"
+  src="october-2026-page-1.png"
+  alt="October 2026 cover of The Captains Report"
+>
 
 
     <!-- ==========================================================
@@ -3117,8 +4787,8 @@
          ========================================================== -->
 
     <h3 class="headline">
-      SEASON 21 SETS SAIL
-    </h3>
+  THE DAMNED RETURN
+</h3>
 
 
     <!-- ==========================================================
@@ -3126,9 +4796,9 @@
          ========================================================== -->
 
     <p class="deck">
-      Season 21 arrives September 17 with new rewards,
-      recurring events and another major sandbox experiment.
-    </p>
+  Festival of the Damned returns as October brings tricks, treats,
+  Outfit Saving, Golden Sands and a packed month on the seas.
+</p>
 
 
     <!-- ==========================================================
@@ -3259,7 +4929,6 @@
        END OF ARCHIVE
        ============================================================ -->
 
-</section>
 
   <!-- ============================================================
        SITE PROMO / ADVERTISEMENT
@@ -3530,87 +5199,48 @@
 
        ============================================================ */
 
-    function showOriginalEdition(readerId) {
+        function showOriginalEdition(readerId) {
 
-      document.body.classList.add("original-edition");
+      const reader = document.getElementById(readerId);
+
+      if (!reader) return;
+
+      reader.classList.add("original-edition-active");
 
       setViewport(desktopViewport);
 
+      setTimeout(function () {
 
-      /*
-         Find the current Latest Issue.
-      */
-
-      const issue =
-        document.getElementById(readerId);
-
-
-      /*
-         Scroll smoothly back to the beginning of the issue.
-      */
-
-      if (issue) {
-
-        issue.scrollIntoView({
+        reader.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
 
-      }
+      }, 50);
 
     }
 
-
-    /* ============================================================
-       FUNCTION:
-       showMobileEdition()
-
-       Runs when the reader presses:
-
-           ← BACK TO MOBILE EDITION
-
-       WHAT IT DOES:
-
-       1. Restores the normal responsive viewport.
-       2. Removes the "original-edition" class.
-       3. Scrolls back to the beginning of the current issue.
-
-       ============================================================ */
 
     function showMobileEdition(readerId) {
 
+      const reader = document.getElementById(readerId);
+
+      if (!reader) return;
+
+      reader.classList.remove("original-edition-active");
+
       setViewport(normalViewport);
 
-      document.body.classList.remove("original-edition");
+      setTimeout(function () {
 
-
-      /*
-         Find the current Latest Issue.
-      */
-
-      const issue =
-        document.getElementById(readerId);
-
-
-      /*
-         Scroll smoothly back to the beginning of the issue.
-      */
-
-      if (issue) {
-
-        issue.scrollIntoView({
+        reader.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
 
-      }
+      }, 50);
 
     }
-
-
-    /* ============================================================
-       END OF JAVASCRIPT
-       ============================================================ */
 
   </script>
 
