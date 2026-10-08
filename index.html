@@ -712,13 +712,18 @@
        The actual Archive HTML appears later in this file.
        ============================================================ */
 
-    .archive-note {
-      max-width: 600px;
-      margin: 70px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+  .archive-note {
+  max-width: 600px;
+  margin: 70px auto;
+  padding: 0 20px;
+  text-align: center;
+  display: none;
+}
 
+/* Show Archive when the ARCHIVE button is selected */
+.archive-note:target {
+  display: block;
+}
 
     /* ============================================================
        16. MOBILE SCREEN RULES
